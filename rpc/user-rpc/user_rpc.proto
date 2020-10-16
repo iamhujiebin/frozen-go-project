@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package user_rpc;
+
+message userInfo {
+  int64 user_id = 1;
+  string access_token = 2;
+  string avatar = 3;
+  int64 create_time_unix = 4;
+}
+
+message getUserReq {
+  int64 user_id = 1;
+}
+
+message getUserRes {
+  userInfo user = 1;
+}
+
+message addUserReq {
+  userInfo user = 1;
+}
+
+message addUserRes {
+}
+
+service userRpc {
+  rpc getUser(getUserReq) returns(getUserRes);
+  rpc addUser(addUserReq) returns(addUserRes);
+}
+
+

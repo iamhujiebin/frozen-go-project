@@ -1,0 +1,10 @@
+Name: user-service.rpc
+ListenOn: 127.0.0.1:7000
+Etcd:
+  Hosts:
+    - 127.0.0.1:2379
+  Key: /user.rpc
+
+DataSource: root:@tcp(127.0.0.1:3306)/Frozen
+Cache:
+  - Host: 127.0.0.1:6379
