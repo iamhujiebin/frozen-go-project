@@ -1,0 +1,7 @@
+Name: user-api
+Host: 0.0.0.0
+Port: 8888
+
+JwtAuth:
+  AccessSecret: j`i!@e#b$i%n^&m*e(n)g_y+n
+  AccessExpire: 604800
