@@ -31,6 +31,7 @@ func (l *GetUserLogic) GetUser(in *user_rpc.GetUserReq) (*user_rpc.GetUserRes, e
 	}
 	pbUser := new(user_rpc.UserInfo)
 	_ = copier.Copy(pbUser, user)
+	pbUser.CreateTimeUnix = user.CreateTime.Unix()
 	return &user_rpc.GetUserRes{
 		User: pbUser,
 	}, nil

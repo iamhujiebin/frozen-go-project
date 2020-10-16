@@ -17,7 +17,10 @@ type GetUserRequest struct {
 }
 
 type GetUserResponse struct {
-	Name string `json:"name"`
+	UserId         string `json:"userId"`
+	AccessToken    string `json:"accessToken"`
+	Avatar         string `json:"avatar"`
+	CreateTimeUnix int64  `json:"createTimeUnix"`
 }
 
 type JwtTokenRequest struct {
