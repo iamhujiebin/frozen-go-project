@@ -29,10 +29,10 @@ type AddUserRequest struct {
 }
 
 type AddUserResponse struct {
-	UserId      string `json:"user_id"`
-	Avatar      string `json:"avatar"`
-	AccessToken string `json:"access_token"`
-	CreateTime  string `json:"create_time"`
+	UserId         string `json:"user_id"`
+	Avatar         string `json:"avatar"`
+	AccessToken    string `json:"access_token"`
+	CreateTimeUnix int64  `json:"create_time_unix"`
 }
 
 service user-api {

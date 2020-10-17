@@ -9,10 +9,11 @@ var errJsonConvert = errors.New("json convert error")
 
 type (
 	AddUserReq struct {
-		User *UserInfo `json:"user,omitempty"`
+		Avatar string `json:"avatar,omitempty"`
 	}
 
 	AddUserRes struct {
+		User *UserInfo `json:"user,omitempty"`
 	}
 
 	GetUserReq struct {

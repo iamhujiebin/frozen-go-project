@@ -2,6 +2,7 @@ package logic
 
 import (
 	"context"
+	"github.com/jinzhu/copier"
 
 	"frozen-go-project/rpc/user-rpc/internal/svc"
 	user_rpc "frozen-go-project/rpc/user-rpc/pb"
@@ -24,7 +25,14 @@ func NewAddUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddUserLo
 }
 
 func (l *AddUserLogic) AddUser(in *user_rpc.AddUserReq) (*user_rpc.AddUserRes, error) {
-	// todo: add your logic here and delete this line
-
-	return &user_rpc.AddUserRes{}, nil
+	user, err := l.svcCtx.UserModel.AddUserTx(in.Avatar)
+	if err != nil {
+		return nil, err
+	}
+	pbUser := new(user_rpc.UserInfo)
+	copier.Copy(pbUser, user)
+	pbUser.CreateTimeUnix = user.CreateTime.Unix()
+	return &user_rpc.AddUserRes{
+		User: pbUser,
+	}, nil
 }

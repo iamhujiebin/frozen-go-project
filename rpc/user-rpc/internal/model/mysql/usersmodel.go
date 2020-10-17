@@ -2,7 +2,9 @@ package model
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
+	"github.com/google/uuid"
 	"strings"
 	"time"
 
@@ -87,4 +89,39 @@ func (m *UsersModel) Delete(userId int64) error {
 		return conn.Exec(query, userId)
 	}, usersUserIdKey)
 	return err
+}
+
+func (m *UsersModel) AddUserTx(avatar string) (*Users, error) {
+	var userId int64
+	var accessToken = uuid.New().String()
+	err := m.Transact(func(session sqlx.Session) error {
+		var user Users
+		query := `select ` + usersRows + ` from ` + m.table + ` where user_id = ? limit 1`
+		err := session.QueryRow(&user, query, 1)
+		if err != nil {
+			return err
+		}
+		query = `insert into ` + m.table + ` (` + usersRowsExpectAutoSet + `) values (?, ?)`
+		res, err := session.Exec(query, accessToken, avatar)
+		if err != nil {
+			return err
+		}
+		userId, err = res.LastInsertId()
+		if err != nil {
+			return err
+		}
+		if userId <= 0 {
+			return errors.New("affect rows fail")
+		}
+		return nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &Users{
+		UserId:      userId,
+		AccessToken: accessToken,
+		Avatar:      avatar,
+		CreateTime:  time.Now(),
+	}, nil
 }

@@ -18,10 +18,11 @@ message getUserRes {
 }
 
 message addUserReq {
-  userInfo user = 1;
+  string avatar = 1;
 }
 
 message addUserRes {
+  userInfo user = 1;
 }
 
 service userRpc {
