@@ -66,6 +66,16 @@ type (
 		User *UserInfo `json:"user,omitempty"`
 	}
 
+	PageAnchorRecommendReq struct {
+		UserId int64 `json:"user_id,omitempty"`
+		Skip   int64 `json:"skip,omitempty"`
+		Limit  int64 `json:"limit,omitempty"`
+	}
+
+	PageAnchorRecommendRes struct {
+		Anchors []*UserInfo `json:"anchors,omitempty"`
+	}
+
 	UserInfo struct {
 		UserId         int64  `json:"user_id,omitempty"`
 		AccessToken    string `json:"access_token,omitempty"`

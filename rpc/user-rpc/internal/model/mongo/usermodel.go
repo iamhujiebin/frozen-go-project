@@ -80,18 +80,6 @@ func (m *UserModel) FindByLoginName(loginname string) (data *User, err error) {
 	return
 }
 
-func (m *UserModel) InsertOne(user *User) (insertID primitive.ObjectID, err error) {
-	m.WithCollection(func(col *mongo.Collection, ctx context.Context) {
-		res, iErr := col.InsertOne(ctx, user)
-		if iErr != nil {
-			err = iErr
-		} else {
-			insertID = res.InsertedID.(primitive.ObjectID)
-		}
-	})
-	return
-}
-
 func (m *UserModel) UpdateOne(where, set bson.M) (err error) {
 	if where == nil || set == nil {
 		return db_errors.IllegalParams("where or set")
@@ -156,4 +144,23 @@ func (m *UserModel) GuestRegister(in *user_rpc.GuestLoginReq) (interface{}, erro
 		}
 		return user, nil
 	})
+}
+
+func (m *UserModel) PageUsers(where bson.M, skip, limit int64) (users []*User, err error) {
+	m.WithCollection(func(col *mongo.Collection, ctx context.Context) {
+		cur, cErr := col.Find(ctx, where, options.Find().SetSort(bson.M{"anchor_weight": -1, "active_at": -1}).SetSkip(skip).SetLimit(limit))
+		if cErr != nil {
+			err = cErr
+			return
+		}
+		for cur.Next(ctx) {
+			var user *User
+			err = cur.Decode(&user)
+			if err != nil {
+				return
+			}
+			users = append(users, user)
+		}
+	})
+	return
 }

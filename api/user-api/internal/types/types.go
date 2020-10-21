@@ -12,7 +12,14 @@ type AddUserResponse struct {
 	CreateTimeUnix int64  `json:"create_time_unix"`
 }
 
+type AnchorRecommendRequest struct {
+	CommonParams
+	Page int64 `form:"page"`
+	Size int64 `form:"size"`
+}
+
 type CommonParams struct {
+	UserId      int64  `form:"__user_id,optional"`
 	GuestId     string `form:"__guest_id,optional"`
 	Country     string `form:"__country,optional"`
 	PkgName     string `form:"__pname,optional"`

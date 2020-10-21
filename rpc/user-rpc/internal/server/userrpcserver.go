@@ -40,3 +40,8 @@ func (s *UserRpcServer) GuestLogin(ctx context.Context, in *user_rpc.GuestLoginR
 	l := logic.NewGuestLoginLogic(ctx, s.svcCtx)
 	return l.GuestLogin(in)
 }
+
+func (s *UserRpcServer) PageAnchorRecommend(ctx context.Context, in *user_rpc.PageAnchorRecommendReq) (*user_rpc.PageAnchorRecommendRes, error) {
+	l := logic.NewPageAnchorRecommendLogic(ctx, s.svcCtx)
+	return l.PageAnchorRecommend(in)
+}

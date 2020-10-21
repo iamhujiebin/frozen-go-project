@@ -31,6 +31,11 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 			Path:    "/:pkg/chat/dispatcher/:id",
 			Handler: dispatcherHandler(serverCtx),
 		},
+		{
+			Method:  http.MethodGet,
+			Path:    "/anchor/recommend",
+			Handler: anchorRecommendHandler(serverCtx),
+		},
 	})
 
 	engine.AddRoutes([]rest.Route{

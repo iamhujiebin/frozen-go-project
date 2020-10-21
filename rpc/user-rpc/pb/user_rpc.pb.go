@@ -763,6 +763,116 @@ func (x *GuestLoginRes) GetUser() *UserInfo {
 	return nil
 }
 
+type PageAnchorRecommendReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Skip   int64 `protobuf:"varint,2,opt,name=skip,proto3" json:"skip,omitempty"`
+	Limit  int64 `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *PageAnchorRecommendReq) Reset() {
+	*x = PageAnchorRecommendReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_user_rpc_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PageAnchorRecommendReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PageAnchorRecommendReq) ProtoMessage() {}
+
+func (x *PageAnchorRecommendReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_rpc_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PageAnchorRecommendReq.ProtoReflect.Descriptor instead.
+func (*PageAnchorRecommendReq) Descriptor() ([]byte, []int) {
+	return file_user_rpc_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *PageAnchorRecommendReq) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *PageAnchorRecommendReq) GetSkip() int64 {
+	if x != nil {
+		return x.Skip
+	}
+	return 0
+}
+
+func (x *PageAnchorRecommendReq) GetLimit() int64 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type PageAnchorRecommendRes struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Anchors []*UserInfo `protobuf:"bytes,1,rep,name=anchors,proto3" json:"anchors,omitempty"`
+}
+
+func (x *PageAnchorRecommendRes) Reset() {
+	*x = PageAnchorRecommendRes{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_user_rpc_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PageAnchorRecommendRes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PageAnchorRecommendRes) ProtoMessage() {}
+
+func (x *PageAnchorRecommendRes) ProtoReflect() protoreflect.Message {
+	mi := &file_user_rpc_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PageAnchorRecommendRes.ProtoReflect.Descriptor instead.
+func (*PageAnchorRecommendRes) Descriptor() ([]byte, []int) {
+	return file_user_rpc_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *PageAnchorRecommendRes) GetAnchors() []*UserInfo {
+	if x != nil {
+		return x.Anchors
+	}
+	return nil
+}
+
 var File_user_rpc_proto protoreflect.FileDescriptor
 
 var file_user_rpc_proto_rawDesc = []byte{
@@ -858,22 +968,38 @@ var file_user_rpc_proto_rawDesc = []byte{
 	0x67, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x12, 0x26, 0x0a,
 	0x04, 0x75, 0x73, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x75, 0x73,
 	0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52,
-	0x04, 0x75, 0x73, 0x65, 0x72, 0x32, 0xf4, 0x01, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x52, 0x70,
-	0x63, 0x12, 0x35, 0x0a, 0x07, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x75,
-	0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52,
-	0x65, 0x71, 0x1a, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65,
-	0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x12, 0x35, 0x0a, 0x07, 0x61, 0x64, 0x64, 0x55,
-	0x73, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x61,
-	0x64, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x1a, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72,
-	0x5f, 0x72, 0x70, 0x63, 0x2e, 0x61, 0x64, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x12,
-	0x3b, 0x0a, 0x09, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69, 0x74, 0x12, 0x16, 0x2e, 0x75,
-	0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69,
-	0x74, 0x52, 0x65, 0x71, 0x1a, 0x16, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e,
-	0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69, 0x74, 0x52, 0x65, 0x73, 0x12, 0x3e, 0x0a, 0x0a,
-	0x67, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12, 0x17, 0x2e, 0x75, 0x73, 0x65,
-	0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
-	0x52, 0x65, 0x71, 0x1a, 0x17, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67,
-	0x75, 0x65, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72,
+	0x04, 0x75, 0x73, 0x65, 0x72, 0x22, 0x5b, 0x0a, 0x16, 0x70, 0x61, 0x67, 0x65, 0x41, 0x6e, 0x63,
+	0x68, 0x6f, 0x72, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x52, 0x65, 0x71, 0x12,
+	0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x6b, 0x69, 0x70,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x73, 0x6b, 0x69, 0x70, 0x12, 0x14, 0x0a, 0x05,
+	0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d,
+	0x69, 0x74, 0x22, 0x46, 0x0a, 0x16, 0x70, 0x61, 0x67, 0x65, 0x41, 0x6e, 0x63, 0x68, 0x6f, 0x72,
+	0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x52, 0x65, 0x73, 0x12, 0x2c, 0x0a, 0x07,
+	0x61, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12, 0x2e,
+	0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66,
+	0x6f, 0x52, 0x07, 0x61, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x73, 0x32, 0xcf, 0x02, 0x0a, 0x07, 0x75,
+	0x73, 0x65, 0x72, 0x52, 0x70, 0x63, 0x12, 0x35, 0x0a, 0x07, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65,
+	0x72, 0x12, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65, 0x74,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x1a, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72,
+	0x70, 0x63, 0x2e, 0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x12, 0x35, 0x0a,
+	0x07, 0x61, 0x64, 0x64, 0x55, 0x73, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f,
+	0x72, 0x70, 0x63, 0x2e, 0x61, 0x64, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x1a, 0x14,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x61, 0x64, 0x64, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x73, 0x12, 0x3b, 0x0a, 0x09, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69,
+	0x74, 0x12, 0x16, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x75, 0x65,
+	0x73, 0x74, 0x49, 0x6e, 0x69, 0x74, 0x52, 0x65, 0x71, 0x1a, 0x16, 0x2e, 0x75, 0x73, 0x65, 0x72,
+	0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69, 0x74, 0x52, 0x65,
+	0x73, 0x12, 0x3e, 0x0a, 0x0a, 0x67, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12,
+	0x17, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x75, 0x65, 0x73, 0x74,
+	0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x1a, 0x17, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f,
+	0x72, 0x70, 0x63, 0x2e, 0x67, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65,
+	0x73, 0x12, 0x59, 0x0a, 0x13, 0x70, 0x61, 0x67, 0x65, 0x41, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x52,
+	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x12, 0x20, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f,
+	0x72, 0x70, 0x63, 0x2e, 0x70, 0x61, 0x67, 0x65, 0x41, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x52, 0x65,
+	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x52, 0x65, 0x71, 0x1a, 0x20, 0x2e, 0x75, 0x73, 0x65,
+	0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x70, 0x61, 0x67, 0x65, 0x41, 0x6e, 0x63, 0x68, 0x6f, 0x72,
+	0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x52, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x33,
 }
 
@@ -889,37 +1015,42 @@ func file_user_rpc_proto_rawDescGZIP() []byte {
 	return file_user_rpc_proto_rawDescData
 }
 
-var file_user_rpc_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_user_rpc_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_user_rpc_proto_goTypes = []interface{}{
-	(*UserInfo)(nil),      // 0: user_rpc.userInfo
-	(*GetUserReq)(nil),    // 1: user_rpc.getUserReq
-	(*GetUserRes)(nil),    // 2: user_rpc.getUserRes
-	(*AddUserReq)(nil),    // 3: user_rpc.addUserReq
-	(*AddUserRes)(nil),    // 4: user_rpc.addUserRes
-	(*GuestInfo)(nil),     // 5: user_rpc.guestInfo
-	(*GuestInitReq)(nil),  // 6: user_rpc.guestInitReq
-	(*GuestInitRes)(nil),  // 7: user_rpc.guestInitRes
-	(*GuestLoginReq)(nil), // 8: user_rpc.guestLoginReq
-	(*GuestLoginRes)(nil), // 9: user_rpc.guestLoginRes
+	(*UserInfo)(nil),               // 0: user_rpc.userInfo
+	(*GetUserReq)(nil),             // 1: user_rpc.getUserReq
+	(*GetUserRes)(nil),             // 2: user_rpc.getUserRes
+	(*AddUserReq)(nil),             // 3: user_rpc.addUserReq
+	(*AddUserRes)(nil),             // 4: user_rpc.addUserRes
+	(*GuestInfo)(nil),              // 5: user_rpc.guestInfo
+	(*GuestInitReq)(nil),           // 6: user_rpc.guestInitReq
+	(*GuestInitRes)(nil),           // 7: user_rpc.guestInitRes
+	(*GuestLoginReq)(nil),          // 8: user_rpc.guestLoginReq
+	(*GuestLoginRes)(nil),          // 9: user_rpc.guestLoginRes
+	(*PageAnchorRecommendReq)(nil), // 10: user_rpc.pageAnchorRecommendReq
+	(*PageAnchorRecommendRes)(nil), // 11: user_rpc.pageAnchorRecommendRes
 }
 var file_user_rpc_proto_depIdxs = []int32{
-	0, // 0: user_rpc.getUserRes.user:type_name -> user_rpc.userInfo
-	0, // 1: user_rpc.addUserRes.user:type_name -> user_rpc.userInfo
-	5, // 2: user_rpc.guestInitRes.guest:type_name -> user_rpc.guestInfo
-	0, // 3: user_rpc.guestLoginRes.user:type_name -> user_rpc.userInfo
-	1, // 4: user_rpc.userRpc.getUser:input_type -> user_rpc.getUserReq
-	3, // 5: user_rpc.userRpc.addUser:input_type -> user_rpc.addUserReq
-	6, // 6: user_rpc.userRpc.guestInit:input_type -> user_rpc.guestInitReq
-	8, // 7: user_rpc.userRpc.guestLogin:input_type -> user_rpc.guestLoginReq
-	2, // 8: user_rpc.userRpc.getUser:output_type -> user_rpc.getUserRes
-	4, // 9: user_rpc.userRpc.addUser:output_type -> user_rpc.addUserRes
-	7, // 10: user_rpc.userRpc.guestInit:output_type -> user_rpc.guestInitRes
-	9, // 11: user_rpc.userRpc.guestLogin:output_type -> user_rpc.guestLoginRes
-	8, // [8:12] is the sub-list for method output_type
-	4, // [4:8] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	0,  // 0: user_rpc.getUserRes.user:type_name -> user_rpc.userInfo
+	0,  // 1: user_rpc.addUserRes.user:type_name -> user_rpc.userInfo
+	5,  // 2: user_rpc.guestInitRes.guest:type_name -> user_rpc.guestInfo
+	0,  // 3: user_rpc.guestLoginRes.user:type_name -> user_rpc.userInfo
+	0,  // 4: user_rpc.pageAnchorRecommendRes.anchors:type_name -> user_rpc.userInfo
+	1,  // 5: user_rpc.userRpc.getUser:input_type -> user_rpc.getUserReq
+	3,  // 6: user_rpc.userRpc.addUser:input_type -> user_rpc.addUserReq
+	6,  // 7: user_rpc.userRpc.guestInit:input_type -> user_rpc.guestInitReq
+	8,  // 8: user_rpc.userRpc.guestLogin:input_type -> user_rpc.guestLoginReq
+	10, // 9: user_rpc.userRpc.pageAnchorRecommend:input_type -> user_rpc.pageAnchorRecommendReq
+	2,  // 10: user_rpc.userRpc.getUser:output_type -> user_rpc.getUserRes
+	4,  // 11: user_rpc.userRpc.addUser:output_type -> user_rpc.addUserRes
+	7,  // 12: user_rpc.userRpc.guestInit:output_type -> user_rpc.guestInitRes
+	9,  // 13: user_rpc.userRpc.guestLogin:output_type -> user_rpc.guestLoginRes
+	11, // 14: user_rpc.userRpc.pageAnchorRecommend:output_type -> user_rpc.pageAnchorRecommendRes
+	10, // [10:15] is the sub-list for method output_type
+	5,  // [5:10] is the sub-list for method input_type
+	5,  // [5:5] is the sub-list for extension type_name
+	5,  // [5:5] is the sub-list for extension extendee
+	0,  // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_user_rpc_proto_init() }
@@ -1048,6 +1179,30 @@ func file_user_rpc_proto_init() {
 				return nil
 			}
 		}
+		file_user_rpc_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PageAnchorRecommendReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_user_rpc_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PageAnchorRecommendRes); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1055,7 +1210,7 @@ func file_user_rpc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_user_rpc_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -1085,6 +1240,7 @@ type UserRpcClient interface {
 	AddUser(ctx context.Context, in *AddUserReq, opts ...grpc.CallOption) (*AddUserRes, error)
 	GuestInit(ctx context.Context, in *GuestInitReq, opts ...grpc.CallOption) (*GuestInitRes, error)
 	GuestLogin(ctx context.Context, in *GuestLoginReq, opts ...grpc.CallOption) (*GuestLoginRes, error)
+	PageAnchorRecommend(ctx context.Context, in *PageAnchorRecommendReq, opts ...grpc.CallOption) (*PageAnchorRecommendRes, error)
 }
 
 type userRpcClient struct {
@@ -1131,12 +1287,22 @@ func (c *userRpcClient) GuestLogin(ctx context.Context, in *GuestLoginReq, opts 
 	return out, nil
 }
 
+func (c *userRpcClient) PageAnchorRecommend(ctx context.Context, in *PageAnchorRecommendReq, opts ...grpc.CallOption) (*PageAnchorRecommendRes, error) {
+	out := new(PageAnchorRecommendRes)
+	err := c.cc.Invoke(ctx, "/user_rpc.userRpc/pageAnchorRecommend", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserRpcServer is the server API for UserRpc service.
 type UserRpcServer interface {
 	GetUser(context.Context, *GetUserReq) (*GetUserRes, error)
 	AddUser(context.Context, *AddUserReq) (*AddUserRes, error)
 	GuestInit(context.Context, *GuestInitReq) (*GuestInitRes, error)
 	GuestLogin(context.Context, *GuestLoginReq) (*GuestLoginRes, error)
+	PageAnchorRecommend(context.Context, *PageAnchorRecommendReq) (*PageAnchorRecommendRes, error)
 }
 
 // UnimplementedUserRpcServer can be embedded to have forward compatible implementations.
@@ -1154,6 +1320,9 @@ func (*UnimplementedUserRpcServer) GuestInit(context.Context, *GuestInitReq) (*G
 }
 func (*UnimplementedUserRpcServer) GuestLogin(context.Context, *GuestLoginReq) (*GuestLoginRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GuestLogin not implemented")
+}
+func (*UnimplementedUserRpcServer) PageAnchorRecommend(context.Context, *PageAnchorRecommendReq) (*PageAnchorRecommendRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PageAnchorRecommend not implemented")
 }
 
 func RegisterUserRpcServer(s *grpc.Server, srv UserRpcServer) {
@@ -1232,6 +1401,24 @@ func _UserRpc_GuestLogin_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserRpc_PageAnchorRecommend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PageAnchorRecommendReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserRpcServer).PageAnchorRecommend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_rpc.userRpc/PageAnchorRecommend",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserRpcServer).PageAnchorRecommend(ctx, req.(*PageAnchorRecommendReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _UserRpc_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "user_rpc.userRpc",
 	HandlerType: (*UserRpcServer)(nil),
@@ -1251,6 +1438,10 @@ var _UserRpc_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "guestLogin",
 			Handler:    _UserRpc_GuestLogin_Handler,
+		},
+		{
+			MethodName: "pageAnchorRecommend",
+			Handler:    _UserRpc_PageAnchorRecommend_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

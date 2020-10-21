@@ -75,9 +75,21 @@ message guestLoginRes {
   userInfo user = 1;
 }
 
+message pageAnchorRecommendReq{
+  int64 user_id = 1;
+  int64 skip = 2;
+  int64 limit = 3;
+}
+
+message pageAnchorRecommendRes {
+  repeated userInfo anchors = 1;
+}
+
 service userRpc {
   rpc getUser(getUserReq) returns(getUserRes);
   rpc addUser(addUserReq) returns(addUserRes);
   rpc guestInit(guestInitReq) returns (guestInitRes);
   rpc guestLogin(guestLoginReq) returns (guestLoginRes);
+
+  rpc pageAnchorRecommend(pageAnchorRecommendReq) returns (pageAnchorRecommendRes) ;
 }
