@@ -27,6 +27,12 @@ type CommonResponse struct {
 	Message string      `json:"message,omitempty"`
 }
 
+type DispatcherRequest struct {
+	CommonParams
+	Id  string `path:"id"`
+	Pkg string `path:"pkg"`
+}
+
 type GetUserRequest struct {
 	UserId string `json:"userId"`
 }

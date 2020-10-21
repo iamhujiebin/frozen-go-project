@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package base_rpc;
+
+message getPkgConfigReq {
+  string pkg_name = 1;
+  string section = 2;
+  string key = 3;
+}
+
+message getPkgConfigResp{
+  string value = 4;
+}
+
+message  getPkgSectionConfigReq {
+  string pkg_name = 1;
+  string section = 2;
+}
+
+message getPkgSectionConfigResp {
+  repeated pkgConfig items = 1;
+}
+
+message pkgConfig{
+  string key = 1;
+  string value = 2;
+}
+
+
+service baseRpc {
+  rpc getPkgConfig (getPkgConfigReq) returns (getPkgConfigResp);
+  rpc getPkgSectionConfig (getPkgSectionConfigReq) returns (getPkgSectionConfigResp);
+}

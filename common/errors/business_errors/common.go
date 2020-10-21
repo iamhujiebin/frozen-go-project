@@ -8,3 +8,5 @@ import (
 func EmptyParams(params ...string) error {
 	return errors.New("empty params:" + strings.Join(params, ","))
 }
+
+var NoConfigErr = errors.New("no config")

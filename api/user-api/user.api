@@ -68,6 +68,12 @@ type CommonResponse struct {
 	Message string      `json:"message,omitempty"`
 }
 
+type DispatcherRequest struct {
+	CommonParams `form:",inline"`
+	Id           string `path:"id"`
+	Pkg          string `path:"pkg"`
+}
+
 service user-api {
     @server(
         handler: JwtHandler
@@ -81,6 +87,9 @@ service user-api {
 
     @handler GuestLoginHandler
     post /guest/login (GuestLoginRequest) returns (CommonResponse)
+
+    @handler DispatcherHandler
+    get /:pkg/chat/dispatcher/:id (DispatcherRequest) returns (CommonResponse)
 }
 
 @server(

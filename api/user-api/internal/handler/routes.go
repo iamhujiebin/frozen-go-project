@@ -26,6 +26,11 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 			Path:    "/guest/login",
 			Handler: guestLoginHandler(serverCtx),
 		},
+		{
+			Method:  http.MethodGet,
+			Path:    "/:pkg/chat/dispatcher/:id",
+			Handler: dispatcherHandler(serverCtx),
+		},
 	})
 
 	engine.AddRoutes([]rest.Route{

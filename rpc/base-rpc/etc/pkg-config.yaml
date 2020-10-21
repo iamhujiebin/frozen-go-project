@@ -1,0 +1,35 @@
+Fatee:
+  Facebook:
+    AppId: '1269925853202469'
+    AppKey: f033252bfd864a64164dad9d330a7f27
+  Google:
+    PayKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkhqrBm2wA4NRdhhvLpe+wYIpIOPR2XQPmAXoVnwvLsA0pOuMdN75oRwIZcJs5PTrqgjFw8O9dNIbcCMObRfVJk8retAufl5rR5GLsSQidBG0sd6ieM66rXePI2PLMbYmcQPDNygudVknRhUQgGPMAf4/tv2gcC6Thqq6umlCBjONzKIUdwZWe2BOJIBVB2NDNA3JWRY2qvu7PD0ZU2osP7e2HptJiEpg+EyAsWNazZqyARcWI3b/BzDxrpX51NHgRh3Bwh/4xafpP80UyuuEkqf6k9ae4N/dXwv3g+DfvWwpbpqugT6lYq2t7G4fKBl+LybpRGXbmYRd1e524UTCDQIDAQAB
+  Adjust:
+    AppToken:
+    PurchaseEventToken:
+  DefaultAvatar:
+    Small: mm/datemein/img/1_1.png
+    Big: mm/datemein/img/1.png
+  FcmPush:
+    ServerKey: AAAARQrLiak:APA91bEzTn4s7qx2QWmUGnSJAKzrjcvIWkOc5B4YpBWVSUFaWnsIJ50uFIrmnl2o7OrwVXhzlVv_etAlD7Tx7etA3xSG3vZUZ2qSrsQSy--FU53mpvTRM815iW97dmhwf7azhrWESCEj
+    SendId: '296533854633'
+  ChatWs:
+    Servers: mm-web2.mohangs.com:5020:6,mm-web4.mohangs.com:5020:6
+
+Supreshe:
+  Facebook:
+    AppId: "1269925853202469"
+    AppKey: f033252bfd864a64164dad9d330a7f27
+  Google:
+    PayKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkhqrBm2wA4NRdhhvLpe+wYIpIOPR2XQPmAXoVnwvLsA0pOuMdN75oRwIZcJs5PTrqgjFw8O9dNIbcCMObRfVJk8retAufl5rR5GLsSQidBG0sd6ieM66rXePI2PLMbYmcQPDNygudVknRhUQgGPMAf4/tv2gcC6Thqq6umlCBjONzKIUdwZWe2BOJIBVB2NDNA3JWRY2qvu7PD0ZU2osP7e2HptJiEpg+EyAsWNazZqyARcWI3b/BzDxrpX51NHgRh3Bwh/4xafpP80UyuuEkqf6k9ae4N/dXwv3g+DfvWwpbpqugT6lYq2t7G4fKBl+LybpRGXbmYRd1e524UTCDQIDAQAB
+  Adjust:
+    AppToken:
+    PurchaseEventToken:
+  DefaultAvatar:
+    Small: mm/datemein/img/1_1.png
+    Big: mm/datemein/img/1.png
+  FcmPush:
+    ServerKey: AAAARQrLiak:APA91bEzTn4s7qx2QWmUGnSJAKzrjcvIWkOc5B4YpBWVSUFaWnsIJ50uFIrmnl2o7OrwVXhzlVv_etAlD7Tx7etA3xSG3vZUZ2qSrsQSy--FU53mpvTRM815iW97dmhwf7azhrWESCEj
+    SendId: "296533854633"
+  ChatWs:
+    Servers: ct1.jollyct.com:5020:6,ct2.jollyct.com:5020:6
