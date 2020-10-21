@@ -17,6 +17,7 @@ type ServiceContext struct {
 	MongoClient     *mongo.Client
 	UserMysqlModel  *mysqlModel.UsersModel
 	GuestMongoModel *mongoModel.GuestsModel
+	UserMongoModel  *mongoModel.UserModel
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
@@ -42,4 +43,5 @@ func initMongoModels(c config.Config, s *ServiceContext) {
 		panic("connect to mongo fail:" + err.Error())
 	}
 	s.GuestMongoModel = mongoModel.NewGuestModel(client, &c, mongoModel.Guests{}.Database(), mongoModel.Guests{}.Collection())
+	s.UserMongoModel = mongoModel.NewUserModel(client, &c, mongoModel.User{}.Database(), mongoModel.User{}.Collection())
 }

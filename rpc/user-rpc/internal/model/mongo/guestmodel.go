@@ -2,7 +2,7 @@ package mongo
 
 import (
 	"context"
-	"frozen-go-project/common"
+	"frozen-go-project/common/errors/db_errors"
 	"frozen-go-project/rpc/user-rpc/internal/config"
 	"github.com/globalsign/mgo/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -69,7 +69,7 @@ func (m *GuestsModel) Insert(data *Guests) (primitive.ObjectID, error) {
 		return primitive.ObjectID{}, err
 	}
 	if res == nil {
-		return primitive.ObjectID{}, common.DBNilRes
+		return primitive.ObjectID{}, db_errors.DBNilRes
 	}
 	return res.InsertedID.(primitive.ObjectID), err
 }

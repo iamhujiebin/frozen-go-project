@@ -49,10 +49,23 @@ type GuestInitRequest struct {
 	CampaignId  string `form:"campaign_id,optional"`
 }
 
+type GuestLoginRequest struct {
+	CommonParams `form:",inline"`
+}
+
+type CommonParams struct {
+	GuestId     string `form:"__guest_id,optional"`
+	Country     string `form:"__country,optional"`
+	PkgName     string `form:"__pname,optional"`
+	Channel     string `form:"__pch,optional"`
+	UserChannel string `form:"__uch,optional"`
+	Platform    string `form:"__platform,optional"`
+}
+
 type CommonResponse struct {
 	Code    int         `json:"code"`
-	Body    interface{} `json:"body"`
-	Message string      `json:"message"`
+	Body    interface{} `json:"body,omitempty"`
+	Message string      `json:"message,omitempty"`
 }
 
 service user-api {
@@ -65,6 +78,9 @@ service user-api {
         handler : GuestInitHandler
     )
     get /guest/init (GuestInitRequest) returns (CommonResponse)
+
+    @handler GuestLoginHandler
+    post /guest/login (GuestLoginRequest) returns (CommonResponse)
 }
 
 @server(

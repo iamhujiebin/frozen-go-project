@@ -21,6 +21,11 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 			Path:    "/guest/init",
 			Handler: guestInitHandler(serverCtx),
 		},
+		{
+			Method:  http.MethodPost,
+			Path:    "/guest/login",
+			Handler: guestLoginHandler(serverCtx),
+		},
 	})
 
 	engine.AddRoutes([]rest.Route{

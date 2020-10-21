@@ -12,10 +12,19 @@ type AddUserResponse struct {
 	CreateTimeUnix int64  `json:"create_time_unix"`
 }
 
+type CommonParams struct {
+	GuestId     string `form:"__guest_id,optional"`
+	Country     string `form:"__country,optional"`
+	PkgName     string `form:"__pname,optional"`
+	Channel     string `form:"__pch,optional"`
+	UserChannel string `form:"__uch,optional"`
+	Platform    string `form:"__platform,optional"`
+}
+
 type CommonResponse struct {
 	Code    int         `json:"code"`
-	Body    interface{} `json:"body"`
-	Message string      `json:"message"`
+	Body    interface{} `json:"body,omitempty"`
+	Message string      `json:"message,omitempty"`
 }
 
 type GetUserRequest struct {
@@ -41,6 +50,10 @@ type GuestInitRequest struct {
 	Channel     string `form:"channel,optional"`
 	UserChannel string `form:"user_channel,optional"`
 	CampaignId  string `form:"campaign_id,optional"`
+}
+
+type GuestLoginRequest struct {
+	CommonParams
 }
 
 type JwtTokenRequest struct {

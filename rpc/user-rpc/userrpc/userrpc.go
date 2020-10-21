@@ -19,6 +19,7 @@ type (
 		GetUser(ctx context.Context, in *GetUserReq) (*GetUserRes, error)
 		AddUser(ctx context.Context, in *AddUserReq) (*AddUserRes, error)
 		GuestInit(ctx context.Context, in *GuestInitReq) (*GuestInitRes, error)
+		GuestLogin(ctx context.Context, in *GuestLoginReq) (*GuestLoginRes, error)
 	}
 
 	defaultUserRpc struct {
@@ -115,6 +116,38 @@ func (m *defaultUserRpc) GuestInit(ctx context.Context, in *GuestInitReq) (*Gues
 	}
 
 	var ret GuestInitRes
+	bts, err = jsonx.Marshal(resp)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &ret)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	return &ret, nil
+}
+
+func (m *defaultUserRpc) GuestLogin(ctx context.Context, in *GuestLoginReq) (*GuestLoginRes, error) {
+	var request user_rpc.GuestLoginReq
+	bts, err := jsonx.Marshal(in)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &request)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	client := user_rpc.NewUserRpcClient(m.cli.Conn())
+	resp, err := client.GuestLogin(ctx, &request)
+	if err != nil {
+		return nil, err
+	}
+
+	var ret GuestLoginRes
 	bts, err = jsonx.Marshal(resp)
 	if err != nil {
 		return nil, errJsonConvert

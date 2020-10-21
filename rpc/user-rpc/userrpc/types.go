@@ -53,10 +53,31 @@ type (
 		Guest *GuestInfo `json:"guest,omitempty"`
 	}
 
+	GuestLoginReq struct {
+		GuestId     string `json:"guest_id,omitempty"`
+		Platform    string `json:"platform,omitempty"`
+		Country     string `json:"country,omitempty"`
+		Channel     string `json:"channel,omitempty"`
+		UserChannel string `json:"user_channel,omitempty"`
+		PkgName     string `json:"pkg_name,omitempty"`
+	}
+
+	GuestLoginRes struct {
+		User *UserInfo `json:"user,omitempty"`
+	}
+
 	UserInfo struct {
 		UserId         int64  `json:"user_id,omitempty"`
 		AccessToken    string `json:"access_token,omitempty"`
+		NickName       string `json:"nick_name,omitempty"`
+		LoginName      string `json:"login_name,omitempty"`
+		UserRole       string `json:"user_role,omitempty"`
+		Country        string `json:"country,omitempty"`
+		Channel        string `json:"channel,omitempty"`
+		UserChannel    string `json:"user_channel,omitempty"`
 		Avatar         string `json:"avatar,omitempty"`
+		RegGuestId     string `json:"reg_guest_id,omitempty"`
+		RegPkgName     string `json:"reg_pkg_name,omitempty"`
 		CreateTimeUnix int64  `json:"create_time_unix,omitempty"`
 	}
 )

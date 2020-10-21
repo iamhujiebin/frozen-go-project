@@ -5,8 +5,16 @@ package user_rpc;
 message userInfo {
   int64 user_id = 1;
   string access_token = 2;
-  string avatar = 3;
-  int64 create_time_unix = 4;
+  string nick_name = 3;
+  string login_name = 4;
+  string user_role = 5;
+  string country = 6;
+  string channel = 7;
+  string user_channel = 8;
+  string avatar = 9;
+  string reg_guest_id = 10;
+  string reg_pkg_name = 11;
+  int64 create_time_unix = 12;
 }
 
 message getUserReq {
@@ -54,10 +62,22 @@ message guestInitRes{
   guestInfo guest = 1;
 }
 
+message guestLoginReq {
+  string guest_id = 1;
+  string platform = 2;
+  string country = 3;
+  string channel = 4;
+  string user_channel = 5;
+  string pkg_name = 6;
+}
+
+message guestLoginRes {
+  userInfo user = 1;
+}
+
 service userRpc {
   rpc getUser(getUserReq) returns(getUserRes);
   rpc addUser(addUserReq) returns(addUserRes);
   rpc guestInit(guestInitReq) returns (guestInitRes);
+  rpc guestLogin(guestLoginReq) returns (guestLoginRes);
 }
-
-

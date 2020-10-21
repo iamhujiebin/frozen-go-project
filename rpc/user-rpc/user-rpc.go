@@ -13,7 +13,6 @@ import (
 	user_rpc "frozen-go-project/rpc/user-rpc/pb"
 
 	"github.com/tal-tech/go-zero/core/conf"
-	"github.com/tal-tech/go-zero/core/logx"
 	"github.com/tal-tech/go-zero/zrpc"
 	"google.golang.org/grpc"
 )
@@ -28,10 +27,10 @@ func main() {
 	ctx := svc.NewServiceContext(c)
 	userRpcSrv := server.NewUserRpcServer(ctx)
 
-	s, err := zrpc.NewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
+	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
 		user_rpc.RegisterUserRpcServer(grpcServer, userRpcSrv)
 	})
-	logx.Must(err)
+	defer s.Stop()
 
 	fmt.Printf("Starting rpc server at %s...\n", c.ListenOn)
 	s.Start()
