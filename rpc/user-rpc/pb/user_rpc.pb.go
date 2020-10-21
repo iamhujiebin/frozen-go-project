@@ -288,6 +288,283 @@ func (x *AddUserRes) GetUser() *UserInfo {
 	return nil
 }
 
+type GuestInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	GuestId     string `protobuf:"bytes,1,opt,name=guest_id,json=guestId,proto3" json:"guest_id,omitempty"`
+	GuestName   string `protobuf:"bytes,2,opt,name=guest_name,json=guestName,proto3" json:"guest_name,omitempty"`
+	Platform    string `protobuf:"bytes,3,opt,name=platform,proto3" json:"platform,omitempty"`
+	AndroidId   string `protobuf:"bytes,4,opt,name=android_id,json=androidId,proto3" json:"android_id,omitempty"`
+	AppVersion  string `protobuf:"bytes,5,opt,name=app_version,json=appVersion,proto3" json:"app_version,omitempty"`
+	Country     string `protobuf:"bytes,6,opt,name=country,proto3" json:"country,omitempty"`
+	Imei        string `protobuf:"bytes,7,opt,name=imei,proto3" json:"imei,omitempty"`
+	Channel     string `protobuf:"bytes,8,opt,name=channel,proto3" json:"channel,omitempty"`
+	CampaignId  string `protobuf:"bytes,9,opt,name=campaign_id,json=campaignId,proto3" json:"campaign_id,omitempty"`
+	UserChannel string `protobuf:"bytes,10,opt,name=user_channel,json=userChannel,proto3" json:"user_channel,omitempty"`
+}
+
+func (x *GuestInfo) Reset() {
+	*x = GuestInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_user_rpc_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GuestInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GuestInfo) ProtoMessage() {}
+
+func (x *GuestInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_user_rpc_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GuestInfo.ProtoReflect.Descriptor instead.
+func (*GuestInfo) Descriptor() ([]byte, []int) {
+	return file_user_rpc_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GuestInfo) GetGuestId() string {
+	if x != nil {
+		return x.GuestId
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetGuestName() string {
+	if x != nil {
+		return x.GuestName
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetPlatform() string {
+	if x != nil {
+		return x.Platform
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetAndroidId() string {
+	if x != nil {
+		return x.AndroidId
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetAppVersion() string {
+	if x != nil {
+		return x.AppVersion
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetImei() string {
+	if x != nil {
+		return x.Imei
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetChannel() string {
+	if x != nil {
+		return x.Channel
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetCampaignId() string {
+	if x != nil {
+		return x.CampaignId
+	}
+	return ""
+}
+
+func (x *GuestInfo) GetUserChannel() string {
+	if x != nil {
+		return x.UserChannel
+	}
+	return ""
+}
+
+type GuestInitReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	GuestId     string `protobuf:"bytes,1,opt,name=guest_id,json=guestId,proto3" json:"guest_id,omitempty"`
+	Platform    string `protobuf:"bytes,2,opt,name=platform,proto3" json:"platform,omitempty"`
+	AndroidId   string `protobuf:"bytes,3,opt,name=android_id,json=androidId,proto3" json:"android_id,omitempty"`
+	AppVersion  string `protobuf:"bytes,4,opt,name=app_version,json=appVersion,proto3" json:"app_version,omitempty"`
+	Country     string `protobuf:"bytes,5,opt,name=country,proto3" json:"country,omitempty"`
+	Imei        string `protobuf:"bytes,6,opt,name=imei,proto3" json:"imei,omitempty"`
+	Channel     string `protobuf:"bytes,7,opt,name=channel,proto3" json:"channel,omitempty"`
+	CampaignId  string `protobuf:"bytes,8,opt,name=campaign_id,json=campaignId,proto3" json:"campaign_id,omitempty"`
+	UserChannel string `protobuf:"bytes,9,opt,name=user_channel,json=userChannel,proto3" json:"user_channel,omitempty"`
+}
+
+func (x *GuestInitReq) Reset() {
+	*x = GuestInitReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_user_rpc_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GuestInitReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GuestInitReq) ProtoMessage() {}
+
+func (x *GuestInitReq) ProtoReflect() protoreflect.Message {
+	mi := &file_user_rpc_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GuestInitReq.ProtoReflect.Descriptor instead.
+func (*GuestInitReq) Descriptor() ([]byte, []int) {
+	return file_user_rpc_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GuestInitReq) GetGuestId() string {
+	if x != nil {
+		return x.GuestId
+	}
+	return ""
+}
+
+func (x *GuestInitReq) GetPlatform() string {
+	if x != nil {
+		return x.Platform
+	}
+	return ""
+}
+
+func (x *GuestInitReq) GetAndroidId() string {
+	if x != nil {
+		return x.AndroidId
+	}
+	return ""
+}
+
+func (x *GuestInitReq) GetAppVersion() string {
+	if x != nil {
+		return x.AppVersion
+	}
+	return ""
+}
+
+func (x *GuestInitReq) GetCountry() string {
+	if x != nil {
+		return x.Country
+	}
+	return ""
+}
+
+func (x *GuestInitReq) GetImei() string {
+	if x != nil {
+		return x.Imei
+	}
+	return ""
+}
+
+func (x *GuestInitReq) GetChannel() string {
+	if x != nil {
+		return x.Channel
+	}
+	return ""
+}
+
+func (x *GuestInitReq) GetCampaignId() string {
+	if x != nil {
+		return x.CampaignId
+	}
+	return ""
+}
+
+func (x *GuestInitReq) GetUserChannel() string {
+	if x != nil {
+		return x.UserChannel
+	}
+	return ""
+}
+
+type GuestInitRes struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Guest *GuestInfo `protobuf:"bytes,1,opt,name=guest,proto3" json:"guest,omitempty"`
+}
+
+func (x *GuestInitRes) Reset() {
+	*x = GuestInitRes{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_user_rpc_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GuestInitRes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GuestInitRes) ProtoMessage() {}
+
+func (x *GuestInitRes) ProtoReflect() protoreflect.Message {
+	mi := &file_user_rpc_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GuestInitRes.ProtoReflect.Descriptor instead.
+func (*GuestInitRes) Descriptor() ([]byte, []int) {
+	return file_user_rpc_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GuestInitRes) GetGuest() *GuestInfo {
+	if x != nil {
+		return x.Guest
+	}
+	return nil
+}
+
 var File_user_rpc_proto protoreflect.FileDescriptor
 
 var file_user_rpc_proto_rawDesc = []byte{
@@ -312,7 +589,47 @@ var file_user_rpc_proto_rawDesc = []byte{
 	0x52, 0x06, 0x61, 0x76, 0x61, 0x74, 0x61, 0x72, 0x22, 0x34, 0x0a, 0x0a, 0x61, 0x64, 0x64, 0x55,
 	0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x12, 0x26, 0x0a, 0x04, 0x75, 0x73, 0x65, 0x72, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e,
-	0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x75, 0x73, 0x65, 0x72, 0x32, 0x77,
+	0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x75, 0x73, 0x65, 0x72, 0x22, 0xad,
+	0x02, 0x0a, 0x09, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x19, 0x0a, 0x08,
+	0x67, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+	0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x67, 0x75, 0x65, 0x73, 0x74,
+	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x67, 0x75, 0x65,
+	0x73, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f,
+	0x72, 0x6d, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x6c, 0x61, 0x74, 0x66, 0x6f,
+	0x72, 0x6d, 0x12, 0x1d, 0x0a, 0x0a, 0x61, 0x6e, 0x64, 0x72, 0x6f, 0x69, 0x64, 0x5f, 0x69, 0x64,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x61, 0x6e, 0x64, 0x72, 0x6f, 0x69, 0x64, 0x49,
+	0x64, 0x12, 0x1f, 0x0a, 0x0b, 0x61, 0x70, 0x70, 0x5f, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e,
+	0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x61, 0x70, 0x70, 0x56, 0x65, 0x72, 0x73, 0x69,
+	0x6f, 0x6e, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x18, 0x06, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x12, 0x0a, 0x04,
+	0x69, 0x6d, 0x65, 0x69, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x69, 0x6d, 0x65, 0x69,
+	0x12, 0x18, 0x0a, 0x07, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x18, 0x08, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x61,
+	0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0a, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x75,
+	0x73, 0x65, 0x72, 0x5f, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0b, 0x75, 0x73, 0x65, 0x72, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x22, 0x91,
+	0x02, 0x0a, 0x0c, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69, 0x74, 0x52, 0x65, 0x71, 0x12,
+	0x19, 0x0a, 0x08, 0x67, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x64, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x6c,
+	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x6c,
+	0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x12, 0x1d, 0x0a, 0x0a, 0x61, 0x6e, 0x64, 0x72, 0x6f, 0x69,
+	0x64, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x61, 0x6e, 0x64, 0x72,
+	0x6f, 0x69, 0x64, 0x49, 0x64, 0x12, 0x1f, 0x0a, 0x0b, 0x61, 0x70, 0x70, 0x5f, 0x76, 0x65, 0x72,
+	0x73, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x61, 0x70, 0x70, 0x56,
+	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72,
+	0x79, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79,
+	0x12, 0x12, 0x0a, 0x04, 0x69, 0x6d, 0x65, 0x69, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
+	0x69, 0x6d, 0x65, 0x69, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x18,
+	0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x12, 0x1f,
+	0x0a, 0x0b, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x08, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x49, 0x64, 0x12,
+	0x21, 0x0a, 0x0c, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x18,
+	0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x75, 0x73, 0x65, 0x72, 0x43, 0x68, 0x61, 0x6e, 0x6e,
+	0x65, 0x6c, 0x22, 0x39, 0x0a, 0x0c, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69, 0x74, 0x52,
+	0x65, 0x73, 0x12, 0x29, 0x0a, 0x05, 0x67, 0x75, 0x65, 0x73, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x13, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x75, 0x65,
+	0x73, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x05, 0x67, 0x75, 0x65, 0x73, 0x74, 0x32, 0xb4, 0x01,
 	0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x52, 0x70, 0x63, 0x12, 0x35, 0x0a, 0x07, 0x67, 0x65, 0x74,
 	0x55, 0x73, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e,
 	0x67, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x1a, 0x14, 0x2e, 0x75, 0x73, 0x65,
@@ -320,7 +637,11 @@ var file_user_rpc_proto_rawDesc = []byte{
 	0x12, 0x35, 0x0a, 0x07, 0x61, 0x64, 0x64, 0x55, 0x73, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x75, 0x73,
 	0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x61, 0x64, 0x64, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
 	0x71, 0x1a, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x61, 0x64, 0x64,
-	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x12, 0x3b, 0x0a, 0x09, 0x67, 0x75, 0x65, 0x73, 0x74,
+	0x49, 0x6e, 0x69, 0x74, 0x12, 0x16, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e,
+	0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69, 0x74, 0x52, 0x65, 0x71, 0x1a, 0x16, 0x2e, 0x75,
+	0x73, 0x65, 0x72, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x75, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x69,
+	0x74, 0x52, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -335,26 +656,32 @@ func file_user_rpc_proto_rawDescGZIP() []byte {
 	return file_user_rpc_proto_rawDescData
 }
 
-var file_user_rpc_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_user_rpc_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_user_rpc_proto_goTypes = []interface{}{
-	(*UserInfo)(nil),   // 0: user_rpc.userInfo
-	(*GetUserReq)(nil), // 1: user_rpc.getUserReq
-	(*GetUserRes)(nil), // 2: user_rpc.getUserRes
-	(*AddUserReq)(nil), // 3: user_rpc.addUserReq
-	(*AddUserRes)(nil), // 4: user_rpc.addUserRes
+	(*UserInfo)(nil),     // 0: user_rpc.userInfo
+	(*GetUserReq)(nil),   // 1: user_rpc.getUserReq
+	(*GetUserRes)(nil),   // 2: user_rpc.getUserRes
+	(*AddUserReq)(nil),   // 3: user_rpc.addUserReq
+	(*AddUserRes)(nil),   // 4: user_rpc.addUserRes
+	(*GuestInfo)(nil),    // 5: user_rpc.guestInfo
+	(*GuestInitReq)(nil), // 6: user_rpc.guestInitReq
+	(*GuestInitRes)(nil), // 7: user_rpc.guestInitRes
 }
 var file_user_rpc_proto_depIdxs = []int32{
 	0, // 0: user_rpc.getUserRes.user:type_name -> user_rpc.userInfo
 	0, // 1: user_rpc.addUserRes.user:type_name -> user_rpc.userInfo
-	1, // 2: user_rpc.userRpc.getUser:input_type -> user_rpc.getUserReq
-	3, // 3: user_rpc.userRpc.addUser:input_type -> user_rpc.addUserReq
-	2, // 4: user_rpc.userRpc.getUser:output_type -> user_rpc.getUserRes
-	4, // 5: user_rpc.userRpc.addUser:output_type -> user_rpc.addUserRes
-	4, // [4:6] is the sub-list for method output_type
-	2, // [2:4] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	5, // 2: user_rpc.guestInitRes.guest:type_name -> user_rpc.guestInfo
+	1, // 3: user_rpc.userRpc.getUser:input_type -> user_rpc.getUserReq
+	3, // 4: user_rpc.userRpc.addUser:input_type -> user_rpc.addUserReq
+	6, // 5: user_rpc.userRpc.guestInit:input_type -> user_rpc.guestInitReq
+	2, // 6: user_rpc.userRpc.getUser:output_type -> user_rpc.getUserRes
+	4, // 7: user_rpc.userRpc.addUser:output_type -> user_rpc.addUserRes
+	7, // 8: user_rpc.userRpc.guestInit:output_type -> user_rpc.guestInitRes
+	6, // [6:9] is the sub-list for method output_type
+	3, // [3:6] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_user_rpc_proto_init() }
@@ -423,6 +750,42 @@ func file_user_rpc_proto_init() {
 				return nil
 			}
 		}
+		file_user_rpc_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GuestInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_user_rpc_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GuestInitReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_user_rpc_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GuestInitRes); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -430,7 +793,7 @@ func file_user_rpc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_user_rpc_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -458,6 +821,7 @@ const _ = grpc.SupportPackageIsVersion6
 type UserRpcClient interface {
 	GetUser(ctx context.Context, in *GetUserReq, opts ...grpc.CallOption) (*GetUserRes, error)
 	AddUser(ctx context.Context, in *AddUserReq, opts ...grpc.CallOption) (*AddUserRes, error)
+	GuestInit(ctx context.Context, in *GuestInitReq, opts ...grpc.CallOption) (*GuestInitRes, error)
 }
 
 type userRpcClient struct {
@@ -486,10 +850,20 @@ func (c *userRpcClient) AddUser(ctx context.Context, in *AddUserReq, opts ...grp
 	return out, nil
 }
 
+func (c *userRpcClient) GuestInit(ctx context.Context, in *GuestInitReq, opts ...grpc.CallOption) (*GuestInitRes, error) {
+	out := new(GuestInitRes)
+	err := c.cc.Invoke(ctx, "/user_rpc.userRpc/guestInit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserRpcServer is the server API for UserRpc service.
 type UserRpcServer interface {
 	GetUser(context.Context, *GetUserReq) (*GetUserRes, error)
 	AddUser(context.Context, *AddUserReq) (*AddUserRes, error)
+	GuestInit(context.Context, *GuestInitReq) (*GuestInitRes, error)
 }
 
 // UnimplementedUserRpcServer can be embedded to have forward compatible implementations.
@@ -501,6 +875,9 @@ func (*UnimplementedUserRpcServer) GetUser(context.Context, *GetUserReq) (*GetUs
 }
 func (*UnimplementedUserRpcServer) AddUser(context.Context, *AddUserReq) (*AddUserRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddUser not implemented")
+}
+func (*UnimplementedUserRpcServer) GuestInit(context.Context, *GuestInitReq) (*GuestInitRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GuestInit not implemented")
 }
 
 func RegisterUserRpcServer(s *grpc.Server, srv UserRpcServer) {
@@ -543,6 +920,24 @@ func _UserRpc_AddUser_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserRpc_GuestInit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GuestInitReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserRpcServer).GuestInit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_rpc.userRpc/GuestInit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserRpcServer).GuestInit(ctx, req.(*GuestInitReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _UserRpc_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "user_rpc.userRpc",
 	HandlerType: (*UserRpcServer)(nil),
@@ -554,6 +949,10 @@ var _UserRpc_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "addUser",
 			Handler:    _UserRpc_AddUser_Handler,
+		},
+		{
+			MethodName: "guestInit",
+			Handler:    _UserRpc_GuestInit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

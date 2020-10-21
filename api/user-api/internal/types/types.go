@@ -12,6 +12,12 @@ type AddUserResponse struct {
 	CreateTimeUnix int64  `json:"create_time_unix"`
 }
 
+type CommonResponse struct {
+	Code    int         `json:"code"`
+	Body    interface{} `json:"body"`
+	Message string      `json:"message"`
+}
+
 type GetUserRequest struct {
 	UserId string `json:"userId"`
 }
@@ -21,6 +27,20 @@ type GetUserResponse struct {
 	AccessToken    string `json:"accessToken"`
 	Avatar         string `json:"avatar"`
 	CreateTimeUnix int64  `json:"createTimeUnix"`
+}
+
+type GuestInitRequest struct {
+	UserId      int    `form:"user_id,optional"`
+	GuestId     string `form:"guest_id,optional"`
+	GuestName   string `form:"guestname,optional"`
+	Platform    string `form:"platform"`
+	AndroidId   string `form:"android_id,optional"`
+	AppVersion  string `form:"app_version"`
+	Country     string `form:"country,optional"`
+	Imei        string `form:"imei,optional"`
+	Channel     string `form:"channel,optional"`
+	UserChannel string `form:"user_channel,optional"`
+	CampaignId  string `form:"campaign_id,optional"`
 }
 
 type JwtTokenRequest struct {

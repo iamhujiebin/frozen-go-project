@@ -18,6 +18,7 @@ type (
 	UserRpc interface {
 		GetUser(ctx context.Context, in *GetUserReq) (*GetUserRes, error)
 		AddUser(ctx context.Context, in *AddUserReq) (*AddUserRes, error)
+		GuestInit(ctx context.Context, in *GuestInitReq) (*GuestInitRes, error)
 	}
 
 	defaultUserRpc struct {
@@ -82,6 +83,38 @@ func (m *defaultUserRpc) AddUser(ctx context.Context, in *AddUserReq) (*AddUserR
 	}
 
 	var ret AddUserRes
+	bts, err = jsonx.Marshal(resp)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &ret)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	return &ret, nil
+}
+
+func (m *defaultUserRpc) GuestInit(ctx context.Context, in *GuestInitReq) (*GuestInitRes, error) {
+	var request user_rpc.GuestInitReq
+	bts, err := jsonx.Marshal(in)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &request)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	client := user_rpc.NewUserRpcClient(m.cli.Conn())
+	resp, err := client.GuestInit(ctx, &request)
+	if err != nil {
+		return nil, err
+	}
+
+	var ret GuestInitRes
 	bts, err = jsonx.Marshal(resp)
 	if err != nil {
 		return nil, errJsonConvert

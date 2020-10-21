@@ -25,7 +25,7 @@ func NewGetUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GetUserLo
 }
 
 func (l *GetUserLogic) GetUser(in *user_rpc.GetUserReq) (*user_rpc.GetUserRes, error) {
-	user, err := l.svcCtx.UserModel.FindOne(in.UserId)
+	user, err := l.svcCtx.UserMysqlModel.FindOne(in.UserId)
 	if err != nil {
 		return nil, err
 	}

@@ -25,7 +25,7 @@ func NewAddUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddUserLo
 }
 
 func (l *AddUserLogic) AddUser(in *user_rpc.AddUserReq) (*user_rpc.AddUserRes, error) {
-	user, err := l.svcCtx.UserModel.AddUserTx(in.Avatar)
+	user, err := l.svcCtx.UserMysqlModel.AddUserTx(in.Avatar)
 	if err != nil {
 		return nil, err
 	}

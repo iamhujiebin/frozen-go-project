@@ -30,3 +30,8 @@ func (s *UserRpcServer) AddUser(ctx context.Context, in *user_rpc.AddUserReq) (*
 	l := logic.NewAddUserLogic(ctx, s.svcCtx)
 	return l.AddUser(in)
 }
+
+func (s *UserRpcServer) GuestInit(ctx context.Context, in *user_rpc.GuestInitReq) (*user_rpc.GuestInitRes, error) {
+	l := logic.NewGuestInitLogic(ctx, s.svcCtx)
+	return l.GuestInit(in)
+}

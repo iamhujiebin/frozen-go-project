@@ -24,6 +24,35 @@ type (
 		User *UserInfo `json:"user,omitempty"`
 	}
 
+	GuestInfo struct {
+		GuestId     string `json:"guest_id,omitempty"`
+		GuestName   string `json:"guest_name,omitempty"`
+		Platform    string `json:"platform,omitempty"`
+		AndroidId   string `json:"android_id,omitempty"`
+		AppVersion  string `json:"app_version,omitempty"`
+		Country     string `json:"country,omitempty"`
+		Imei        string `json:"imei,omitempty"`
+		Channel     string `json:"channel,omitempty"`
+		CampaignId  string `json:"campaign_id,omitempty"`
+		UserChannel string `json:"user_channel,omitempty"`
+	}
+
+	GuestInitReq struct {
+		GuestId     string `json:"guest_id,omitempty"`
+		Platform    string `json:"platform,omitempty"`
+		AndroidId   string `json:"android_id,omitempty"`
+		AppVersion  string `json:"app_version,omitempty"`
+		Country     string `json:"country,omitempty"`
+		Imei        string `json:"imei,omitempty"`
+		Channel     string `json:"channel,omitempty"`
+		CampaignId  string `json:"campaign_id,omitempty"`
+		UserChannel string `json:"user_channel,omitempty"`
+	}
+
+	GuestInitRes struct {
+		Guest *GuestInfo `json:"guest,omitempty"`
+	}
+
 	UserInfo struct {
 		UserId         int64  `json:"user_id,omitempty"`
 		AccessToken    string `json:"access_token,omitempty"`

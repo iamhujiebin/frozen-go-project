@@ -16,6 +16,11 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 			Path:    "/user/token",
 			Handler: jwtHandler(serverCtx),
 		},
+		{
+			Method:  http.MethodGet,
+			Path:    "/guest/init",
+			Handler: guestInitHandler(serverCtx),
+		},
 	})
 
 	engine.AddRoutes([]rest.Route{

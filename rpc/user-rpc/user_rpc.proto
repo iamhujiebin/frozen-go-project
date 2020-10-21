@@ -25,9 +25,39 @@ message addUserRes {
   userInfo user = 1;
 }
 
+message guestInfo {
+  string guest_id = 1;
+  string guest_name = 2;
+  string platform = 3;
+  string android_id = 4;
+  string app_version = 5;
+  string country = 6;
+  string imei = 7;
+  string channel = 8;
+  string campaign_id = 9;
+  string user_channel = 10;
+}
+
+message guestInitReq {
+  string guest_id = 1;
+  string platform = 2;
+  string android_id = 3;
+  string app_version = 4;
+  string country = 5;
+  string imei = 6;
+  string channel = 7;
+  string campaign_id = 8;
+  string user_channel = 9;
+}
+
+message guestInitRes{
+  guestInfo guest = 1;
+}
+
 service userRpc {
   rpc getUser(getUserReq) returns(getUserRes);
   rpc addUser(addUserReq) returns(addUserRes);
+  rpc guestInit(guestInitReq) returns (guestInitRes);
 }
 
 
