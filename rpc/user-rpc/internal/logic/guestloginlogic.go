@@ -51,6 +51,14 @@ func (l *GuestLoginLogic) GuestLogin(in *user_rpc.GuestLoginReq) (*user_rpc.Gues
 			User: pbUser,
 		}, nil
 	}
-	//注册
-	return &user_rpc.GuestLoginRes{}, nil
+	//注册-事务操作
+	newUser, err := l.svcCtx.UserMongoModel.GuestRegister(in)
+	if err != nil {
+		return nil, err
+	}
+	pbUser := new(user_rpc.UserInfo)
+	_ = copier.Copy(pbUser, newUser)
+	return &user_rpc.GuestLoginRes{
+		User: pbUser,
+	}, nil
 }

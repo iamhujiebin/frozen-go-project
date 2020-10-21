@@ -20,19 +20,19 @@ type (
 
 	Guests struct {
 		Id          primitive.ObjectID `bson:"_id,omitempty"`
-		UserId      int                `bson:"user_id,omitempty"`
-		GuestId     string             `bson:"guest_id"`
-		GuestName   string             `bson:"guestname"`
-		Platform    string             `bson:"platform"`
-		AndroidId   string             `bson:"android_id"`
-		AppVersion  string             `bson:"app_version"`
-		Country     string             `bson:"country"`
-		Imei        string             `bson:"imei"`
-		Channel     string             `bson:"channel"`
-		UserChannel string             `bson:"user_channel"`
-		CampaignId  string             `bson:"campaign_id"`
-		CreateTime  time.Time          `bson:"create_time"`
-		UpdateTime  time.Time          `bson:"update_time"`
+		UserId      int64              `bson:"user_id,omitempty"`
+		GuestId     string             `bson:"guest_id,omitempty"`
+		GuestName   string             `bson:"guestname,omitempty"`
+		Platform    string             `bson:"platform,omitempty"`
+		AndroidId   string             `bson:"android_id,omitempty"`
+		AppVersion  string             `bson:"app_version,omitempty"`
+		Country     string             `bson:"country,omitempty"`
+		Imei        string             `bson:"imei,omitempty"`
+		Channel     string             `bson:"channel,omitempty"`
+		UserChannel string             `bson:"user_channel,omitempty"`
+		CampaignId  string             `bson:"campaign_id,omitempty"`
+		CreateTime  time.Time          `bson:"create_time,omitempty"`
+		UpdateTime  time.Time          `bson:"update_time,omitempty"`
 	}
 )
 
@@ -43,14 +43,6 @@ func NewGuestModel(client *mongo.Client, globalConfig *config.Config, database, 
 		database:     database,
 		collection:   collection,
 	}
-}
-
-func (Guests) Database() string {
-	return "FEWeb"
-}
-
-func (Guests) Collection() string {
-	return "guests"
 }
 
 func (m *GuestsModel) WithCollection(f func(col *mongo.Collection, ctx context.Context)) {
