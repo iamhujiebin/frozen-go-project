@@ -3,8 +3,7 @@ Brokers:
   - 10.1.64.37:9092
 Group: example
 Topics:
-  - six-partitions
-  - two-partitions
+  - user-event
 Assignor: sticky #range|roundRobin|sticky
 Oldest: true
 Verbose: true

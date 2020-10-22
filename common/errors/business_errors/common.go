@@ -10,3 +10,4 @@ func EmptyParams(params ...string) error {
 }
 
 var NoConfigErr = errors.New("no config")
+var NoMqTopic = errors.New("no mq topic")
