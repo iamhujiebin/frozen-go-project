@@ -1,0 +1,14 @@
+Name: event-worker
+Brokers:
+  - 10.1.64.37:9092
+Group: example
+Topics:
+  - six-partitions
+  - two-partitions
+Assignor: sticky #range|roundRobin|sticky
+Oldest: true
+Verbose: true
+LogConf:
+  Mode: console # console|file|volume
+  Path: ./logs
+  KeepDays: 7 #当LogMode在是file才有效

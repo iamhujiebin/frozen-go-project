@@ -2,6 +2,11 @@ Name: user-api
 Host: 0.0.0.0
 Port: 8888
 
+LogConf:
+  Mode: console # console | file | volume
+  Path: ./logs
+  KeepDays: 7 #当LogMode在是file才有效
+
 JwtAuth:
   AccessSecret: j`i!@e#b$i%n^&m*e(n)g_y+n
   AccessExpire: 604800

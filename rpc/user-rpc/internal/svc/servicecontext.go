@@ -5,6 +5,7 @@ import (
 	"frozen-go-project/rpc/user-rpc/internal/config"
 	mongoModel "frozen-go-project/rpc/user-rpc/internal/model/mongo"
 	mysqlModel "frozen-go-project/rpc/user-rpc/internal/model/mysql"
+	"github.com/tal-tech/go-zero/core/logx"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -21,6 +22,7 @@ type ServiceContext struct {
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
+	logx.MustSetup(c.LogConf)
 	s := &ServiceContext{
 		c:              c,
 		UserMysqlModel: mysqlModel.NewUsersModel(sqlx.NewMysql(c.DataSource), c.Cache),

@@ -4,3 +4,8 @@ Etcd:
   Hosts:
   - 127.0.0.1:2379
   Key: /base.rpc
+
+LogConf:
+  Mode: console # console | file | volume
+  Path: ./logs
+  KeepDays: 7 #当LogMode在是file才有效

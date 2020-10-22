@@ -5,6 +5,11 @@ Etcd:
     - 127.0.0.1:2379
   Key: /user.rpc
 
+LogConf:
+  Mode: console # console | file | volume
+  Path: ./logs
+  KeepDays: 7 #当LogMode在是file才有效
+
 DataSource: jiebin:123456@tcp(127.0.0.1:3306)/Frozen?parseTime=true
 Cache:
   - Host: 127.0.0.1:6379
