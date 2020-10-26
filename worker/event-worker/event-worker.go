@@ -3,9 +3,11 @@ package main
 import (
 	"context"
 	"flag"
+	"frozen-go-project/worker/event-worker/internal/svc"
 	"frozen-go-project/worker/event-worker/internal/user_event"
 	"github.com/tal-tech/go-zero/core/conf"
 	"github.com/tal-tech/go-zero/core/logx"
+	"github.com/tal-tech/go-zero/zrpc"
 	"log"
 	"os"
 	"os/signal"
@@ -18,6 +20,7 @@ import (
 var configFile = flag.String("f", "etc/event-worker.yaml", "the config file")
 
 var c = struct {
+	BaseRpc  zrpc.RpcClientConf
 	LogConf  logx.LogConf
 	Brokers  []string
 	Group    string
@@ -42,6 +45,7 @@ func init() {
 
 func main() {
 	logx.MustSetup(c.LogConf)
+	svc.InitServiceContext(c.BaseRpc)
 	logx.Info("Starting a new Sarama consumer")
 	if c.Verbose {
 		sarama.Logger = log.New(os.Stdout, "[sarama] ", log.LstdFlags)

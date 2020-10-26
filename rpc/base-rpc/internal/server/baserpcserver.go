@@ -30,3 +30,8 @@ func (s *BaseRpcServer) GetPkgSectionConfig(ctx context.Context, in *base_rpc.Ge
 	l := logic.NewGetPkgSectionConfigLogic(ctx, s.svcCtx)
 	return l.GetPkgSectionConfig(in)
 }
+
+func (s *BaseRpcServer) GetSystemConfigs(ctx context.Context, in *base_rpc.GetSystemConfigReq) (*base_rpc.GetSystemConfigRes, error) {
+	l := logic.NewGetSystemConfigsLogic(ctx, s.svcCtx)
+	return l.GetSystemConfigs(in)
+}

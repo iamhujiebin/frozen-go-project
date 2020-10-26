@@ -27,8 +27,24 @@ type (
 		Items []*PkgConfig `json:"items,omitempty"`
 	}
 
+	GetSystemConfigReq struct {
+		Section string   `json:"section,omitempty"`
+		Keys    []string `json:"keys,omitempty"`
+	}
+
+	GetSystemConfigRes struct {
+		Items []*SystemConfig `json:"items,omitempty"`
+	}
+
 	PkgConfig struct {
 		Key   string `json:"key,omitempty"`
 		Value string `json:"value,omitempty"`
+	}
+
+	SystemConfig struct {
+		Section  string `json:"section,omitempty"`
+		Key      string `json:"key,omitempty"`
+		Category string `json:"category,omitempty"`
+		Value    string `json:"value,omitempty"`
 	}
 )

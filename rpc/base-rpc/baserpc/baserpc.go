@@ -18,6 +18,7 @@ type (
 	BaseRpc interface {
 		GetPkgConfig(ctx context.Context, in *GetPkgConfigReq) (*GetPkgConfigResp, error)
 		GetPkgSectionConfig(ctx context.Context, in *GetPkgSectionConfigReq) (*GetPkgSectionConfigResp, error)
+		GetSystemConfigs(ctx context.Context, in *GetSystemConfigReq) (*GetSystemConfigRes, error)
 	}
 
 	defaultBaseRpc struct {
@@ -82,6 +83,38 @@ func (m *defaultBaseRpc) GetPkgSectionConfig(ctx context.Context, in *GetPkgSect
 	}
 
 	var ret GetPkgSectionConfigResp
+	bts, err = jsonx.Marshal(resp)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &ret)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	return &ret, nil
+}
+
+func (m *defaultBaseRpc) GetSystemConfigs(ctx context.Context, in *GetSystemConfigReq) (*GetSystemConfigRes, error) {
+	var request base_rpc.GetSystemConfigReq
+	bts, err := jsonx.Marshal(in)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &request)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	client := base_rpc.NewBaseRpcClient(m.cli.Conn())
+	resp, err := client.GetSystemConfigs(ctx, &request)
+	if err != nil {
+		return nil, err
+	}
+
+	var ret GetSystemConfigRes
 	bts, err = jsonx.Marshal(resp)
 	if err != nil {
 		return nil, errJsonConvert

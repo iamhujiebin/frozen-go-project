@@ -8,4 +8,9 @@ import (
 type Config struct {
 	zrpc.RpcServerConf
 	LogConf logx.LogConf
+	Mongo   struct {
+		Url         string
+		MaxPoolSize uint64
+		OpTimeout   uint64
+	}
 }

@@ -2,7 +2,7 @@ Name: base-rpc.rpc
 ListenOn: 127.0.0.1:7001
 Etcd:
   Hosts:
-    - 10.1.64.37:3379
+    - 127.0.0.1:2379
   Key: /base.rpc
 Verbose: true
 Log:
@@ -14,3 +14,7 @@ Prometheus:
   Host: 0.0.0.0
   Path: /metrics
   Port: 17001
+Mongo:
+  Url: mongodb://127.0.0.1:27103
+  MaxPoolSize: 5
+  OpTimeout: 5

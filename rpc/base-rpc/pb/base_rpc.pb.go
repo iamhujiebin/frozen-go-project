@@ -296,6 +296,179 @@ func (x *PkgConfig) GetValue() string {
 	return ""
 }
 
+type SystemConfig struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Section  string `protobuf:"bytes,1,opt,name=section,proto3" json:"section,omitempty"`
+	Key      string `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	Category string `protobuf:"bytes,3,opt,name=category,proto3" json:"category,omitempty"`
+	Value    string `protobuf:"bytes,4,opt,name=value,proto3" json:"value,omitempty"`
+}
+
+func (x *SystemConfig) Reset() {
+	*x = SystemConfig{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_base_rpc_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SystemConfig) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SystemConfig) ProtoMessage() {}
+
+func (x *SystemConfig) ProtoReflect() protoreflect.Message {
+	mi := &file_base_rpc_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SystemConfig.ProtoReflect.Descriptor instead.
+func (*SystemConfig) Descriptor() ([]byte, []int) {
+	return file_base_rpc_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *SystemConfig) GetSection() string {
+	if x != nil {
+		return x.Section
+	}
+	return ""
+}
+
+func (x *SystemConfig) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *SystemConfig) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *SystemConfig) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+type GetSystemConfigReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Section string   `protobuf:"bytes,1,opt,name=section,proto3" json:"section,omitempty"`
+	Keys    []string `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys,omitempty"`
+}
+
+func (x *GetSystemConfigReq) Reset() {
+	*x = GetSystemConfigReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_base_rpc_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetSystemConfigReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSystemConfigReq) ProtoMessage() {}
+
+func (x *GetSystemConfigReq) ProtoReflect() protoreflect.Message {
+	mi := &file_base_rpc_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSystemConfigReq.ProtoReflect.Descriptor instead.
+func (*GetSystemConfigReq) Descriptor() ([]byte, []int) {
+	return file_base_rpc_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetSystemConfigReq) GetSection() string {
+	if x != nil {
+		return x.Section
+	}
+	return ""
+}
+
+func (x *GetSystemConfigReq) GetKeys() []string {
+	if x != nil {
+		return x.Keys
+	}
+	return nil
+}
+
+type GetSystemConfigRes struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Items []*SystemConfig `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+}
+
+func (x *GetSystemConfigRes) Reset() {
+	*x = GetSystemConfigRes{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_base_rpc_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetSystemConfigRes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSystemConfigRes) ProtoMessage() {}
+
+func (x *GetSystemConfigRes) ProtoReflect() protoreflect.Message {
+	mi := &file_base_rpc_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSystemConfigRes.ProtoReflect.Descriptor instead.
+func (*GetSystemConfigRes) Descriptor() ([]byte, []int) {
+	return file_base_rpc_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetSystemConfigRes) GetItems() []*SystemConfig {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_base_rpc_proto protoreflect.FileDescriptor
 
 var file_base_rpc_proto_rawDesc = []byte{
@@ -321,18 +494,39 @@ var file_base_rpc_proto_rawDesc = []byte{
 	0x65, 0x6d, 0x73, 0x22, 0x33, 0x0a, 0x09, 0x70, 0x6b, 0x67, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67,
 	0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b,
 	0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x32, 0xac, 0x01, 0x0a, 0x07, 0x62, 0x61, 0x73,
-	0x65, 0x52, 0x70, 0x63, 0x12, 0x45, 0x0a, 0x0c, 0x67, 0x65, 0x74, 0x50, 0x6b, 0x67, 0x43, 0x6f,
-	0x6e, 0x66, 0x69, 0x67, 0x12, 0x19, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e,
-	0x67, 0x65, 0x74, 0x50, 0x6b, 0x67, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x71, 0x1a,
-	0x1a, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65, 0x74, 0x50, 0x6b,
-	0x67, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x73, 0x70, 0x12, 0x5a, 0x0a, 0x13, 0x67,
-	0x65, 0x74, 0x50, 0x6b, 0x67, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66,
-	0x69, 0x67, 0x12, 0x20, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65,
-	0x74, 0x50, 0x6b, 0x67, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69,
-	0x67, 0x52, 0x65, 0x71, 0x1a, 0x21, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e,
-	0x67, 0x65, 0x74, 0x50, 0x6b, 0x67, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e,
-	0x66, 0x69, 0x67, 0x52, 0x65, 0x73, 0x70, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x6c, 0x0a, 0x0c, 0x73, 0x79, 0x73, 0x74,
+	0x65, 0x6d, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x65, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x65, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x03, 0x6b, 0x65, 0x79, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79,
+	0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x42, 0x0a, 0x12, 0x67, 0x65, 0x74, 0x53, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x71, 0x12, 0x18, 0x0a, 0x07,
+	0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73,
+	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x6b, 0x65, 0x79, 0x73, 0x18, 0x02,
+	0x20, 0x03, 0x28, 0x09, 0x52, 0x04, 0x6b, 0x65, 0x79, 0x73, 0x22, 0x42, 0x0a, 0x12, 0x67, 0x65,
+	0x74, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x73,
+	0x12, 0x2c, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x16, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x73, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x32, 0xfc,
+	0x01, 0x0a, 0x07, 0x62, 0x61, 0x73, 0x65, 0x52, 0x70, 0x63, 0x12, 0x45, 0x0a, 0x0c, 0x67, 0x65,
+	0x74, 0x50, 0x6b, 0x67, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x19, 0x2e, 0x62, 0x61, 0x73,
+	0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65, 0x74, 0x50, 0x6b, 0x67, 0x43, 0x6f, 0x6e, 0x66,
+	0x69, 0x67, 0x52, 0x65, 0x71, 0x1a, 0x1a, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x72, 0x70, 0x63,
+	0x2e, 0x67, 0x65, 0x74, 0x50, 0x6b, 0x67, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x73,
+	0x70, 0x12, 0x5a, 0x0a, 0x13, 0x67, 0x65, 0x74, 0x50, 0x6b, 0x67, 0x53, 0x65, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x20, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f,
+	0x72, 0x70, 0x63, 0x2e, 0x67, 0x65, 0x74, 0x50, 0x6b, 0x67, 0x53, 0x65, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x71, 0x1a, 0x21, 0x2e, 0x62, 0x61, 0x73,
+	0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65, 0x74, 0x50, 0x6b, 0x67, 0x53, 0x65, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x73, 0x70, 0x12, 0x4e, 0x0a,
+	0x10, 0x67, 0x65, 0x74, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67,
+	0x73, 0x12, 0x1c, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65, 0x74,
+	0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x71, 0x1a,
+	0x1c, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x72, 0x70, 0x63, 0x2e, 0x67, 0x65, 0x74, 0x53, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x73, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -347,25 +541,31 @@ func file_base_rpc_proto_rawDescGZIP() []byte {
 	return file_base_rpc_proto_rawDescData
 }
 
-var file_base_rpc_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_base_rpc_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_base_rpc_proto_goTypes = []interface{}{
 	(*GetPkgConfigReq)(nil),         // 0: base_rpc.getPkgConfigReq
 	(*GetPkgConfigResp)(nil),        // 1: base_rpc.getPkgConfigResp
 	(*GetPkgSectionConfigReq)(nil),  // 2: base_rpc.getPkgSectionConfigReq
 	(*GetPkgSectionConfigResp)(nil), // 3: base_rpc.getPkgSectionConfigResp
 	(*PkgConfig)(nil),               // 4: base_rpc.pkgConfig
+	(*SystemConfig)(nil),            // 5: base_rpc.systemConfig
+	(*GetSystemConfigReq)(nil),      // 6: base_rpc.getSystemConfigReq
+	(*GetSystemConfigRes)(nil),      // 7: base_rpc.getSystemConfigRes
 }
 var file_base_rpc_proto_depIdxs = []int32{
 	4, // 0: base_rpc.getPkgSectionConfigResp.items:type_name -> base_rpc.pkgConfig
-	0, // 1: base_rpc.baseRpc.getPkgConfig:input_type -> base_rpc.getPkgConfigReq
-	2, // 2: base_rpc.baseRpc.getPkgSectionConfig:input_type -> base_rpc.getPkgSectionConfigReq
-	1, // 3: base_rpc.baseRpc.getPkgConfig:output_type -> base_rpc.getPkgConfigResp
-	3, // 4: base_rpc.baseRpc.getPkgSectionConfig:output_type -> base_rpc.getPkgSectionConfigResp
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	5, // 1: base_rpc.getSystemConfigRes.items:type_name -> base_rpc.systemConfig
+	0, // 2: base_rpc.baseRpc.getPkgConfig:input_type -> base_rpc.getPkgConfigReq
+	2, // 3: base_rpc.baseRpc.getPkgSectionConfig:input_type -> base_rpc.getPkgSectionConfigReq
+	6, // 4: base_rpc.baseRpc.getSystemConfigs:input_type -> base_rpc.getSystemConfigReq
+	1, // 5: base_rpc.baseRpc.getPkgConfig:output_type -> base_rpc.getPkgConfigResp
+	3, // 6: base_rpc.baseRpc.getPkgSectionConfig:output_type -> base_rpc.getPkgSectionConfigResp
+	7, // 7: base_rpc.baseRpc.getSystemConfigs:output_type -> base_rpc.getSystemConfigRes
+	5, // [5:8] is the sub-list for method output_type
+	2, // [2:5] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_base_rpc_proto_init() }
@@ -434,6 +634,42 @@ func file_base_rpc_proto_init() {
 				return nil
 			}
 		}
+		file_base_rpc_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SystemConfig); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_base_rpc_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetSystemConfigReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_base_rpc_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetSystemConfigRes); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -441,7 +677,7 @@ func file_base_rpc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_base_rpc_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -469,6 +705,7 @@ const _ = grpc.SupportPackageIsVersion6
 type BaseRpcClient interface {
 	GetPkgConfig(ctx context.Context, in *GetPkgConfigReq, opts ...grpc.CallOption) (*GetPkgConfigResp, error)
 	GetPkgSectionConfig(ctx context.Context, in *GetPkgSectionConfigReq, opts ...grpc.CallOption) (*GetPkgSectionConfigResp, error)
+	GetSystemConfigs(ctx context.Context, in *GetSystemConfigReq, opts ...grpc.CallOption) (*GetSystemConfigRes, error)
 }
 
 type baseRpcClient struct {
@@ -497,10 +734,20 @@ func (c *baseRpcClient) GetPkgSectionConfig(ctx context.Context, in *GetPkgSecti
 	return out, nil
 }
 
+func (c *baseRpcClient) GetSystemConfigs(ctx context.Context, in *GetSystemConfigReq, opts ...grpc.CallOption) (*GetSystemConfigRes, error) {
+	out := new(GetSystemConfigRes)
+	err := c.cc.Invoke(ctx, "/base_rpc.baseRpc/getSystemConfigs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BaseRpcServer is the server API for BaseRpc service.
 type BaseRpcServer interface {
 	GetPkgConfig(context.Context, *GetPkgConfigReq) (*GetPkgConfigResp, error)
 	GetPkgSectionConfig(context.Context, *GetPkgSectionConfigReq) (*GetPkgSectionConfigResp, error)
+	GetSystemConfigs(context.Context, *GetSystemConfigReq) (*GetSystemConfigRes, error)
 }
 
 // UnimplementedBaseRpcServer can be embedded to have forward compatible implementations.
@@ -512,6 +759,9 @@ func (*UnimplementedBaseRpcServer) GetPkgConfig(context.Context, *GetPkgConfigRe
 }
 func (*UnimplementedBaseRpcServer) GetPkgSectionConfig(context.Context, *GetPkgSectionConfigReq) (*GetPkgSectionConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPkgSectionConfig not implemented")
+}
+func (*UnimplementedBaseRpcServer) GetSystemConfigs(context.Context, *GetSystemConfigReq) (*GetSystemConfigRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSystemConfigs not implemented")
 }
 
 func RegisterBaseRpcServer(s *grpc.Server, srv BaseRpcServer) {
@@ -554,6 +804,24 @@ func _BaseRpc_GetPkgSectionConfig_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BaseRpc_GetSystemConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSystemConfigReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BaseRpcServer).GetSystemConfigs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/base_rpc.baseRpc/GetSystemConfigs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BaseRpcServer).GetSystemConfigs(ctx, req.(*GetSystemConfigReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _BaseRpc_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "base_rpc.baseRpc",
 	HandlerType: (*BaseRpcServer)(nil),
@@ -565,6 +833,10 @@ var _BaseRpc_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "getPkgSectionConfig",
 			Handler:    _BaseRpc_GetPkgSectionConfig_Handler,
+		},
+		{
+			MethodName: "getSystemConfigs",
+			Handler:    _BaseRpc_GetSystemConfigs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
