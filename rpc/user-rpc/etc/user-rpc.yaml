@@ -2,7 +2,7 @@ Name: user-service.rpc
 ListenOn: 127.0.0.1:7000
 Etcd:
   Hosts:
-    - 127.0.0.1:2379
+    - 10.1.64.37:4379
   Key: /user.rpc
 Log:
   Compress: false
