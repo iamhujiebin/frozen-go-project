@@ -20,7 +20,7 @@ func main() {
 	conf.MustLoad(*configFile, &c)
 
 	ctx := svc.NewServiceContext(c)
-	server := rest.MustNewServer(c.RestConf)
+	server := rest.MustNewServer(c.RestConf, rest.WithNotAllowedHandler(rest.CorsHandler()))
 	defer server.Stop()
 	//server.Use(func(next http.HandlerFunc) http.HandlerFunc {
 	//	return func(w http.ResponseWriter, r *http.Request) {

@@ -13,7 +13,7 @@ require (
 	github.com/google/uuid v1.1.2
 	github.com/jinzhu/copier v0.0.0-20190924061706-b57f9002281a
 	github.com/klauspost/compress v1.11.1 // indirect
-	github.com/tal-tech/go-zero v1.0.21
+	github.com/tal-tech/go-zero v1.0.22
 	go.mongodb.org/mongo-driver v1.4.2
 	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
 	golang.org/x/net v0.0.0-20201021035429-f5854403a974 // indirect
