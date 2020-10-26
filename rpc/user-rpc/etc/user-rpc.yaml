@@ -13,6 +13,10 @@ Verbose: true
 DataSource: jiebin:123456@tcp(127.0.0.1:3306)/Frozen?parseTime=true
 Cache:
   - Host: 127.0.0.1:6379
+Prometheus:
+  Host: 0.0.0.0
+  Path: /metrics
+  Port: 17000
 Mongo:
   Url: mongodb://10.1.64.37:27104
   MaxPoolSize: 5

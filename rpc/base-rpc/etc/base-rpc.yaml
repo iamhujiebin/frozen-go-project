@@ -10,3 +10,7 @@ Log:
   KeepDays: 7
   Mode: console # console|file|volume
   Path: "./logs"
+Prometheus:
+  Host: 0.0.0.0
+  Path: /metrics
+  Port: 17001
