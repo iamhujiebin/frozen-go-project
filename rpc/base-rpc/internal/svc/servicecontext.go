@@ -2,7 +2,6 @@ package svc
 
 import (
 	"frozen-go-project/rpc/base-rpc/internal/config"
-	"github.com/tal-tech/go-zero/core/logx"
 )
 
 type ServiceContext struct {
@@ -10,7 +9,6 @@ type ServiceContext struct {
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
-	logx.MustSetup(c.LogConf)
 	return &ServiceContext{
 		c: c,
 	}

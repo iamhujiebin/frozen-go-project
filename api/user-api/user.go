@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-
 	"frozen-go-project/api/user-api/internal/config"
 	"frozen-go-project/api/user-api/internal/handler"
 	"frozen-go-project/api/user-api/internal/svc"
@@ -23,6 +22,13 @@ func main() {
 	ctx := svc.NewServiceContext(c)
 	server := rest.MustNewServer(c.RestConf)
 	defer server.Stop()
+	//server.Use(func(next http.HandlerFunc) http.HandlerFunc {
+	//	return func(w http.ResponseWriter, r *http.Request) {
+	//		logx.Info("request ... ")
+	//		next(w, r)
+	//		logx.Infof("response ...%v ", w)
+	//	}
+	//})
 
 	handler.RegisterHandlers(server, ctx)
 
