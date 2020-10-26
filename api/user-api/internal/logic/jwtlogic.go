@@ -28,7 +28,7 @@ func (l *JwtLogic) Jwt(req types.JwtTokenRequest) (*types.JwtTokenResponse, erro
 	var accessExpire = l.svcCtx.Config.JwtAuth.AccessExpire
 
 	now := time.Now().Unix()
-	accessToken, err := l.GenToken(now, l.svcCtx.Config.JwtAuth.AccessSecret, nil, accessExpire)
+	accessToken, err := l.GenToken(req.UserId, now, l.svcCtx.Config.JwtAuth.AccessSecret, nil, accessExpire)
 	if err != nil {
 		return nil, err
 	}
@@ -40,10 +40,11 @@ func (l *JwtLogic) Jwt(req types.JwtTokenRequest) (*types.JwtTokenResponse, erro
 	}, nil
 }
 
-func (l *JwtLogic) GenToken(iat int64, secretKey string, payloads map[string]interface{}, seconds int64) (string, error) {
+func (l *JwtLogic) GenToken(userId, iat int64, secretKey string, payloads map[string]interface{}, seconds int64) (string, error) {
 	claims := make(jwt.MapClaims)
 	claims["exp"] = iat + seconds
 	claims["iat"] = iat
+	claims["userId"] = userId
 	for k, v := range payloads {
 		claims[k] = v
 	}

@@ -54,7 +54,7 @@ type GetUserResponse struct {
 type GuestInitRequest struct {
 	UserId      int    `form:"user_id,optional"`
 	GuestId     string `form:"guest_id,optional"`
-	GuestName   string `form:"guestname,optional"`
+	GuestName   string `form:"guest_name,optional"`
 	Platform    string `form:"platform"`
 	AndroidId   string `form:"android_id,optional"`
 	AppVersion  string `form:"app_version"`
@@ -70,6 +70,7 @@ type GuestLoginRequest struct {
 }
 
 type JwtTokenRequest struct {
+	UserId int64 `path:"userId"`
 }
 
 type JwtTokenResponse struct {

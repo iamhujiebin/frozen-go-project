@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"github.com/tal-tech/go-zero/core/logx"
 	"net/http"
 
 	"frozen-go-project/api/user-api/internal/logic"
@@ -12,6 +13,7 @@ import (
 
 func getUserHandler(ctx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		logx.Infof("jwt user:%v", r.Context().Value("userId"))
 		var req types.GetUserRequest
 		if err := httpx.Parse(r, &req); err != nil {
 			httpx.Error(w, err)

@@ -1,4 +1,6 @@
-type JwtTokenRequest struct{}
+type JwtTokenRequest struct {
+	UserId int64 `path:"userId"`
+}
 
 type JwtTokenResponse struct {
 	AccessToken  string `json:"access_token"`
@@ -31,7 +33,7 @@ type AddUserResponse struct {
 type GuestInitRequest struct {
 	UserId      int    `form:"user_id,optional"`
 	GuestId     string `form:"guest_id,optional"`
-	GuestName   string `form:"guestname,optional"`
+	GuestName   string `form:"guest_name,optional"`
 	Platform    string `form:"platform"`
 	AndroidId   string `form:"android_id,optional"`
 	AppVersion  string `form:"app_version"`
@@ -78,7 +80,7 @@ service user-api {
     @server(
         handler: JwtHandler
     )
-    post /user/token (JwtTokenRequest) returns (JwtTokenResponse)
+    post /user/token/:userId (JwtTokenRequest) returns (JwtTokenResponse)
 
     @server(
         handler : GuestInitHandler
