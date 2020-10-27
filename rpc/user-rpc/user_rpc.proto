@@ -107,6 +107,16 @@ message addActionPointRes {
   userExt user_ext = 1;
 }
 
+message checkAccessTokenReq{
+  string access_token = 1;
+  bool user_info = 2;
+}
+
+message checkAccessTokenRes {
+  bool success = 1;
+  userInfo user_info = 2;
+}
+
 service userRpc {
   rpc getUser(getUserReq) returns(getUserRes);
   rpc addUser(addUserReq) returns(addUserRes);
@@ -115,4 +125,5 @@ service userRpc {
 
   rpc pageAnchorRecommend(pageAnchorRecommendReq) returns (pageAnchorRecommendRes) ;
   rpc addActionPoint(addActionPointReq) returns (addActionPointRes);
+  rpc checkAccessToken(checkAccessTokenReq) returns (checkAccessTokenRes);
 }

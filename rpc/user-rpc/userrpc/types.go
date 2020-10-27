@@ -33,6 +33,16 @@ type (
 		User *UserInfo `json:"user,omitempty"`
 	}
 
+	CheckAccessTokenReq struct {
+		AccessToken string `json:"access_token,omitempty"`
+		UserInfo    bool   `json:"user_info,omitempty"`
+	}
+
+	CheckAccessTokenRes struct {
+		Success  bool      `json:"success,omitempty"`
+		UserInfo *UserInfo `json:"user_info,omitempty"`
+	}
+
 	GetUserReq struct {
 		UserId int64 `json:"user_id,omitempty"`
 	}

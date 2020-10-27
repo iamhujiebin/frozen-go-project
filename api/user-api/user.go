@@ -5,9 +5,8 @@ import (
 	"fmt"
 	"frozen-go-project/api/user-api/internal/config"
 	"frozen-go-project/api/user-api/internal/handler"
+	"frozen-go-project/api/user-api/internal/middlerware"
 	"frozen-go-project/api/user-api/internal/svc"
-	"net/http"
-
 	"github.com/tal-tech/go-zero/core/conf"
 	"github.com/tal-tech/go-zero/rest"
 )
@@ -23,13 +22,7 @@ func main() {
 	ctx := svc.NewServiceContext(c)
 	server := rest.MustNewServer(c.RestConf, rest.WithNotAllowedHandler(rest.CorsHandler()))
 	defer server.Stop()
-	server.Use(func(next http.HandlerFunc) http.HandlerFunc {
-		return func(w http.ResponseWriter, r *http.Request) {
-			//check accessToken //todo
-			//check sign
-			next(w, r)
-		}
-	})
+	server.Use(middlerware.CheckAccessToken(ctx))
 
 	handler.RegisterHandlers(server, ctx)
 

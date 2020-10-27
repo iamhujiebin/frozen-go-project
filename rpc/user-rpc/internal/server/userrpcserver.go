@@ -50,3 +50,8 @@ func (s *UserRpcServer) AddActionPoint(ctx context.Context, in *user_rpc.AddActi
 	l := logic.NewAddActionPointLogic(ctx, s.svcCtx)
 	return l.AddActionPoint(in)
 }
+
+func (s *UserRpcServer) CheckAccessToken(ctx context.Context, in *user_rpc.CheckAccessTokenReq) (*user_rpc.CheckAccessTokenRes, error) {
+	l := logic.NewCheckAccessTokenLogic(ctx, s.svcCtx)
+	return l.CheckAccessToken(in)
+}

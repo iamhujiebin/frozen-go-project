@@ -22,6 +22,7 @@ type (
 		GuestLogin(ctx context.Context, in *GuestLoginReq) (*GuestLoginRes, error)
 		PageAnchorRecommend(ctx context.Context, in *PageAnchorRecommendReq) (*PageAnchorRecommendRes, error)
 		AddActionPoint(ctx context.Context, in *AddActionPointReq) (*AddActionPointRes, error)
+		CheckAccessToken(ctx context.Context, in *CheckAccessTokenReq) (*CheckAccessTokenRes, error)
 	}
 
 	defaultUserRpc struct {
@@ -214,6 +215,38 @@ func (m *defaultUserRpc) AddActionPoint(ctx context.Context, in *AddActionPointR
 	}
 
 	var ret AddActionPointRes
+	bts, err = jsonx.Marshal(resp)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &ret)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	return &ret, nil
+}
+
+func (m *defaultUserRpc) CheckAccessToken(ctx context.Context, in *CheckAccessTokenReq) (*CheckAccessTokenRes, error) {
+	var request user_rpc.CheckAccessTokenReq
+	bts, err := jsonx.Marshal(in)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &request)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	client := user_rpc.NewUserRpcClient(m.cli.Conn())
+	resp, err := client.CheckAccessToken(ctx, &request)
+	if err != nil {
+		return nil, err
+	}
+
+	var ret CheckAccessTokenRes
 	bts, err = jsonx.Marshal(resp)
 	if err != nil {
 		return nil, errJsonConvert

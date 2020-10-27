@@ -164,3 +164,10 @@ func (m *UserModel) PageUsers(where bson.M, skip, limit int64) (users []*User, e
 	})
 	return
 }
+
+func (m *UserModel) FindOneByAccessToken(accessToken string) (user *User, err error) {
+	m.WithCollection(func(col *mongo.Collection, ctx context.Context) {
+		err = col.FindOne(ctx, bson.M{"accessToken": accessToken}).Decode(&user)
+	})
+	return
+}

@@ -35,7 +35,8 @@ func NewServiceContext(c config.Config) *ServiceContext {
 func initMongoModels(c config.Config, s *ServiceContext) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(c.Mongo.OpTimeout)*time.Second)
 	defer cancel()
-	client, err := mongo.Connect(ctx, options.Client().SetMaxPoolSize(c.Mongo.MaxPoolSize).ApplyURI(c.Mongo.Url))
+	client, err := mongo.Connect(ctx, options.Client().SetMaxPoolSize(c.Mongo.MaxPoolSize).SetRetryReads(true).
+		ApplyURI(c.Mongo.Url))
 	if err != nil {
 		panic("connect to mongo fail:" + err.Error())
 	}
