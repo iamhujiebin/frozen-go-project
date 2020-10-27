@@ -3,7 +3,7 @@ Brokers:
   - 10.1.64.37:9092
 Group: example
 Topics:
-  - user-event
+  - user-action
 Assignor: sticky #range|roundRobin|sticky
 Oldest: true
 Verbose: true
@@ -15,5 +15,11 @@ LogConf:
 BaseRpc:
   Etcd:
     Hosts:
-      - 127.0.0.1:2379
+      - 10.1.64.37:2379
     Key: /base.rpc
+
+UserRpc:
+  Etcd:
+    Hosts:
+      - 10.1.64.37:2379
+    Key: /user.rpc

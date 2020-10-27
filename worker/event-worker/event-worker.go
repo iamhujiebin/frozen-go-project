@@ -21,6 +21,7 @@ var configFile = flag.String("f", "etc/event-worker.yaml", "the config file")
 
 var c = struct {
 	BaseRpc  zrpc.RpcClientConf
+	UserRpc  zrpc.RpcClientConf
 	LogConf  logx.LogConf
 	Brokers  []string
 	Group    string
@@ -45,7 +46,7 @@ func init() {
 
 func main() {
 	logx.MustSetup(c.LogConf)
-	svc.InitServiceContext(c.BaseRpc)
+	svc.InitServiceContext(c.BaseRpc, c.UserRpc)
 	logx.Info("Starting a new Sarama consumer")
 	if c.Verbose {
 		sarama.Logger = log.New(os.Stdout, "[sarama] ", log.LstdFlags)

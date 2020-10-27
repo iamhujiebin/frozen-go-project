@@ -47,7 +47,6 @@ func (m *SystemConfigModel) FindSystemConfigs(section string, keys []string) (da
 	m.WithCollection(func(col *mongo.Collection, ctx context.Context) {
 		where := bson.M{
 			"section": section,
-			"key":     bson.M{"$in": keys},
 		}
 		if len(keys) > 0 {
 			where["key"] = bson.M{"$in": keys}

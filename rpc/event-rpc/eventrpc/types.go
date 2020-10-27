@@ -9,8 +9,9 @@ var errJsonConvert = errors.New("json convert error")
 
 type (
 	CommonMessage struct {
-		Topic   string `json:"topic,omitempty"`
-		Message []byte `json:"message,omitempty"`
+		Topic       string `json:"topic,omitempty"`
+		EventTimeMs int64  `json:"event_time_ms,omitempty"`
+		Message     []byte `json:"message,omitempty"`
 	}
 
 	CommonResponse struct {
@@ -18,9 +19,13 @@ type (
 		Offset    int64 `json:"offset,omitempty"`
 	}
 
+	UserAction struct {
+		UserAction string `json:"user_action,omitempty"`
+		UserId     int64  `json:"user_id,omitempty"`
+	}
+
 	UserActionReq struct {
-		Common *CommonMessage `json:"common,omitempty"`
-		Type   int64          `json:"type,omitempty"`
-		UserId int64          `json:"user_id,omitempty"`
+		Common     *CommonMessage `json:"common,omitempty"`
+		UserAction *UserAction    `json:"userAction,omitempty"`
 	}
 )

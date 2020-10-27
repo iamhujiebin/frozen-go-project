@@ -21,6 +21,7 @@ type (
 		GuestInit(ctx context.Context, in *GuestInitReq) (*GuestInitRes, error)
 		GuestLogin(ctx context.Context, in *GuestLoginReq) (*GuestLoginRes, error)
 		PageAnchorRecommend(ctx context.Context, in *PageAnchorRecommendReq) (*PageAnchorRecommendRes, error)
+		AddActionPoint(ctx context.Context, in *AddActionPointReq) (*AddActionPointRes, error)
 	}
 
 	defaultUserRpc struct {
@@ -181,6 +182,38 @@ func (m *defaultUserRpc) PageAnchorRecommend(ctx context.Context, in *PageAnchor
 	}
 
 	var ret PageAnchorRecommendRes
+	bts, err = jsonx.Marshal(resp)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &ret)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	return &ret, nil
+}
+
+func (m *defaultUserRpc) AddActionPoint(ctx context.Context, in *AddActionPointReq) (*AddActionPointRes, error) {
+	var request user_rpc.AddActionPointReq
+	bts, err := jsonx.Marshal(in)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &request)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	client := user_rpc.NewUserRpcClient(m.cli.Conn())
+	resp, err := client.AddActionPoint(ctx, &request)
+	if err != nil {
+		return nil, err
+	}
+
+	var ret AddActionPointRes
 	bts, err = jsonx.Marshal(resp)
 	if err != nil {
 		return nil, errJsonConvert

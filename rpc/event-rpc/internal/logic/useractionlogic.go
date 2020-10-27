@@ -2,7 +2,10 @@ package logic
 
 import (
 	"context"
+	"encoding/json"
+	"frozen-go-project/common/enum"
 	"frozen-go-project/common/errors/business_errors"
+	"frozen-go-project/common/mq_msg"
 	"frozen-go-project/rpc/event-rpc/internal/svc"
 	event_rpc "frozen-go-project/rpc/event-rpc/pb"
 	"github.com/Shopify/sarama"
@@ -26,10 +29,15 @@ func NewUserActionLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserAc
 
 func (l *UserActionLogic) UserAction(in *event_rpc.UserActionReq) (*event_rpc.CommonResponse, error) {
 	topic := in.Common.Topic
-	msg := in.Common.Message
 	if len(topic) <= 0 {
 		return nil, business_errors.NoMqTopic
 	}
+	userActionMsg := &mq_msg.UserActionMsg{
+		UserId:      in.UserAction.UserId,
+		UserAction:  enum.UserAction(in.UserAction.UserAction),
+		EventTimeMs: in.Common.EventTimeMs,
+	}
+	msg, _ := json.Marshal(userActionMsg)
 	partition, offset, err := l.svcCtx.KafkaProducer.SendMessage(&sarama.ProducerMessage{
 		Topic: topic,
 		Value: sarama.StringEncoder(msg),

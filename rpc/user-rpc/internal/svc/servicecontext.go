@@ -13,11 +13,12 @@ import (
 )
 
 type ServiceContext struct {
-	c               config.Config
-	MongoClient     *mongo.Client
-	UserMysqlModel  *mysqlModel.UsersModel
-	GuestMongoModel *mongoModel.GuestsModel
-	UserMongoModel  *mongoModel.UserModel
+	c                 config.Config
+	MongoClient       *mongo.Client
+	UserMysqlModel    *mysqlModel.UsersModel
+	GuestMongoModel   *mongoModel.GuestsModel
+	UserMongoModel    *mongoModel.UserModel
+	UserExtMongoModel *mongoModel.UserExtModel
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
@@ -45,4 +46,5 @@ func initMongoModels(c config.Config, s *ServiceContext) {
 	s.MongoClient = client
 	s.GuestMongoModel = mongoModel.NewGuestModel(client, &c, mongoModel.DB_FEWeb, mongoModel.COL_GUESTS)
 	s.UserMongoModel = mongoModel.NewUserModel(client, &c, mongoModel.DB_FEWeb, mongoModel.COL_USERS)
+	s.UserExtMongoModel = mongoModel.NewUserExtModel(client, &c, mongoModel.DB_FEWeb, mongoModel.COL_USEREXT)
 }

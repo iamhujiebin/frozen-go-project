@@ -24,3 +24,8 @@ BaseRpc:
     Hosts:
       - 10.1.64.37:2379
     Key: /base.rpc
+EventRpc:
+  Etcd:
+    Hosts:
+      - 10.1.64.37:2379
+    Key: /event.rpc

@@ -36,6 +36,11 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 			Path:    "/anchor/recommend",
 			Handler: anchorRecommendHandler(serverCtx),
 		},
+		{
+			Method:  http.MethodGet,
+			Path:    "/user/action",
+			Handler: userActionHandler(serverCtx),
+		},
 	})
 
 	engine.AddRoutes([]rest.Route{

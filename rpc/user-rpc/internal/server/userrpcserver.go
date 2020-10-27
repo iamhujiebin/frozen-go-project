@@ -6,10 +6,9 @@ package server
 import (
 	"context"
 
+	"frozen-go-project/rpc/user-rpc/internal/logic"
 	"frozen-go-project/rpc/user-rpc/internal/svc"
 	user_rpc "frozen-go-project/rpc/user-rpc/pb"
-
-	"frozen-go-project/rpc/user-rpc/internal/logic"
 )
 
 type UserRpcServer struct {
@@ -45,4 +44,9 @@ func (s *UserRpcServer) GuestLogin(ctx context.Context, in *user_rpc.GuestLoginR
 func (s *UserRpcServer) PageAnchorRecommend(ctx context.Context, in *user_rpc.PageAnchorRecommendReq) (*user_rpc.PageAnchorRecommendRes, error) {
 	l := logic.NewPageAnchorRecommendLogic(ctx, s.svcCtx)
 	return l.PageAnchorRecommend(in)
+}
+
+func (s *UserRpcServer) AddActionPoint(ctx context.Context, in *user_rpc.AddActionPointReq) (*user_rpc.AddActionPointRes, error) {
+	l := logic.NewAddActionPointLogic(ctx, s.svcCtx)
+	return l.AddActionPoint(in)
 }

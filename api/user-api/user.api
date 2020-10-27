@@ -76,6 +76,11 @@ type AnchorRecommendRequest struct {
 	Size int64 `form:"size"`
 }
 
+type UserActionRequest struct {
+	CommonParams
+	UserAction string `form:"user_action"`
+}
+
 service user-api {
     @server(
         handler: JwtHandler
@@ -95,6 +100,9 @@ service user-api {
 
     @handler AnchorRecommendHandler
     get /anchor/recommend (AnchorRecommendRequest) returns (CommonResponse)
+
+    @handler UserActionHandler
+    get /user/action (UserActionRequest) returns (CommonResponse)
 }
 
 @server(

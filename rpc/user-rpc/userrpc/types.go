@@ -8,6 +8,23 @@ import "errors"
 var errJsonConvert = errors.New("json convert error")
 
 type (
+	ActionPoint struct {
+		PayChannel    int64 `json:"pay_channel,omitempty"`
+		VipPromotion  int64 `json:"vip_promotion,omitempty"`
+		CoinPromotion int64 `json:"coin_promotion,omitempty"`
+	}
+
+	AddActionPointReq struct {
+		UserId             int64 `json:"user_id,omitempty"`
+		PayChannelPoint    int64 `json:"pay_channel_point,omitempty"`
+		VipPromotionPoint  int64 `json:"vip_promotion_point,omitempty"`
+		CoinPromotionPoint int64 `json:"coin_promotion_point,omitempty"`
+	}
+
+	AddActionPointRes struct {
+		UserExt *UserExt `json:"user_ext,omitempty"`
+	}
+
 	AddUserReq struct {
 		Avatar string `json:"avatar,omitempty"`
 	}
@@ -74,6 +91,11 @@ type (
 
 	PageAnchorRecommendRes struct {
 		Anchors []*UserInfo `json:"anchors,omitempty"`
+	}
+
+	UserExt struct {
+		UserId      int64        `json:"user_id,omitempty"`
+		ActionPoint *ActionPoint `json:"action_point,omitempty"`
 	}
 
 	UserInfo struct {

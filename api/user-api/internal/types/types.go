@@ -78,3 +78,8 @@ type JwtTokenResponse struct {
 	AccessExpire int64  `json:"access_expire"`
 	RefreshAfter int64  `json:"refresh_after"` // 建议客户端刷新token的绝对时间
 }
+
+type UserActionRequest struct {
+	CommonParams
+	UserAction string `form:"user_action"`
+}
