@@ -39,24 +39,10 @@ build_pkg() {
     PKG_NAME="$PROJECT.$version.tar.bz2"
     (
         cp version build/$PROJECT
-        if [ -f "Dockerfile" ]; then
-          cp Dockerfile build/$PROJECT
-        fi
-        if [ -f "docker-compose.yml" ]; then
-          cp Dockerfile build/$PROJECT
-        fi
         cp -r etc/* build/$PROJECT/etc/
-        if [ -d src/config ]; then
-            cp -r src/config/* etc/
-            cp -r src/config/* build/$PROJECT/etc/
-        fi
         if [ -d bin ]; then
             cp -r bin/* build/$PROJECT/bin/
         fi
-        if [ -d nonoapi ]; then
-            cp nonoapi/*.proto build/$PROJECT/
-        fi
-        cp $PACKTOOL_DIR/color_log.sh build/$PROJECT/bin/
         cd build
         tar -cjf $PKG_NAME $PROJECT
         if [ $? -ne 0 ]; then
@@ -74,3 +60,5 @@ build_pkg() {
         fi
     fi
 }
+
+build_pkg
