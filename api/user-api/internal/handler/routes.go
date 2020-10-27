@@ -10,49 +10,62 @@ import (
 )
 
 func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
-	engine.AddRoutes([]rest.Route{
-		{
-			Method:  http.MethodPost,
-			Path:    "/user/token/:userId",
-			Handler: jwtHandler(serverCtx),
-		},
-		{
-			Method:  http.MethodGet,
-			Path:    "/guest/init",
-			Handler: guestInitHandler(serverCtx),
-		},
-		{
-			Method:  http.MethodPost,
-			Path:    "/guest/login",
-			Handler: guestLoginHandler(serverCtx),
-		},
-		{
-			Method:  http.MethodGet,
-			Path:    "/:pkg/chat/dispatcher/:id",
-			Handler: dispatcherHandler(serverCtx),
-		},
-		{
-			Method:  http.MethodGet,
-			Path:    "/anchor/recommend",
-			Handler: anchorRecommendHandler(serverCtx),
-		},
-		{
-			Method:  http.MethodGet,
-			Path:    "/user/action",
-			Handler: userActionHandler(serverCtx),
-		},
-	})
+	engine.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckAccessToken},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/token/:userId",
+					Handler: jwtHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/:pkg/chat/dispatcher/:id",
+					Handler: dispatcherHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/anchor/recommend",
+					Handler: anchorRecommendHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/user/action",
+					Handler: userActionHandler(serverCtx),
+				},
+			}...,
+		),
+	)
 
-	engine.AddRoutes([]rest.Route{
-		{
-			Method:  http.MethodPost,
-			Path:    "/user/info",
-			Handler: getUserHandler(serverCtx),
+	engine.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodGet,
+				Path:    "/guest/init",
+				Handler: guestInitHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/guest/login",
+				Handler: guestLoginHandler(serverCtx),
+			},
 		},
-		{
-			Method:  http.MethodPost,
-			Path:    "/user/add",
-			Handler: addUserHandler(serverCtx),
+	)
+
+	engine.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodPost,
+				Path:    "/user/info",
+				Handler: getUserHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/user/add",
+				Handler: addUserHandler(serverCtx),
+			},
 		},
-	}, rest.WithJwt(serverCtx.Config.JwtAuth.AccessSecret))
+		rest.WithJwt(serverCtx.Config.JwtAuth.AccessSecret),
+	)
 }

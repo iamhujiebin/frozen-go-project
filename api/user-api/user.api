@@ -81,19 +81,12 @@ type UserActionRequest struct {
 	UserAction string `form:"user_action"`
 }
 
+@server(
+	middleware : CheckAccessToken
+)
 service user-api {
-    @server(
-        handler: JwtHandler
-    )
+    @handler JwtHandler
     post /user/token/:userId (JwtTokenRequest) returns (JwtTokenResponse)
-
-    @server(
-        handler : GuestInitHandler
-    )
-    get /guest/init (GuestInitRequest) returns (CommonResponse)
-
-    @handler GuestLoginHandler
-    post /guest/login (GuestLoginRequest) returns (CommonResponse)
 
     @handler DispatcherHandler
     get /:pkg/chat/dispatcher/:id (DispatcherRequest) returns (CommonResponse)
@@ -103,6 +96,14 @@ service user-api {
 
     @handler UserActionHandler
     get /user/action (UserActionRequest) returns (CommonResponse)
+}
+
+service user-api {
+    @handler GuestInitHandler
+    get /guest/init (GuestInitRequest) returns (CommonResponse)
+
+    @handler GuestLoginHandler
+    post /guest/login (GuestLoginRequest) returns (CommonResponse)
 }
 
 @server(
