@@ -8,10 +8,11 @@ import (
 
 type Config struct {
 	zrpc.RpcServerConf
-	LogConf    logx.LogConf
-	DataSource string          // 手动代码
-	Cache      cache.CacheConf // 手动代码
-	Mongo      struct {
+	LogConf           logx.LogConf
+	DataSource        string
+	Cache             cache.CacheConf
+	CacheExpirySecond int64
+	Mongo             struct {
 		Url         string
 		MaxPoolSize uint64
 		OpTimeout   uint64

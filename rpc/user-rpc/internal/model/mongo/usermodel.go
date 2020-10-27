@@ -2,6 +2,7 @@ package mongo
 
 import (
 	"context"
+	"frozen-go-project/common/cache_keys"
 	"frozen-go-project/common/enum"
 	"frozen-go-project/common/errors/db_errors"
 	"frozen-go-project/common/public_method"
@@ -9,6 +10,7 @@ import (
 	user_rpc "frozen-go-project/rpc/user-rpc/pb"
 	"github.com/google/uuid"
 	"github.com/jinzhu/copier"
+	"github.com/tal-tech/go-zero/core/stores/cache"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -22,6 +24,7 @@ type (
 	UserModel struct {
 		globalConfig *config.Config
 		client       *mongo.Client
+		cache        cache.Cache
 		database     string
 		collection   string
 	}
@@ -44,12 +47,13 @@ type (
 	}
 )
 
-func NewUserModel(client *mongo.Client, globalConfig *config.Config, database, collection string) *UserModel {
+func NewUserModel(client *mongo.Client, cache cache.Cache, globalConfig *config.Config, database, collection string) *UserModel {
 	return &UserModel{
 		globalConfig: globalConfig,
 		client:       client,
 		database:     database,
 		collection:   collection,
+		cache:        cache,
 	}
 }
 
@@ -168,6 +172,17 @@ func (m *UserModel) PageUsers(where bson.M, skip, limit int64) (users []*User, e
 func (m *UserModel) FindOneByAccessToken(accessToken string) (user *User, err error) {
 	m.WithCollection(func(col *mongo.Collection, ctx context.Context) {
 		err = col.FindOne(ctx, bson.M{"accessToken": accessToken}).Decode(&user)
+	})
+	return
+}
+
+func (m *UserModel) FindOneByAccessTokenWithCache(accessToken string) (user *User, err error) {
+	key := cache_keys.AccessTokenKey(accessToken)
+	err = m.cache.Take(&user, key, func(v interface{}) error {
+		m.WithCollection(func(col *mongo.Collection, ctx context.Context) {
+			err = col.FindOne(ctx, bson.M{"accessToken": accessToken}).Decode(&user)
+		})
+		return err
 	})
 	return
 }

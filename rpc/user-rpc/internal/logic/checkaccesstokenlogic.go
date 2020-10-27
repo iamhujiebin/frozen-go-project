@@ -25,7 +25,7 @@ func NewCheckAccessTokenLogic(ctx context.Context, svcCtx *svc.ServiceContext) *
 }
 
 func (l *CheckAccessTokenLogic) CheckAccessToken(in *user_rpc.CheckAccessTokenReq) (*user_rpc.CheckAccessTokenRes, error) {
-	res, err := l.svcCtx.UserMongoModel.FindOneByAccessToken(in.AccessToken)
+	res, err := l.svcCtx.UserMongoModel.FindOneByAccessTokenWithCache(in.AccessToken)
 	if err != nil {
 		return nil, err
 	}

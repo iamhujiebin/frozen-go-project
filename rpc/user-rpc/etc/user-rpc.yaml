@@ -12,7 +12,8 @@ Log:
 Verbose: true
 DataSource: jiebin:123456@tcp(127.0.0.1:3306)/Frozen?parseTime=true
 Cache:
-  - Host: 127.0.0.1:6379
+  - Host: 10.1.64.37:6379
+CacheExpirySecond: 600
 Prometheus:
   Host: 0.0.0.0
   Path: /metrics
