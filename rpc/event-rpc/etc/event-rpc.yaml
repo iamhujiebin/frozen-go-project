@@ -1,5 +1,5 @@
 Name: event-rpc.rpc
-ListenOn: 127.0.0.1:7002
+ListenOn: 0.0.0.0:7002
 Etcd:
   Hosts:
     - 10.1.64.37:2379
