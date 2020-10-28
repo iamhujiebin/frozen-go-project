@@ -7,7 +7,7 @@ Etcd:
 Log:
   Compress: false
   KeepDays: 7
-  Mode: file " #console|file|volume
+  Mode: file #console|file|volume
   Path: /root/logs
 Verbose: true
 DataSource: jiebin:123456@tcp(127.0.0.1:3306)/Frozen?parseTime=true
