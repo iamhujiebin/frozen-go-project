@@ -7,7 +7,7 @@ Topics:
 Assignor: sticky #range|roundRobin|sticky
 Oldest: true
 Verbose: true
-LogConf:
+Log:
   Mode: console # console|file|volume
   Path: ./logs
   KeepDays: 7 #当LogMode在是file才有效

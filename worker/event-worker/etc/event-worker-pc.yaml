@@ -7,7 +7,7 @@ Topics:
 Assignor: sticky #range|roundRobin|sticky
 Oldest: true
 Verbose: true
-LogConf:
+Log:
   Mode: file # console|file|volume
   Path: /root/logs/event-worker
   KeepDays: 7 #当LogMode在是file才有效
