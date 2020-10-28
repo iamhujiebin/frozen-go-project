@@ -1,0 +1,20 @@
+Name: base-rpc.rpc
+ListenOn: 0.0.0.0:7001
+Etcd:
+  Hosts:
+    - 10.1.64.37:2379
+  Key: /base.rpc
+Verbose: true
+Log:
+  Compress: false
+  KeepDays: 7
+  Mode: file # console|file|volume
+  Path: "/root/logs"
+Prometheus:
+  Host: 0.0.0.0
+  Path: /metrics
+  Port: 17001
+Mongo:
+  Url: mongodb://127.0.0.1:27103
+  MaxPoolSize: 5
+  OpTimeout: 5

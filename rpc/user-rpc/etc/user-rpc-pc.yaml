@@ -1,0 +1,24 @@
+Name: user-service.rpc
+ListenOn: 0.0.0.0:7000
+Etcd:
+  Hosts:
+    - 10.1.64.37:4379
+  Key: /user.rpc
+Log:
+  Compress: false
+  KeepDays: 7
+  Mode: file " #console|file|volume
+  Path: /root/logs
+Verbose: true
+DataSource: jiebin:123456@tcp(127.0.0.1:3306)/Frozen?parseTime=true
+Cache:
+  - Host: 10.1.64.37:6379
+CacheExpirySecond: 600
+Prometheus:
+  Host: 0.0.0.0
+  Path: /metrics
+  Port: 17000
+Mongo:
+  Url: mongodb://10.1.64.37:27104
+  MaxPoolSize: 5
+  OpTimeout: 5

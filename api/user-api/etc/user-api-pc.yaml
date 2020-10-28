@@ -1,0 +1,32 @@
+Name: user-api
+Host: 0.0.0.0
+Port: 8888
+Verbose: true
+SignSecretKey: m`y!@i#b$i%n^&j*e(n)b_y+n
+Log:
+  Compress: false
+  KeepDays: 7
+  Mode: file # console|file|volume
+  Path: "/root/logs"
+JwtAuth:
+  AccessSecret: j`i!@e#b$i%n^&m*e(n)g_y+n
+  AccessExpire: 604800
+Prometheus:
+  Host: 0.0.0.0
+  Path: /metrics
+  Port: 18888
+UserRpc:
+  Etcd:
+    Hosts:
+      - 10.1.64.37:2379
+    Key: /user.rpc
+BaseRpc:
+  Etcd:
+    Hosts:
+      - 10.1.64.37:2379
+    Key: /base.rpc
+EventRpc:
+  Etcd:
+    Hosts:
+      - 10.1.64.37:2379
+    Key: /event.rpc

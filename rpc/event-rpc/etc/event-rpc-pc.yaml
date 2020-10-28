@@ -1,0 +1,19 @@
+Name: event-rpc.rpc
+ListenOn: 0.0.0.0:7002
+Etcd:
+  Hosts:
+    - 10.1.64.37:2379
+  Key: /event.rpc
+
+LogConf:
+  Mode: file # console | file | volume
+  Path: "/root/logs"
+  KeepDays: 7 #当LogMode在是file才有效
+
+Kafka:
+  Brokers:
+    - 10.1.64.37:9092
+  RequiredAcks: wait_for_all
+  RetryMax: 10
+  ReturnSuccess: true
+  ReturnError: true
