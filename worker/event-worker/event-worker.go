@@ -33,6 +33,7 @@ var c = struct {
 
 func Init() {
 	conf.MustLoad(*configFile, &c)
+	logx.MustSetup(c.Log)
 	if len(c.Brokers) == 0 {
 		panic("no Kafka bootstrap brokers defined, please set the -brokers flag")
 	}
@@ -46,7 +47,6 @@ func Init() {
 
 func main() {
 	flag.Parse()
-	logx.MustSetup(c.Log)
 	Init()
 	svc.InitServiceContext(c.BaseRpc, c.UserRpc)
 	logx.Info("Starting a new Sarama consumer")
