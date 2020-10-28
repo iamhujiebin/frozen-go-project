@@ -45,6 +45,7 @@ func init() {
 }
 
 func main() {
+	flag.Parse()
 	logx.MustSetup(c.LogConf)
 	svc.InitServiceContext(c.BaseRpc, c.UserRpc)
 	logx.Info("Starting a new Sarama consumer")
