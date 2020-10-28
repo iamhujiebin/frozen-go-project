@@ -7,7 +7,7 @@ Log:
   Compress: false
   KeepDays: 7
   Mode: file # console|file|volume
-  Path: "/root/logs"
+  Path: /root/logs/user-api
 JwtAuth:
   AccessSecret: j`i!@e#b$i%n^&m*e(n)g_y+n
   AccessExpire: 604800

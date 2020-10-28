@@ -8,7 +8,7 @@ Log:
   Compress: false
   KeepDays: 7
   Mode: file #console|file|volume
-  Path: /root/logs
+  Path: /root/logs/user-rpc
 Verbose: true
 DataSource: jiebin:123456@tcp(127.0.0.1:3306)/Frozen?parseTime=true
 Cache:

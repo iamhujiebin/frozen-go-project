@@ -7,7 +7,7 @@ Etcd:
 
 LogConf:
   Mode: file # console | file | volume
-  Path: "/root/logs"
+  Path: /root/logs/event-rpc
   KeepDays: 7 #当LogMode在是file才有效
 
 Kafka:

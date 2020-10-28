@@ -9,7 +9,7 @@ Log:
   Compress: false
   KeepDays: 7
   Mode: file # console|file|volume
-  Path: "/root/logs"
+  Path: /root/logs/base-rpc
 Prometheus:
   Host: 0.0.0.0
   Path: /metrics
