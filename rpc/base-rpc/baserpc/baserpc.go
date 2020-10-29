@@ -19,6 +19,7 @@ type (
 		GetPkgConfig(ctx context.Context, in *GetPkgConfigReq) (*GetPkgConfigResp, error)
 		GetPkgSectionConfig(ctx context.Context, in *GetPkgSectionConfigReq) (*GetPkgSectionConfigResp, error)
 		GetSystemConfigs(ctx context.Context, in *GetSystemConfigReq) (*GetSystemConfigRes, error)
+		IsBan(ctx context.Context, in *IsBanReq) (*IsBanRes, error)
 	}
 
 	defaultBaseRpc struct {
@@ -115,6 +116,38 @@ func (m *defaultBaseRpc) GetSystemConfigs(ctx context.Context, in *GetSystemConf
 	}
 
 	var ret GetSystemConfigRes
+	bts, err = jsonx.Marshal(resp)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &ret)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	return &ret, nil
+}
+
+func (m *defaultBaseRpc) IsBan(ctx context.Context, in *IsBanReq) (*IsBanRes, error) {
+	var request base_rpc.IsBanReq
+	bts, err := jsonx.Marshal(in)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	err = jsonx.Unmarshal(bts, &request)
+	if err != nil {
+		return nil, errJsonConvert
+	}
+
+	client := base_rpc.NewBaseRpcClient(m.cli.Conn())
+	resp, err := client.IsBan(ctx, &request)
+	if err != nil {
+		return nil, err
+	}
+
+	var ret IsBanRes
 	bts, err = jsonx.Marshal(resp)
 	if err != nil {
 		return nil, errJsonConvert

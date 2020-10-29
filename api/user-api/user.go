@@ -23,6 +23,7 @@ func main() {
 	server := rest.MustNewServer(c.RestConf, rest.WithNotAllowedHandler(rest.CorsHandler()))
 	defer server.Stop()
 	server.Use(middleware.CheckSign(ctx))
+	server.Use(middleware.CheckBan(ctx))
 
 	handler.RegisterHandlers(server, ctx)
 

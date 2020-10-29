@@ -35,3 +35,8 @@ func (s *BaseRpcServer) GetSystemConfigs(ctx context.Context, in *base_rpc.GetSy
 	l := logic.NewGetSystemConfigsLogic(ctx, s.svcCtx)
 	return l.GetSystemConfigs(in)
 }
+
+func (s *BaseRpcServer) IsBan(ctx context.Context, in *base_rpc.IsBanReq) (*base_rpc.IsBanRes, error) {
+	l := logic.NewIsBanLogic(ctx, s.svcCtx)
+	return l.IsBan(in)
+}

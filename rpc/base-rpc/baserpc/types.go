@@ -36,6 +36,15 @@ type (
 		Items []*SystemConfig `json:"items,omitempty"`
 	}
 
+	IsBanReq struct {
+		UserId  int64  `json:"user_id,omitempty"`
+		GuestId string `json:"guest_id,omitempty"`
+	}
+
+	IsBanRes struct {
+		IsBan bool `json:"isBan,omitempty"`
+	}
+
 	PkgConfig struct {
 		Key   string `json:"key,omitempty"`
 		Value string `json:"value,omitempty"`

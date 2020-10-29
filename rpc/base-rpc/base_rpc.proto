@@ -42,9 +42,19 @@ message getSystemConfigRes {
   repeated systemConfig items = 1;
 }
 
+message isBanReq {
+  int64 user_id = 1;
+  string guest_id = 2;
+}
+
+message isBanRes {
+  bool isBan = 1;
+}
+
 
 service baseRpc {
   rpc getPkgConfig (getPkgConfigReq) returns (getPkgConfigResp);
   rpc getPkgSectionConfig (getPkgSectionConfigReq) returns (getPkgSectionConfigResp);
   rpc getSystemConfigs(getSystemConfigReq) returns(getSystemConfigRes);
+  rpc isBan(isBanReq) returns(isBanRes);
 }

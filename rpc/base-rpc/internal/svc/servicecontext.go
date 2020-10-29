@@ -14,6 +14,7 @@ type ServiceContext struct {
 	c                 config.Config
 	MongoClient       *mongo.Client
 	CommonConfigModel *mongoModel.SystemConfigModel
+	BanModel          *mongoModel.BanModel
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
@@ -39,4 +40,5 @@ func initMongoModels(c config.Config, s *ServiceContext) {
 	}
 	s.MongoClient = client
 	s.CommonConfigModel = mongoModel.NewCommonConfigModel(client, &c, mongoModel.DB_FEWeb, mongoModel.COL_COMMON_CONFIG)
+	s.BanModel = mongoModel.NewCBanModel(client, &c, mongoModel.DB_FEWeb, mongoModel.COL_BAN_LIST)
 }
