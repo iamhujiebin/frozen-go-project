@@ -1,3 +1,13 @@
+info(
+    title: "user api"
+    desc: "user api interface"
+    author: "jiebin.hu"
+    email: "458249864@qq.com"
+    version: "1.0.0"
+)
+
+type HelloRequest struct{}
+
 type JwtTokenRequest struct {
 	UserId int64 `path:"userId"`
 }
@@ -82,7 +92,7 @@ type UserActionRequest struct {
 }
 
 @server(
-	middleware : CheckAccessToken
+middleware : CheckAccessToken
 )
 service user-api {
     @handler JwtHandler
@@ -104,6 +114,9 @@ service user-api {
 
     @handler GuestLoginHandler
     post /userapi/guest/login (GuestLoginRequest) returns (CommonResponse)
+
+    @handler HelloHandler
+    get /userapi/hello (HelloRequest) returns (CommonResponse)
 }
 
 @server(

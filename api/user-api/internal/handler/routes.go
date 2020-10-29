@@ -50,6 +50,11 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/userapi/guest/login",
 				Handler: guestLoginHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/userapi/hello",
+				Handler: helloHandler(serverCtx),
+			},
 		},
 	)
 

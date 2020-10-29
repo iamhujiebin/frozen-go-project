@@ -69,6 +69,9 @@ type GuestLoginRequest struct {
 	CommonParams
 }
 
+type HelloRequest struct {
+}
+
 type JwtTokenRequest struct {
 	UserId int64 `path:"userId"`
 }
