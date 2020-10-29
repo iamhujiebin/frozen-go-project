@@ -21,7 +21,7 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/user-api/:pkg/chat/dispatcher/:id",
+					Path:    "/userapi/:pkg/chat/dispatcher",
 					Handler: dispatcherHandler(serverCtx),
 				},
 				{

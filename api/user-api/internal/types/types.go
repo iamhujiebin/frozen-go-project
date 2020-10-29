@@ -37,7 +37,7 @@ type CommonResponse struct {
 
 type DispatcherRequest struct {
 	CommonParams
-	Id  string `path:"id"`
+	Id  string `form:"id"`
 	Pkg string `path:"pkg"`
 }
 

@@ -70,7 +70,7 @@ type CommonResponse struct {
 
 type DispatcherRequest struct {
 	CommonParams
-	Id  string `path:"id"`
+	Id  string `form:"id"`
 	Pkg string `path:"pkg"`
 }
 
@@ -93,7 +93,7 @@ service user-api {
     post /userapi/user/token/:userId (JwtTokenRequest) returns (JwtTokenResponse)
 
     @handler DispatcherHandler
-    get /user-api/:pkg/chat/dispatcher/:id (DispatcherRequest) returns (CommonResponse)
+    get /userapi/:pkg/chat/dispatcher (DispatcherRequest) returns (CommonResponse)
 
     @handler AnchorRecommendHandler
     get /userapi/anchor/recommend (AnchorRecommendRequest) returns (CommonResponse)
