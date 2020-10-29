@@ -63,6 +63,7 @@ type GuestInitRequest struct {
 	Channel     string `form:"channel,optional"`
 	UserChannel string `form:"user_channel,optional"`
 	CampaignId  string `form:"campaign_id,optional"`
+	PkgName     string `form:"pkg_name,optional"`
 }
 
 type GuestLoginRequest struct {
