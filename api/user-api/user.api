@@ -86,24 +86,24 @@ type UserActionRequest struct {
 )
 service user-api {
     @handler JwtHandler
-    post /user/token/:userId (JwtTokenRequest) returns (JwtTokenResponse)
+    post /userapi/user/token/:userId (JwtTokenRequest) returns (JwtTokenResponse)
 
     @handler DispatcherHandler
-    get /:pkg/chat/dispatcher/:id (DispatcherRequest) returns (CommonResponse)
+    get /user-api/:pkg/chat/dispatcher/:id (DispatcherRequest) returns (CommonResponse)
 
     @handler AnchorRecommendHandler
-    get /anchor/recommend (AnchorRecommendRequest) returns (CommonResponse)
+    get /userapi/anchor/recommend (AnchorRecommendRequest) returns (CommonResponse)
 
     @handler UserActionHandler
-    get /user/action (UserActionRequest) returns (CommonResponse)
+    get /userapi/user/action (UserActionRequest) returns (CommonResponse)
 }
 
 service user-api {
     @handler GuestInitHandler
-    get /guest/init (GuestInitRequest) returns (CommonResponse)
+    get /userapi/guest/init (GuestInitRequest) returns (CommonResponse)
 
     @handler GuestLoginHandler
-    post /guest/login (GuestLoginRequest) returns (CommonResponse)
+    post /userapi/guest/login (GuestLoginRequest) returns (CommonResponse)
 }
 
 @server(
@@ -113,11 +113,11 @@ service user-api {
     @server(
         handler: GetUserHandler
     )
-    post /user/info (GetUserRequest) returns (GetUserResponse)
+    post /userapi/user/info (GetUserRequest) returns (GetUserResponse)
 
     @server(
         handler : AddUserHandler
     )
-    post /user/add (AddUserRequest) returns (AddUserResponse)
+    post /userapi/user/add (AddUserRequest) returns (AddUserResponse)
 }
 

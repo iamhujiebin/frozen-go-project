@@ -16,22 +16,22 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 			[]rest.Route{
 				{
 					Method:  http.MethodPost,
-					Path:    "/user/token/:userId",
+					Path:    "/userapi/user/token/:userId",
 					Handler: jwtHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/:pkg/chat/dispatcher/:id",
+					Path:    "/user-api/:pkg/chat/dispatcher/:id",
 					Handler: dispatcherHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/anchor/recommend",
+					Path:    "/userapi/anchor/recommend",
 					Handler: anchorRecommendHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/user/action",
+					Path:    "/userapi/user/action",
 					Handler: userActionHandler(serverCtx),
 				},
 			}...,
@@ -42,12 +42,12 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodGet,
-				Path:    "/guest/init",
+				Path:    "/userapi/guest/init",
 				Handler: guestInitHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodPost,
-				Path:    "/guest/login",
+				Path:    "/userapi/guest/login",
 				Handler: guestLoginHandler(serverCtx),
 			},
 		},
@@ -57,12 +57,12 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodPost,
-				Path:    "/user/info",
+				Path:    "/userapi/user/info",
 				Handler: getUserHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodPost,
-				Path:    "/user/add",
+				Path:    "/userapi/user/add",
 				Handler: addUserHandler(serverCtx),
 			},
 		},
