@@ -22,7 +22,7 @@ func CheckSign(ctx *svc.ServiceContext) func(http.HandlerFunc) http.HandlerFunc 
 			_ = r.ParseForm()
 			paramsKeyList := make([]string, 0, len(r.Form))
 			var signValue string
-			for k, _ := range r.Form {
+			for k := range r.Form {
 				if k != "sign" {
 					paramsKeyList = append(paramsKeyList, k)
 				} else {
