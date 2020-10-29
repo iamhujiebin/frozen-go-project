@@ -23,9 +23,10 @@ type CommonParams struct {
 	GuestId     string `form:"__guest_id,optional"`
 	Country     string `form:"__country,optional"`
 	PkgName     string `form:"__pname,optional"`
-	Channel     string `form:"__pch,optional"`
+	PkgChannel  string `form:"__pch,optional"`
 	UserChannel string `form:"__uch,optional"`
 	Platform    string `form:"__platform,optional"`
+	Version     string `form:"__v,optional"`
 }
 
 type CommonResponse struct {
@@ -52,18 +53,10 @@ type GetUserResponse struct {
 }
 
 type GuestInitRequest struct {
-	UserId      int    `form:"user_id,optional"`
-	GuestId     string `form:"guest_id,optional"`
-	GuestName   string `form:"guest_name,optional"`
-	Platform    string `form:"platform"`
-	AndroidId   string `form:"android_id,optional"`
-	AppVersion  string `form:"app_version"`
-	Country     string `form:"country,optional"`
-	Imei        string `form:"imei,optional"`
-	Channel     string `form:"channel,optional"`
-	UserChannel string `form:"user_channel,optional"`
-	CampaignId  string `form:"campaign_id,optional"`
-	PkgName     string `form:"pkg_name,optional"`
+	CommonParams
+	AndroidId  string `form:"android_id,optional"`
+	Imei       string `form:"imei,optional"`
+	CampaignId string `form:"campaign_id,optional"`
 }
 
 type GuestLoginRequest struct {

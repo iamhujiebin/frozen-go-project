@@ -29,10 +29,10 @@ func (l *GuestInitLogic) GuestInit(req types.GuestInitRequest) (*types.CommonRes
 		GuestId:     req.GuestId,
 		Platform:    req.Platform,
 		AndroidId:   req.AndroidId,
-		AppVersion:  req.AppVersion,
+		AppVersion:  req.Version,
 		Country:     req.Country,
 		Imei:        req.Imei,
-		Channel:     req.Channel,
+		Channel:     req.PkgChannel,
 		CampaignId:  req.CampaignId,
 		UserChannel: req.UserChannel,
 	})

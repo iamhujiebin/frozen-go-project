@@ -31,7 +31,7 @@ func (l *GuestLoginLogic) GuestLogin(req types.GuestLoginRequest) (*types.Common
 		GuestId:     req.GuestId,
 		Platform:    req.Platform,
 		Country:     req.Country,
-		Channel:     req.Channel,
+		Channel:     req.PkgChannel,
 		UserChannel: req.UserChannel,
 		PkgName:     req.PkgName,
 	})
