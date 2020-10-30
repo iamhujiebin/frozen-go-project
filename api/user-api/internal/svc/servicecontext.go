@@ -6,7 +6,6 @@ import (
 	"frozen-go-project/rpc/base-rpc/baserpc"
 	"frozen-go-project/rpc/event-rpc/eventrpc"
 	"frozen-go-project/rpc/user-rpc/userrpc"
-	"github.com/tal-tech/go-zero/core/logx"
 	"github.com/tal-tech/go-zero/rest/httpx"
 	"github.com/tal-tech/go-zero/zrpc"
 	"net/http"
@@ -49,7 +48,6 @@ func CheckAccessToken(ctx *ServiceContext) func(http.HandlerFunc) http.HandlerFu
 						UserInfo:    false,
 					})
 					if err != nil {
-						logx.Errorf("should check accessToken")
 						httpx.OkJson(w, resp_codes.CheckAccessTokenFail)
 						return
 					}
