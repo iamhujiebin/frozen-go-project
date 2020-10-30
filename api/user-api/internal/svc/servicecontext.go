@@ -39,6 +39,7 @@ func CheckAccessToken(ctx *ServiceContext) func(http.HandlerFunc) http.HandlerFu
 			userId, _ := strconv.Atoi(r.Form.Get("__user_id"))
 			accessToken := r.Form.Get("accessToken")
 			if userId > 0 {
+				accessToken = "72a6c5fb-2713-4bb4-b887-515f7e3e5654"
 				if len(accessToken) <= 0 {
 					httpx.OkJson(w, resp_codes.CheckAccessTokenFail)
 					return
@@ -49,8 +50,8 @@ func CheckAccessToken(ctx *ServiceContext) func(http.HandlerFunc) http.HandlerFu
 					})
 					if err != nil {
 						logx.Errorf("should check accessToken")
-						//httpx.OkJson(w, resp_codes.CheckAccessTokenFail)
-						//return
+						httpx.OkJson(w, resp_codes.CheckAccessTokenFail)
+						return
 					}
 				}
 			}
