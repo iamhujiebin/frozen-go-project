@@ -26,7 +26,13 @@ type (
 	}
 
 	AddUserReq struct {
-		Avatar string `json:"avatar,omitempty"`
+		Avatar      string `json:"avatar,omitempty"`
+		GuestId     string `json:"guest_id,omitempty"`
+		PkgName     string `json:"pkg_name,omitempty"`
+		Channel     string `json:"channel,omitempty"`
+		UserChannel string `json:"user_channel,omitempty"`
+		Platform    string `json:"platform,omitempty"`
+		Country     string `json:"country,omitempty"`
 	}
 
 	AddUserRes struct {
@@ -43,11 +49,21 @@ type (
 		UserInfo *UserInfo `json:"user_info,omitempty"`
 	}
 
-	GetUserReq struct {
+	GetUserAssetReq struct {
 		UserId int64 `json:"user_id,omitempty"`
 	}
 
+	GetUserAssetRes struct {
+		UserAsset *UserAsset `json:"userAsset,omitempty"`
+	}
+
+	GetUserReq struct {
+		UserId    int64  `json:"user_id,omitempty"`
+		LoginName string `json:"login_name,omitempty"`
+	}
+
 	GetUserRes struct {
+		Code int64     `json:"code,omitempty"`
 		User *UserInfo `json:"user,omitempty"`
 	}
 
@@ -80,17 +96,12 @@ type (
 		Guest *GuestInfo `json:"guest,omitempty"`
 	}
 
-	GuestLoginReq struct {
-		GuestId     string `json:"guest_id,omitempty"`
-		Platform    string `json:"platform,omitempty"`
-		Country     string `json:"country,omitempty"`
-		Channel     string `json:"channel,omitempty"`
-		UserChannel string `json:"user_channel,omitempty"`
-		PkgName     string `json:"pkg_name,omitempty"`
+	InitUserAssetReq struct {
+		UserAsset *UserAsset `json:"userAsset,omitempty"`
 	}
 
-	GuestLoginRes struct {
-		User *UserInfo `json:"user,omitempty"`
+	InitUserAssetRes struct {
+		UserAsset *UserAsset `json:"userAsset,omitempty"` //含有自增id
 	}
 
 	PageAnchorRecommendReq struct {
@@ -101,6 +112,17 @@ type (
 
 	PageAnchorRecommendRes struct {
 		Anchors []*UserInfo `json:"anchors,omitempty"`
+	}
+
+	UserAsset struct {
+		UserId                int64 `json:"user_id,omitempty"`
+		AvailableCoin         int64 `json:"available_coin,omitempty"`
+		AccumulatedCoin       int64 `json:"accumulated_coin,omitempty"`
+		FreeChatTimes         int64 `json:"free_chat_times,omitempty"`
+		FreeCallTimes         int64 `json:"free_call_times,omitempty"`
+		AvailableSilverCoin   int64 `json:"available_silver_coin,omitempty"`
+		AccumulatedSilverCoin int64 `json:"accumulated_silver_coin,omitempty"`
+		VipEffectEndMs        int64 `json:"vip_effect_end_ms,omitempty"`
 	}
 
 	UserExt struct {

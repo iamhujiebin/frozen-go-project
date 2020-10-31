@@ -33,7 +33,8 @@ func NewServiceContext(c config.Config) *ServiceContext {
 	var err error
 	producer, err := sarama.NewSyncProducer(c.Kafka.Brokers, kc)
 	if err != nil {
-		panic(err)
+		logx.Errorf("kafka fail:%s", err.Error())
+		//panic(err)
 	}
 	return &ServiceContext{
 		Config:        c,

@@ -101,7 +101,7 @@ func (m *UserModel) UpdateOne(where, set bson.M) (err error) {
 	return
 }
 
-func (m *UserModel) GuestRegister(in *user_rpc.GuestLoginReq) (interface{}, error) {
+func (m *UserModel) AddUser(in *user_rpc.AddUserReq) (interface{}, error) {
 	return m.WithTransaction(func(sessCtx mongo.SessionContext) (interface{}, error) {
 		//获取自增用户id
 		idCol := m.client.Database(DB_FEWeb).Collection(COL_IDS)
@@ -126,8 +126,8 @@ func (m *UserModel) GuestRegister(in *user_rpc.GuestLoginReq) (interface{}, erro
 			Channel:     in.Channel,
 			UserChannel: in.UserChannel,
 			RegPkgName:  in.PkgName,
-			CreateTime:  time.Time{},
-			UpdateTime:  time.Time{},
+			CreateTime:  time.Now(),
+			UpdateTime:  time.Now(),
 		}
 		userCol := m.client.Database(DB_FEWeb).Collection(COL_USERS)
 		_, err = userCol.InsertOne(sessCtx, user)

@@ -2,7 +2,7 @@ Name: event-rpc.rpc
 ListenOn: 0.0.0.0:7002
 Etcd:
   Hosts:
-    - 10.1.64.37:2379
+    - 127.0.0.1:2379
   Key: /event.rpc
 
 LogConf:
@@ -12,7 +12,7 @@ LogConf:
 
 Kafka:
   Brokers:
-    - 10.1.64.37:9092
+    - 127.0.0.1:9092
   RequiredAcks: wait_for_all
   RetryMax: 10
   ReturnSuccess: true

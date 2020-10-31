@@ -15,19 +15,19 @@ import (
 )
 
 type ServiceContext struct {
-	c                 config.Config
-	MongoClient       *mongo.Client
-	Cache             cache.Cache
-	UserMysqlModel    *mysqlModel.UsersModel
-	GuestMongoModel   *mongoModel.GuestsModel
-	UserMongoModel    *mongoModel.UserModel
-	UserExtMongoModel *mongoModel.UserExtModel
+	c                   config.Config
+	MongoClient         *mongo.Client
+	Cache               cache.Cache
+	GuestMongoModel     *mongoModel.GuestsModel
+	UserMongoModel      *mongoModel.UserModel
+	UserExtMongoModel   *mongoModel.UserExtModel
+	UserAssetMysqlModel *mysqlModel.UserAssetModel
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
 	s := &ServiceContext{
-		c:              c,
-		UserMysqlModel: mysqlModel.NewUsersModel(sqlx.NewMysql(c.DataSource), c.Cache),
+		c:                   c,
+		UserAssetMysqlModel: mysqlModel.NewUserAssetModel(sqlx.NewMysql(c.DataSource), c.Cache, mysqlModel.TABLE_USER_ASSET),
 	}
 	if len(c.Mongo.Url) > 0 {
 		initMongoModels(c, s)

@@ -2,7 +2,7 @@ Name: user-service.rpc
 ListenOn: 0.0.0.0:7000
 Etcd:
   Hosts:
-    - 10.1.64.37:4379
+    - 127.0.0.1:2379
   Key: /user.rpc
 Log:
   Compress: false
@@ -10,15 +10,15 @@ Log:
   Mode: "console" #console|file|volume
   Path: "./logs"
 Verbose: true
-DataSource: jiebin:123456@tcp(127.0.0.1:3306)/Frozen?parseTime=true
+DataSource: jiebin:123456@tcp(127.0.0.1:3306)/DateMe?parseTime=true
 Cache:
-  - Host: 10.1.64.37:6379
+  - Host: 127.0.0.1:6379
 CacheExpirySecond: 600
 Prometheus:
   Host: 0.0.0.0
   Path: /metrics
   Port: 17000
 Mongo:
-  Url: mongodb://10.1.64.37:27104
+  Url: mongodb://127.0.0.1:27103
   MaxPoolSize: 5
   OpTimeout: 5

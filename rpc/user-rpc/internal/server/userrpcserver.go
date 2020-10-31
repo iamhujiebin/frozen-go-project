@@ -8,7 +8,6 @@ import (
 
 	"frozen-go-project/rpc/user-rpc/internal/logic"
 	"frozen-go-project/rpc/user-rpc/internal/svc"
-
 	user_rpc "frozen-go-project/rpc/user-rpc/pb"
 )
 
@@ -37,11 +36,6 @@ func (s *UserRpcServer) GuestInit(ctx context.Context, in *user_rpc.GuestInitReq
 	return l.GuestInit(in)
 }
 
-func (s *UserRpcServer) GuestLogin(ctx context.Context, in *user_rpc.GuestLoginReq) (*user_rpc.GuestLoginRes, error) {
-	l := logic.NewGuestLoginLogic(ctx, s.svcCtx)
-	return l.GuestLogin(in)
-}
-
 func (s *UserRpcServer) PageAnchorRecommend(ctx context.Context, in *user_rpc.PageAnchorRecommendReq) (*user_rpc.PageAnchorRecommendRes, error) {
 	l := logic.NewPageAnchorRecommendLogic(ctx, s.svcCtx)
 	return l.PageAnchorRecommend(in)
@@ -55,4 +49,14 @@ func (s *UserRpcServer) AddActionPoint(ctx context.Context, in *user_rpc.AddActi
 func (s *UserRpcServer) CheckAccessToken(ctx context.Context, in *user_rpc.CheckAccessTokenReq) (*user_rpc.CheckAccessTokenRes, error) {
 	l := logic.NewCheckAccessTokenLogic(ctx, s.svcCtx)
 	return l.CheckAccessToken(in)
+}
+
+func (s *UserRpcServer) GetUserAsset(ctx context.Context, in *user_rpc.GetUserAssetReq) (*user_rpc.GetUserAssetRes, error) {
+	l := logic.NewGetUserAssetLogic(ctx, s.svcCtx)
+	return l.GetUserAsset(in)
+}
+
+func (s *UserRpcServer) InitUserAsset(ctx context.Context, in *user_rpc.InitUserAssetReq) (*user_rpc.InitUserAssetRes, error) {
+	l := logic.NewInitUserAssetLogic(ctx, s.svcCtx)
+	return l.InitUserAsset(in)
 }

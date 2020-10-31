@@ -10,7 +10,7 @@ Log:
   Mode: file #console|file|volume
   Path: /root/logs/user-rpc
 Verbose: true
-DataSource: jiebin:123456@tcp(127.0.0.1:3306)/Frozen?parseTime=true
+DataSource: jiebin:123456@tcp(127.0.0.1:3306)/DateMe?parseTime=true
 Cache:
   - Host: 10.1.64.37:6379
 CacheExpirySecond: 600

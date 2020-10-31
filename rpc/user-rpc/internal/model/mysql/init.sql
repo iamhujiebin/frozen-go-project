@@ -1,17 +1,22 @@
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
-  `access_token` varchar(256) NOT NULL COMMENT '用户校验token',
-  `avatar` varchar(45) DEFAULT NULL COMMENT '用户头像',
-  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='用户表'
-
-CREATE TABLE `Frozen`.`guests` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `guest_id` varchar(256) NOT NULL COMMENT '游客id',
-  `platform` varchar(45) NOT NULL COMMENT '平台：ios/android/web',
-  `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='游客表'
+CREATE TABLE `user_asset` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '用户id',
+  `available_coin` int(11) NOT NULL DEFAULT '0' COMMENT '可用的金币数',
+  `accumulated_coin` int(11) NOT NULL DEFAULT '0' COMMENT '累计金币数',
+  `free_chat_times` smallint(6) NOT NULL DEFAULT '0' COMMENT '免费聊天次数',
+  `free_call_minute` smallint(6) NOT NULL DEFAULT '0' COMMENT '免费通话时长',
+  `version` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '数据版本号，乐观锁',
+  `create_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00',
+  `update_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00',
+  `ext_num` int(11) DEFAULT '0',
+  `ext_str` varchar(255) DEFAULT '',
+  `vip_effect_end` datetime NOT NULL DEFAULT '1970-01-01 00:00:00',
+  `available_silver_coin` int(11) NOT NULL DEFAULT '0' COMMENT '可用的银币数',
+  `accumulated_silver_coin` int(11) NOT NULL DEFAULT '0' COMMENT '累计银币数',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `inx_uid` (`user_id`) USING BTREE,
+  KEY `inx_acoin` (`available_coin`) USING BTREE,
+  KEY `inx_ctime` (`create_time`) USING BTREE,
+  KEY `inx_vip` (`vip_effect_end`),
+  KEY `inx_scoin` (`available_silver_coin`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='用户资产表'
