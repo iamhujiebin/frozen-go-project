@@ -29,14 +29,21 @@ type ServiceContext struct {
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
-	db, err := gorm.Open(mysql.Open(c.DataSource), &gorm.Config{})
+	db, err := gorm.Open(mysql.Open(c.Mysql.Url), &gorm.Config{})
 	if err != nil {
 		logx.Errorf("gorm connect to db fail :%s", err.Error())
+	} else {
+		rawDb, err := db.DB()
+		if err == nil {
+			rawDb.SetConnMaxLifetime(time.Second * time.Duration(c.Mysql.ConnMaxLiveTime))
+			rawDb.SetMaxOpenConns(c.Mysql.MaxPoolSize)
+			rawDb.SetMaxIdleConns(c.Mysql.MaxPoolSize)
+		}
 	}
 	s := &ServiceContext{
 		c:                   c,
 		MysqlClient:         db,
-		UserAssetMysqlModel: mysqlModel.NewUserAssetModel(sqlx.NewMysql(c.DataSource), db, c.Cache, mysqlModel.TABLE_USER_ASSET),
+		UserAssetMysqlModel: mysqlModel.NewUserAssetModel(sqlx.NewMysql(c.Mysql.Url), db, c.Cache, mysqlModel.TABLE_USER_ASSET),
 	}
 	if len(c.Mongo.Url) > 0 {
 		initMongoModels(c, s)

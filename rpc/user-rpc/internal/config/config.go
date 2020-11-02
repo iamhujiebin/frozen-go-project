@@ -9,10 +9,14 @@ import (
 type Config struct {
 	zrpc.RpcServerConf
 	LogConf           logx.LogConf
-	DataSource        string
 	Cache             cache.CacheConf
 	CacheExpirySecond int64
-	Mongo             struct {
+	Mysql             struct {
+		Url             string
+		MaxPoolSize     int
+		ConnMaxLiveTime int
+	}
+	Mongo struct {
 		Url         string
 		MaxPoolSize uint64
 		OpTimeout   uint64
