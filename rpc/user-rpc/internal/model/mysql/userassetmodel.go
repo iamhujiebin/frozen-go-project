@@ -32,20 +32,20 @@ type (
 	}
 
 	UserAsset struct {
-		Id                    int64     `db:"id"`
-		UserId                int64     `db:"user_id"`          // 用户id
-		AvailableCoin         int64     `db:"available_coin"`   // 可用的金币数
-		AccumulatedCoin       int64     `db:"accumulated_coin"` // 累计金币数
-		FreeChatTimes         int64     `db:"free_chat_times"`  // 免费聊天次数
-		FreeCallMinute        int64     `db:"free_call_minute"` // 免费通话时长
-		Version               int64     `db:"version"`          // 数据版本号，乐观锁
-		CreateTime            time.Time `db:"create_time"`
-		UpdateTime            time.Time `db:"update_time"`
-		ExtNum                int64     `db:"ext_num"`
-		ExtStr                string    `db:"ext_str"`
-		VipEffectEnd          time.Time `db:"vip_effect_end"`
-		AvailableSilverCoin   int64     `db:"available_silver_coin"`   // 可用的银币数
-		AccumulatedSilverCoin int64     `db:"accumulated_silver_coin"` // 累计银币数
+		Id                    int64      `db:"id"`
+		UserId                int64      `db:"user_id"`          // 用户id
+		AvailableCoin         int64      `db:"available_coin"`   // 可用的金币数
+		AccumulatedCoin       int64      `db:"accumulated_coin"` // 累计金币数
+		FreeChatTimes         int64      `db:"free_chat_times"`  // 免费聊天次数
+		FreeCallMinute        int64      `db:"free_call_minute"` // 免费通话时长
+		Version               int64      `db:"version"`          // 数据版本号，乐观锁
+		CreateTime            *time.Time `db:"create_time"`
+		UpdateTime            *time.Time `db:"update_time"`
+		ExtNum                int64      `db:"ext_num"`
+		ExtStr                string     `db:"ext_str"`
+		VipEffectEnd          *time.Time `db:"vip_effect_end"`
+		AvailableSilverCoin   int64      `db:"available_silver_coin"`   // 可用的银币数
+		AccumulatedSilverCoin int64      `db:"accumulated_silver_coin"` // 累计银币数
 	}
 )
 
