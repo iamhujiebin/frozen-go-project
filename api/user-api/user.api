@@ -107,7 +107,7 @@ service user-api {
     get /userapi/guest/init (GuestInitRequest) returns (CommonResponse)
 
     @handler GuestLoginHandler
-    post /userapi/guest/login (GuestLoginRequest) returns (CommonResponse)
+    get /userapi/guest/login (GuestLoginRequest) returns (CommonResponse)
 
     @handler HelloHandler
     get /userapi/hello (HelloRequest) returns (CommonResponse)
