@@ -30,3 +30,4 @@ EventRpc:
     Hosts:
       - 10.1.64.37:2379
     Key: /event.rpc
+Timeout: 10000
