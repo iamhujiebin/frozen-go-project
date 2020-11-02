@@ -21,6 +21,7 @@ UserRpc:
     Hosts:
       - 10.1.64.37:2379
     Key: /user.rpc
+  Timeout: 5000 # rpc接口的超时时间,单位毫秒
 BaseRpc:
   Etcd:
     Hosts:
@@ -31,3 +32,4 @@ EventRpc:
     Hosts:
       - 10.1.64.37:2379
     Key: /event.rpc
+  Timeout: 5000 # rpc接口的超时时间,单位毫秒
