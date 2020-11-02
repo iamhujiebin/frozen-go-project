@@ -3,6 +3,7 @@ Host: 0.0.0.0
 Port: 8888
 Verbose: true
 SignSecretKey: m`y!@i#b$i%n^&j*e(n)b_y+n
+Timeout: 10000 # api接口的超时时间,单位毫秒
 Log:
   Compress: false
   KeepDays: 7
@@ -20,6 +21,7 @@ UserRpc:
     Hosts:
       - 10.1.64.37:2379
     Key: /user.rpc
+  Timeout: 5000 # rpc接口的超时时间,单位毫秒
 BaseRpc:
   Etcd:
     Hosts:
@@ -30,4 +32,3 @@ EventRpc:
     Hosts:
       - 10.1.64.37:2379
     Key: /event.rpc
-Timeout: 10000

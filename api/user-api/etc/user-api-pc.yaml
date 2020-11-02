@@ -3,6 +3,7 @@ Host: 0.0.0.0
 Port: 8888
 Verbose: true
 SignSecretKey: m`y!@i#b$i%n^&j*e(n)b_y+n
+Timeout: 10000 # api接口的超时时间,单位毫秒
 Log:
   Compress: false
   KeepDays: 7

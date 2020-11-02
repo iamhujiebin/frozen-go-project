@@ -77,8 +77,7 @@ func (l *GuestLoginLogic) doUserRegister(req *types.GuestLoginRequest) (*dto.Gue
 	}
 	respBody := new(dto.GuestLoginResponse)
 	_ = copier.Copy(respBody, addUserRes.User)
-	//todo 这里写mysql会比较慢，所以不设置deadline
-	_, err = l.svcCtx.UserRpc.InitUserAsset(context.Background(), &userrpc.InitUserAssetReq{UserAsset: &userrpc.UserAsset{
+	_, err = l.svcCtx.UserRpc.InitUserAsset(l.ctx, &userrpc.InitUserAssetReq{UserAsset: &userrpc.UserAsset{
 		UserId:                respBody.UserId,
 		AvailableCoin:         0,
 		AccumulatedCoin:       0,
