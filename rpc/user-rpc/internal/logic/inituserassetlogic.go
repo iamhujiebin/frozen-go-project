@@ -30,13 +30,13 @@ func (l *InitUserAssetLogic) InitUserAsset(in *user_rpc.InitUserAssetReq) (*user
 	userAsset := new(mysqlModel.UserAsset)
 	_ = copier.Copy(userAsset, in.UserAsset)
 	userAsset.VipEffectEnd = time.Unix(0, 0)
-	res, err := l.svcCtx.UserAssetMysqlModel.Insert(*userAsset)
+	//res, err := l.svcCtx.UserAssetMysqlModel.Insert(*userAsset)
+	res, err := l.svcCtx.UserAssetMysqlModel.Insert2(*userAsset)
 	if err != nil {
 		return nil, err
 	}
-	userAsset.Id, _ = res.LastInsertId()
 	pbUserAsset := new(user_rpc.UserAsset)
-	_ = copier.Copy(pbUserAsset, userAsset)
+	_ = copier.Copy(pbUserAsset, res)
 	return &user_rpc.InitUserAssetRes{
 		UserAsset: pbUserAsset,
 	}, nil

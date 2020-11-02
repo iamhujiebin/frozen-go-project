@@ -5,18 +5,22 @@ import (
 	"frozen-go-project/rpc/user-rpc/internal/config"
 	mongoModel "frozen-go-project/rpc/user-rpc/internal/model/mongo"
 	mysqlModel "frozen-go-project/rpc/user-rpc/internal/model/mysql"
+	"github.com/tal-tech/go-zero/core/logx"
 	"github.com/tal-tech/go-zero/core/stores/cache"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
 	"github.com/tal-tech/go-zero/core/syncx"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 	"time"
 )
 
 type ServiceContext struct {
 	c                   config.Config
 	MongoClient         *mongo.Client
+	MysqlClient         *gorm.DB
 	Cache               cache.Cache
 	GuestMongoModel     *mongoModel.GuestsModel
 	UserMongoModel      *mongoModel.UserModel
@@ -25,9 +29,14 @@ type ServiceContext struct {
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
+	db, err := gorm.Open(mysql.Open(c.DataSource), &gorm.Config{})
+	if err != nil {
+		logx.Errorf("gorm connect to db fail :%s", err.Error())
+	}
 	s := &ServiceContext{
 		c:                   c,
-		UserAssetMysqlModel: mysqlModel.NewUserAssetModel(sqlx.NewMysql(c.DataSource), c.Cache, mysqlModel.TABLE_USER_ASSET),
+		MysqlClient:         db,
+		UserAssetMysqlModel: mysqlModel.NewUserAssetModel(sqlx.NewMysql(c.DataSource), db, c.Cache, mysqlModel.TABLE_USER_ASSET),
 	}
 	if len(c.Mongo.Url) > 0 {
 		initMongoModels(c, s)

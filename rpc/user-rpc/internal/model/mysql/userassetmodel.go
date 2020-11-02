@@ -3,6 +3,7 @@ package model
 import (
 	"database/sql"
 	"fmt"
+	"gorm.io/gorm"
 	"strings"
 	"time"
 
@@ -26,6 +27,7 @@ var (
 type (
 	UserAssetModel struct {
 		sqlc.CachedConn
+		db    *gorm.DB
 		table string
 	}
 
@@ -47,8 +49,18 @@ type (
 	}
 )
 
-func NewUserAssetModel(conn sqlx.SqlConn, c cache.CacheConf, table string) *UserAssetModel {
+func (u *UserAsset) TableName() string {
+	tbIndex := u.UserId % 2 //分表
+	if tbIndex == 0 {
+		tbIndex = 2
+	}
+	table := fmt.Sprintf("user_asset_%d", tbIndex)
+	return table
+}
+
+func NewUserAssetModel(conn sqlx.SqlConn, db *gorm.DB, c cache.CacheConf, table string) *UserAssetModel {
 	return &UserAssetModel{
+		db:         db,
 		CachedConn: sqlc.NewConn(conn, c),
 		table:      table,
 	}
@@ -70,6 +82,14 @@ func (m *UserAssetModel) Insert(data UserAsset) (sql.Result, error) {
 		return conn.Exec(query, data.UserId, data.AvailableCoin, data.AccumulatedCoin, data.FreeChatTimes, data.FreeCallMinute, data.Version, data.ExtNum, data.ExtStr, data.VipEffectEnd, data.AvailableSilverCoin, data.AccumulatedSilverCoin)
 	}, userAssetUserIdKey)
 	return ret, err
+}
+
+func (m *UserAssetModel) Insert2(data UserAsset) (UserAsset, error) {
+	res := m.db.Create(&data)
+	if res.Error != nil {
+		return data, res.Error
+	}
+	return data, nil
 }
 
 func (m *UserAssetModel) FindOne(id int64) (*UserAsset, error) {
