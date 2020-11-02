@@ -39,11 +39,11 @@ type (
 		FreeChatTimes         int64      `db:"free_chat_times"`  // 免费聊天次数
 		FreeCallMinute        int64      `db:"free_call_minute"` // 免费通话时长
 		Version               int64      `db:"version"`          // 数据版本号，乐观锁
-		CreateTime            *time.Time `db:"create_time"`
-		UpdateTime            *time.Time `db:"update_time"`
+		CreateTime            time.Time `db:"create_time"`
+		UpdateTime            time.Time `db:"update_time"`
 		ExtNum                int64      `db:"ext_num"`
 		ExtStr                string     `db:"ext_str"`
-		VipEffectEnd          *time.Time `db:"vip_effect_end"`
+		VipEffectEnd          time.Time `db:"vip_effect_end"`
 		AvailableSilverCoin   int64      `db:"available_silver_coin"`   // 可用的银币数
 		AccumulatedSilverCoin int64      `db:"accumulated_silver_coin"` // 累计银币数
 	}

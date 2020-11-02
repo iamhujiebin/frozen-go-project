@@ -6,6 +6,7 @@ import (
 	"frozen-go-project/rpc/user-rpc/internal/svc"
 	user_rpc "frozen-go-project/rpc/user-rpc/pb"
 	"github.com/jinzhu/copier"
+	"time"
 
 	"github.com/tal-tech/go-zero/core/logx"
 )
@@ -27,6 +28,8 @@ func NewInitUserAssetLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Ini
 func (l *InitUserAssetLogic) InitUserAsset(in *user_rpc.InitUserAssetReq) (*user_rpc.InitUserAssetRes, error) {
 	userAsset := new(mysqlModel.UserAsset)
 	_ = copier.Copy(userAsset, in.UserAsset)
+	userAsset.CreateTime, userAsset.UpdateTime = time.Now(), time.Now()
+	userAsset.VipEffectEnd = time.Unix(0, 0)
 	//res, err := l.svcCtx.UserAssetMysqlModel.Insert(*userAsset)
 	res, err := l.svcCtx.UserAssetMysqlModel.Insert2(*userAsset)
 	if err != nil {
