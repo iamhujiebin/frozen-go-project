@@ -11,7 +11,7 @@ Log:
   Path: /root/logs/user-rpc
 Verbose: true
 Mysql:
-  Url: jiebin:123456@tcp(127.0.0.1:3306)/DateMe?parseTime=true #dsn data source name
+  Url: root:123456@tcp(127.0.0.1:3307)/DateMe?parseTime=true #dsn data source name
   MaxPoolSize: 5 #只能控制gorm的，go-zero底层的mysql写死了64
   ConnMaxLiveTime: 1800 #gorm连接最长存活时间/s
 Cache:
