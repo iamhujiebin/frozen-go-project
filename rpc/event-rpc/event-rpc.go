@@ -18,12 +18,17 @@ import (
 )
 
 var configFile = flag.String("f", "etc/event-rpc.yaml", "the config file")
+var port = flag.Int("port", 0, "rpc port")
 
 func main() {
 	flag.Parse()
 
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
+	if *port <= 0 {
+		panic("should provide listen port")
+	}
+	c.ListenOn = fmt.Sprintf("0.0.0.0:%d", *port)
 	ctx := svc.NewServiceContext(c)
 	eventRpcSrv := server.NewEventRpcServer(ctx)
 

@@ -1,5 +1,5 @@
 Name: user-service.rpc
-ListenOn: 0.0.0.0:7000
+ListenOn: 0.0.0.0:0 # tobe replace in cmd line
 Etcd:
   Hosts:
     - 10.1.64.37:4379

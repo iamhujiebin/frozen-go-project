@@ -12,12 +12,17 @@ import (
 )
 
 var configFile = flag.String("f", "etc/user-api.yaml", "the config file")
+var port = flag.Int("port", 0, "rpc port")
 
 func main() {
 	flag.Parse()
 
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
+	if *port <= 0 {
+		panic("should provide listen port")
+	}
+	c.Port = *port
 
 	ctx := svc.NewServiceContext(c)
 	server := rest.MustNewServer(c.RestConf, rest.WithNotAllowedHandler(rest.CorsHandler()))

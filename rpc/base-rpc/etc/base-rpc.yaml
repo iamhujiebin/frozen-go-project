@@ -1,5 +1,5 @@
 Name: base-rpc.rpc
-ListenOn: 0.0.0.0:7001
+ListenOn: 0.0.0.0:0 # tobe replace in cmd line
 Etcd:
   Hosts:
     - 127.0.0.1:2379
