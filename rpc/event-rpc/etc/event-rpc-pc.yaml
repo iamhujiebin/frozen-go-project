@@ -5,7 +5,7 @@ Etcd:
     - 10.1.64.37:2379
   Key: /event.rpc
 
-LogConf:
+Log:
   Mode: file # console | file | volume
   Path: /root/logs/event-rpc
   KeepDays: 7 #当LogMode在是file才有效

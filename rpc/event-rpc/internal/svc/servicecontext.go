@@ -13,7 +13,6 @@ type ServiceContext struct {
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
-	logx.MustSetup(c.LogConf)
 	kc := sarama.NewConfig()
 	switch c.Kafka.RequiredAcks {
 	case "no_response":
