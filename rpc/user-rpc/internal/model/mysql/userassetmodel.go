@@ -85,7 +85,7 @@ func (m *UserAssetModel) Insert(data UserAsset) (sql.Result, error) {
 }
 
 func (m *UserAssetModel) InsertByGorm(data *UserAsset) (*UserAsset, error) {
-	res := m.db.Create(&data)
+	res := m.db.Table(data.TableName()).Create(&data)
 	if res.Error != nil {
 		return data, res.Error
 	}
