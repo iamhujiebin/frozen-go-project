@@ -17,10 +17,10 @@ Mysql:
 Cache:
   - Host: 127.0.0.1:6379
 CacheExpirySecond: 600
-Prometheus:
-  Host: 0.0.0.0
-  Path: /metrics
-  Port: 17000
+#Prometheus:
+#  Host: 0.0.0.0
+#  Path: /metrics
+#  Port: 17000
 Mongo:
   Url: mongodb://127.0.0.1:27103
   MaxPoolSize: 5

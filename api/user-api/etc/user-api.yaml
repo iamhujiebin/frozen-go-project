@@ -12,10 +12,10 @@ Log:
 JwtAuth:
   AccessSecret: j`i!@e#b$i%n^&m*e(n)g_y+n
   AccessExpire: 604800
-Prometheus:
-  Host: 0.0.0.0
-  Path: /metrics
-  Port: 18888
+#Prometheus:
+#  Host: 0.0.0.0
+#  Path: /metrics
+#  Port: 18888
 UserRpc:
   Etcd:
     Hosts:
