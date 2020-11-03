@@ -23,6 +23,7 @@ func main() {
 		panic("should provide listen port")
 	}
 	c.Port = *port
+	c.Log.Path = fmt.Sprintf("%s/%d", c.Log.Path, c.Port)
 
 	ctx := svc.NewServiceContext(c)
 	server := rest.MustNewServer(c.RestConf, rest.WithNotAllowedHandler(rest.CorsHandler()))

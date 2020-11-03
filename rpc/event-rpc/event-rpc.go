@@ -29,6 +29,7 @@ func main() {
 		panic("should provide listen port")
 	}
 	c.ListenOn = fmt.Sprintf("0.0.0.0:%d", *port)
+	c.Log.Path = fmt.Sprintf("%s/%d", c.Log.Path, *port)
 	ctx := svc.NewServiceContext(c)
 	eventRpcSrv := server.NewEventRpcServer(ctx)
 
