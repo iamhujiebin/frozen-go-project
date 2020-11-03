@@ -43,6 +43,7 @@ func (l *UserActionLogic) UserAction(in *event_rpc.UserActionReq) (*event_rpc.Co
 		Value: sarama.StringEncoder(msg),
 	})
 	if err != nil {
+		logx.Errorf("send kafka msg fail:%s", err.Error())
 		return nil, err
 	}
 	return &event_rpc.CommonResponse{
