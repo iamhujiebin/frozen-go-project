@@ -26,6 +26,7 @@ func main() {
 	c.Log.Path = fmt.Sprintf("%s/%d", c.Log.Path, c.Port)
 
 	ctx := svc.NewServiceContext(c)
+	//跨域支持
 	server := rest.MustNewServer(c.RestConf, rest.WithNotAllowedHandler(rest.CorsHandler()))
 	defer server.Stop()
 	server.Use(middleware.CheckSign(ctx))
