@@ -1,0 +1,6 @@
+Mysql:
+  Url: jiebin:123456@tcp(127.0.0.1:3306)/test?parseTime=true # dsn data source name
+  MaxPoolSize: 5
+  ConnMaxLiveTime: 1800
+Cache:
+  - Host: 127.0.0.1:6379
