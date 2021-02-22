@@ -1,0 +1,25 @@
+type Request {
+	Name string `path:"name,options=you|me"`
+}
+
+type Response {
+	Message string `json:"message"`
+}
+
+type CommonParams {
+	UserId int64 `form:"userId,optional"`
+}
+
+type CommonResponse {
+	Code    int64  `json:"code"`
+	Message string `json:"message"`
+}
+
+service greet-api {
+	@handler GreetHandler
+	get /from/:name (Request) returns (Response);
+	
+	@handler HelloHandler
+	
+	get /hello (CommonParams) returns (CommonResponse)
+}
