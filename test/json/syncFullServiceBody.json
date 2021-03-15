@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "activity_name": "活动名称",
+  "trigger_type": 1,
+  "start_time_unix": 1614081855,
+  "end_time_unix": 1614081855,
+  "content_id": 1,
+  "content_num": 10,
+  "full_pic": "http://1.png",
+  "full_svga": "http://2.svga",
+  "full_text": "全服文案",
+  "full_color": "全服文案颜色",
+  "full_jump_type": 1,
+  "full_jump_value": 1,
+  "chat_text": "公聊文案",
+  "chat_highlight": "公聊文案",
+  "char_color": "#FFFFFF",
+  "status": 1
+}

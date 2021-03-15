@@ -17,6 +17,8 @@ require (
 	github.com/iancoleman/strcase v0.1.3 // indirect
 	github.com/jinzhu/copier v0.0.0-20190924061706-b57f9002281a
 	github.com/klauspost/compress v1.11.1 // indirect
+	github.com/nicksnyder/go-i18n v1.10.1 // indirect
+	github.com/prometheus/common v0.9.1
 	github.com/tal-tech/go-zero v1.1.4
 	go.mongodb.org/mongo-driver v1.4.2
 	go.uber.org/automaxprocs v1.4.0 // indirect

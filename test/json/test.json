@@ -1,0 +1,151 @@
+{
+  "pool_type": [
+    1,
+    2
+  ],
+  "advanced_num": 2,
+  "general_num": 2822,
+  "group_num": "35",
+  "user_grade": {
+    "input_day": 1,
+    "key_1613992391": {
+      "grades": {
+        "min": "0",
+        "max": "200"
+      },
+      "input": {
+        "min": "0",
+        "max": "400"
+      },
+      "range": {
+        "min": 1,
+        "max": "10"
+      }
+    },
+    "key_1614048477": {
+      "grades": {
+        "min": "200",
+        "max": "400"
+      },
+      "input": {
+        "min": "400",
+        "max": "800"
+      },
+      "range": {
+        "min": "10",
+        "max": "50"
+      }
+    }
+  },
+  "continue_range": {
+    "not_continue_input_day": 3,
+    "continue_input_day": 1,
+    "not_continue": {
+      "key_15": {
+        "input": {
+          "min": -9999999999,
+          "max": "200"
+        },
+        "zooming": "2.1",
+        "value_type": 1
+      },
+      "key_16": {
+        "input": {
+          "min": 200,
+          "max": "400"
+        },
+        "zooming": "3.2",
+        "value_type": 0
+      },
+      "key_17": {
+        "input": {
+          "min": 400,
+          "max": 9999999999
+        },
+        "zooming": "4.4",
+        "value_type": 1
+      }
+    },
+    "continue": {
+      "key_18": {
+        "input": {
+          "min": -9999999999,
+          "max": "100"
+        },
+        "zooming": "1.13",
+        "value_type": 1
+      },
+      "key_19": {
+        "input": {
+          "min": 100,
+          "max": "400"
+        },
+        "zooming": "1.26",
+        "value_type": 0
+      },
+      "key_20": {
+        "input": {
+          "min": 400,
+          "max": 9999999999
+        },
+        "zooming": "1.22",
+        "value_type": 1
+      }
+    }
+  },
+  "gift": {
+    "advanced": {
+      "key_5": {
+        "id": 9734,
+        "num": "35"
+      }
+    },
+    "general": {
+      "key_6": {
+        "id": 2214,
+        "num": 2000
+      },
+      "key_7": {
+        "id": 1991,
+        "num": 200
+      },
+      "key_8": {
+        "id": 2061,
+        "num": 200
+      },
+      "key_9": {
+        "id": 2217,
+        "num": 200
+      },
+      "key_10": {
+        "id": 2216,
+        "num": 10
+      },
+      "key_11": {
+        "id": 2142,
+        "num": 200
+      },
+      "key_12": {
+        "id": 8977,
+        "num": 10
+      },
+      "key_13": {
+        "id": 8849,
+        "num": 1
+      },
+      "key_1614148405": {
+        "id": 8852,
+        "num": 1
+      }
+    }
+  },
+  "car": {
+    "advanced": {
+      "key_14": {
+        "id": 10000007,
+        "num": "35"
+      }
+    }
+  },
+  "id": "219"
+}

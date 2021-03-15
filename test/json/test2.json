@@ -1,0 +1,86 @@
+{
+  "b": {
+    "ev": "s.m"
+  },
+  "dest": 2,
+  "liveid": "1574135214094039",
+  "messageId": "YPR_cj.test.sendgift.core_L-1574135214094039_59fc959b771111eba6f1525400f45d3d",
+  "ms": [
+    {
+      "c": "我送了 盖茨比 1个 情时明月",
+      "card_effect": {
+        "c": "送给盖茨比1个情时明月",
+        "show_card": 1
+      },
+      "ec": "送了 盖茨比 1个 情时明月",
+      "from": {
+        "dsc": "",
+        "gd": 0,
+        "good_id": 0,
+        "id": 191880,
+        "lc": "",
+        "lvl": 40,
+        "nic": "随便试试试试试试试试试试试试试试",
+        "ptr": "https:\/\/media.xiangshengclub.com\/MTYxNDEzODAwNDg3OCMzNzQjanBn.jpg",
+        "vf": 27684,
+        "vip_level": 2
+      },
+      "fs": "null",
+      "g_ext": {
+        "gcl": [
+          0,
+          216,
+          201,
+          1
+        ]
+      },
+      "g_to": {
+        "dsc": "",
+        "gd": 1,
+        "good_id": 0,
+        "id": 101180,
+        "lc": "",
+        "lvl": 124,
+        "nic": "盖茨比",
+        "ptr": "https:\/\/media.xiangshengclub.com\/MTU5NjUxMzgxNDIxMyMzMzAjanBn.jpg",
+        "vf": 27669,
+        "vip_level": 7
+      },
+      "gcl": [
+        0,
+        216,
+        201,
+        1
+      ],
+      "gift": {
+        "bundle": 1,
+        "bundle_effect_id": 0,
+        "channel": 0,
+        "cl": [
+          255,
+          255,
+          255
+        ],
+        "count": 1,
+        "exp": 99990,
+        "gold": 9999,
+        "gold_type": 1,
+        "id": 8867,
+        "in": 0,
+        "name": "情时明月",
+        "point": 9999,
+        "repeat": 1,
+        "res_id": 1731,
+        "seq": 2,
+        "type": 2
+      },
+      "rcv": 101180,
+      "show_chat": 1,
+      "show_state": 0,
+      "tp": "pub"
+    }
+  ],
+  "p": "r",
+  "priority": 0,
+  "userid": 191880
+}
