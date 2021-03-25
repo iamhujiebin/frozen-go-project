@@ -18,4 +18,5 @@ func main() {
 	println(y, w)
 	//y, w = other.ISOWeek()
 	//println(y, w)
+	println(0xA)
 }

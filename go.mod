@@ -27,6 +27,8 @@ require (
 	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
 	golang.org/x/net v0.0.0-20201021035429-f5854403a974 // indirect
 	golang.org/x/sync v0.0.0-20201008141435-b3e1573b7520 // indirect
+	github.com/gin-gonic/gin v1.6.3
+	github.com/fvbock/endless v0.0.0-20170109170031-447134032cb6
 	google.golang.org/grpc v1.33.0
 	google.golang.org/protobuf v1.25.0
 	gorm.io/driver/mysql v1.0.3

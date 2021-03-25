@@ -1,0 +1,284 @@
+# 工具大于工具和文档
+
+1. gdb //mac很是复杂。各种报错，用docker的ubuntu看看！ ubuntu的gdb可以！//done
+2. adb //done
+   1. adb install
+   2. adb shell pm list packages
+   3. adb uninstall $package
+   4. adb screencap/screenrecord 
+   5. adb pull /path/to/mobile /path/to/mac
+3. user的代码继续看//done
+   1. userId是在redis中pop出来的，定时任务task中lpush(每秒搞一次)
+      1. redis记录maxUserId
+      2. 如果redis中llen小于50000，就生成，并且是批量生成1000个
+   2. 用户profile，proto.marshal存储在mysql+Redis的varbinary(9000)，获取时候用unionStoage
+   3. 用户相册，varchar(9000)做json
+   4. 雷峰塔：对账号风险评估，支持洗白(level1/2:手机号/实名认证),level3就gg
+   5. 用户好友关系//done
+      1. Redis 数据结构用hash, 0，0 作为占位是否命中缓存，ttl：30天。关注数就能用hlen
+      2. 批量获取的golang技巧：chan interface{}(1000) + goroutine+for(wg)+defer close(chan).外层for range chan读取 
+      3. 数据库，数据库+表两次uid hash。follow和fan分开两个表 
+   6. Session校验服务，客户端登陆之后有个sid，服务端关键接口需要校验
+   7. es的搜索看看代码
+      1. chan替换waitGroup技巧： 多个go func里面chan<-userInfos,在后面userInfos<-chan。chan没有buf，所以就会阻塞到n个go func完成
+      2. 接入es的搜索有三种：用户、房间、工会，都是从es拿到id，再用id到具体的服务中mget
+      3. 同样是在user.search.logic中更新数据到es，提供一个服务发现的功能
+   8. session是有服务的
+      1. zset数据结构，一系列的zset操作
+      2. zrange key 0 -1 ,加上map exist + list操作保留单点登录，清掉的srem清掉非最新的
+      3. zremrangebyrank：清掉分数低的(时间考前的)前n的登录。保持多端登录，最多n个
+   9. 私信message-logic/base
+      1. 接口，pre-process process post-process，中间用ctx交互
+      2. 各种id的的生成规则，msgId，msgVerId，scVerId，rcVerId。利用errgroup.Group去并发去做。go-zero的mr.finsh()的优势在于其中一个失败了，其他的就不管了。errgroup的是要等待所有完成，感觉内部就是使用wg的效果
+      3. 1<<30,二的30次方就是10亿，32次方就是40亿
+      4. 构造id的元素：时间戳，左右位移(乘除以2)，取余操作，然后拼接
+      5. 存储
+         1. mysql分表 uid%dbNum / dbCount 做库，uid%count做表。
+         2. redis用hash+zset+version的偏移，做数据的拉取
+         3. 概念：send、fetch、withdraw(recall)、contact(session)、(un)read、
+      6. send接口就是更新存储，fetch接口获取存储，更新偏移值和已读状态
+      7. 疑问：长链是哪里做的呢？北京吗？
+   10. Gateway 
+       1. 权限开通了
+       2. 做的是session校验，限流等
+       3. 没有源码，但是ppt说是用iris+基础框架实现。
+4. 告警的元素收集//done
+   1. 接口的err
+   2. 盈收情况
+   3. 发布服务
+   4. 配置关键的活动，如大泡泡
+5. 音泡公共库的代码 //done
+6. 海外的元素
+   1. 咨询下是否负责新项目
+   2. 文案，i18n的引用//done ，other其实是对比one的，one是单数，other做复数
+   3. 时间，utc时间，看下市场规划。如果多国家，那就utc。如果分库，那就对应市区的时间？
+   4. 支付，不过也是类似微信/支付宝的。看bd对接。
+   5. 服务器，可能还是沿用阿里云/腾讯的海外版本，运维的工作，估计对服务端无关
+   6. google的政策
+      1. google play
+      2. Firebase
+7. 看一下活动的代码，大泡泡// 主要是redis的操作。zset做排行榜。当前奖池，下一个奖池
+8. 写全服自定义的wiki文档 //done
+9. 抓包工具in Mac //done
+   1. http //done
+   2. https //done,手机安装charles的证书就好了
+
+# 入职指南
+
+1. 用户的接口文档
+
+   1. 手机号登陆
+      1. session 有啥用呢,判断是否本人在操作。客户端有sid，服务端也会存储。
+      2. first_login 怎么做存储的 // 看下是否注册而已。查询master的db。需要要查master的 //done
+      3. rds: relational database service 关系型数据库
+      4. id的生成：通过MQ去生成的(redis的rpop)
+   2. 状态码
+      1. dm_error
+      2. error_msg
+
+2. 看一些基本的规范
+   1. http
+
+   2. rpc
+
+   3. kafka
+
+      1. ```bash
+         $KAFKA_HOME/bin/kafka-topics.sh --zookeeper zoo_kafka_zookeeper_1:2181 --describe --topic test
+         $KAFKA_HOME/bin/kafka-topics.sh --zookeeper zoo_kafka_zookeeper_1:2181 --list
+         $KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server zoo_kafka_kafka_1:9092 --from-beginning --topic test
+         $KAFKA_HOME/bin/kafka-console-producer.sh --topic=test --broker-list zoo_kafka_kafka_1:9092
+         $KAFKA_HOME/bin/kafka-topics.sh --create --topic cj_gift_sendgift_core --partitions 4 --zookeeper zoo_kafka_zookeeper_1:2181 --replication-factor 1 
+         ```
+
+3. 看公共库的小工具//done
+
+4. 迁移原来小本本笔记到印象笔记
+
+   1. 小本本的done了 //done
+   2. todoinke的准备了 //done了！
+
+5. 确认cp关系时候，需要上锁吗？TryLock一下吧//done
+
+
+
+# 三月5号交起初考核表//done
+
+1. 下载表格 //done
+2. 填写表格 //done
+3. 打印表格//done
+4. leader签字 //done
+5. 上交表格 //done
+
+# 全服自定义//done
+
+1. 对接运营后台
+   1. syncFullService //done
+   2. upDownFullService //done
+   3. 接口文档 //done
+2. redis存储
+   1. key定义
+      1. 总的配置：HMSet  key:yp_fullsvc_config
+      2. 具体活动。 Hget yp_fullsvc_config 1 {json}
+   2. redis 选择
+      1. 测服：addr="10.100.128.37:6379"   
+      2. 正服：addr="cj-cluster01.tx4.codis.inkept.cn:6379"
+   3. 三种triggerType的处理
+      1. gift
+         1. kafka的消息监听//done
+         2. giftId->configId的快速映射 //done
+         3. 同步配置的时候，需要删除掉原来的id，然后重新写一次//done
+      2. 抽奖/活动触发 //done
+         1. 直接给configId发送即可//done
+         2. 写一个自己触发的接口。send的接口//done
+      3. 奖励触发
+         1. 需要定期触发 cron //done
+         2. 需要redis分布式锁 //done
+   4. 发送全服封装
+      1. 要跟客户端对应//等待客户端出协议后就可以发了 //done
+3. 对接客户端
+   1. 协议等客户端出三种triggerType对应三种tp(尝试全局搜索一下服务端代码)//done
+      1. ![image-20210228103100877](/Users/jiebin/Library/Application Support/typora-user-images/image-20210228103100877.png)
+      2. 送礼的tp：pub_high（暂定“都”用这个）/pub_gc（不搞）,考虑批量发
+      3. 抽奖的tp：pub_reward，后台必须配置礼物// 测试通过
+      4. 奖励下发（定期发送）：tp:也用pub_high，但是没有from/to/gift字段
+      5. 整理整个json到wiki // 世豪done
+      6. 撸一个脚本去模拟发送push消息//done,用golang的Test即可//done
+      7. 公屏文案，替换变量 {$}//done
+   2. 先封装好发送的接口//done
+4. 监听送礼kafka //done
+5. 按照fangchuwei，manager的方式敲代码//done,多了一个errTrace//done
+6. 补一下同步的脚本，以及检查mysql/redis数据库的脚本//done
+7. 配置跳板机快速登陆//done
+8. {$show_id}需要替换一下//done
+9. 活动下发的，需要判断一下是否活动的类型，不然给错了也下发就不好//done
+10. bugfix
+    1. 奖励下发，end_time_unix 1 代表不关注 //done
+    2. {$user_name} {$gift_name} {$show_id} 做成传参，根据id下发的地方 //done
+    3.  埋点，看世豪的聊天//done
+    4. 调整log级别//done
+11. 上线 //done
+    1. room.vip.logic：加上ann2的live埋点
+    2. busi.sendgift.core:同上
+    3. room.action.buz: 具体新逻辑
+12. 线上回归 //todo
+    1. bugfix
+    2. 埋点需求调整上线.  回滚
+
+# inke活动
+
+1. 代码目录// done
+2. 机器权限 //done
+3. 原有项目
+   1. 77活动搬运到音泡-》幸运礼物增长活动。还没开发，要等锐豪，自己要熟悉需求。
+      1. 熟悉了
+      2. 自己定义一下数据结构。对比一下锐豪的
+   2. 音泡cp活动。自己做 //done
+      1. 系统消息 //done
+      2. 检查是否cp //done
+      3. cp的爱意值 //done
+      4. cp的排行榜 //done
+         1. 带有“周年庆”角标的礼物才能加。添加配置文件
+      5. 赠送礼物/勋章/坐骑 //done
+         1. redis key去做是否已经发送 //done
+      6. 活动代码目录结构 //done
+      7. kafka送礼消息//done
+5. 注意key的过期时间 //done
+6. 结束后自动派奖
+   1. 上锁
+   2. 特殊key判断是否已发送 string即可
+6. 正服的配置 // done
+7. 正服的端口 //9990 暂定
+8. 设计文档+接口文档//done
+9. apiGateWay+session接入，//done
+10. api文档端口修改//done
+11. 数据需求，按天来分的//done!!!
+    1. xlsx,结束的时候导出 //done
+    2. 数据结构设计一下，并且补一下文档 //done
+    3. 文案调整，用户是否存在判断，不同人有不同的文案 //done
+    4. 自己撸一个发邮件服务 //done
+    5. python 撸一个脚本导出，并且把xlsx做成一个sheet即可，即可发布服务到测试环境 //done!!!
+12. 看下锐豪的api文档//done
+13. Git的操作熟练一下，有的，因为要fork+fetch+merge别人的项目
+14. 拼图活动迁移
+    1. 编译通过 //done
+    2. 替换配置//done
+    3. Fork + fetch + merge + conflict + commit + push //done
+    4. 对比下发奖励的uri+redis名+my名字 //done
+       1. 都是一致的//done
+       2. service名字配对一下//done
+       3. 顺便把两周年活动也统一一下
+          1. redis的db - 》 选0
+          2. 关键key
+          3. 送礼物调用公用方法-----失败的时候，打印结果 //done
+    5. 部署+自测拼图活动！！
+       1. 基本送礼加排行榜，送座驾，厅主，靓号都ok
+       2. 查一下用户的这些资产的情况(运营后台) // 这个是不行的
+    6. 还有fixme的逻辑！差点漏了//done
+    7. 单元测试一下第12周//done，其实是周日历，单元测试过是北京时间周一0点开始第一天//done
+    8. cp活动的礼物id写到配置文件，顺便要测试一下时间是否加上了 //done
+       1. 还缺部分的奖励
+    9. 配置拼图活动+音泡cp活动测试服nginx, 部署proxy的机器 //done. 
+       1. 可以看下别人的配置啦。lua什么的都有
+    10. 看下用户profile看下数据库存储，我的徽章和头像框是否已经加上了 //done
+        1. db 看不了，是varbinay //done
+        2. redis可以看，是U:$uid前缀. //done
+        3. 下午撸一个python脚本，用proto.Unmarshal 一下（golang脚本done了）
+           1. python也done了 //done
+           2. 还差验证座驾 // 也done了
+    11. inke的文件服务，上传后返回一个url。//done 我感觉没啥必要
+        1. 没有校验md5，每次都不同
+    12. 测服wiki文档：拼图活动的. //done
+    13. 编辑拼图的活动开始/结束时间
+
+
+
+# Inke公共库 //done
+
+1. concurrent包里面有一个类似于mr.finish的方法，有错误马上返回。用chan(no buffer)+ctx(withtimeout)+goroutine实现
+2. group包有一个类似于errgroup的方法，怀疑是直接搬过来的。会等待所有协程搞完在返回。感觉是用waitgroup实现
+3. consul/kafka/redis/mysql的轮子。
+4. redis需要开启pipeline的话，需要用daenery的Redis去NewPipeline，send send flush receive receive，close
+5. rolling轮子实现logging的滚动删除
+6. safego的GO(ctx),捕捉打印panic情况，并且上报到metrics。中间利用到tls的玩意
+7. gorm对数据库的的时间Timestamp操作，inke提供了一个xtime的方法，可以把Timestamp统一转成时间戳。使用时就 struct { upadteTime xtime.Time `gorm:"column:update_time"`} 这样就把updateTime转成int64
+8. 写所有的对外的func，都需要用ctx“传参”，注意不是NewClient中的一个变量，是要传参数ctx，ctx需要贯穿anywhere
+
+# 海外项目
+
+1. 四月份才启动
+
+
+
+# 二进制的操作
+
+1. 接口返回设计。
+   1. 0001: 超重 0010:超时 0100:超方 1000:缓行
+   2. 返回给客户端就是 1、2、3、4、5、8 等数字。然后客户端自己做二进制的& ｜ 操作
+2. 活动碎片的组合
+   1. 1011:就是缺第三片
+   2. 1111:就是集齐了
+
+# Redis的操作
+
+1. 排行榜：zset
+2. 并发保底方案：加锁，粒度尽量小，比如到uid
+3. 达到阈值必中奖励的并发不加锁方案，incr n = new，new-n=old old<阈值 & new>阈值，则下发奖励
+
+
+
+# Hash的操作
+
+1. 两个50亿的url文件，查重。4g内存。---- hash%1000 求出对应的桶，然后再遍历每个桶，存进内存的hashMap。然后再分别对比两个文件产生的hashMap
+2. redis/mysql的分库分表-》uid%n
+
+
+
+# MyTodo
+
+1. gin-vue-admin的文件服务 
+   1. 已经撸好
+2. python发送邮件，发邮件的好处是免得scp了
+   1. 简单的nc命令开一个端口，做文件流的传输 // done
+   2. inke 测试环境没有python3 只是用python2-》也不是不行。看下是否改一改？// 不改啦。因为要自己安装很多包。脚本语言就是恶心//done
+
