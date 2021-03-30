@@ -1,22 +1,60 @@
 package main
 
 import (
+	"golang.org/x/sync/errgroup"
+	"sync/atomic"
 	"time"
 )
 
+var (
+	num int32 = 0
+)
+
 func main() {
-	loc := time.FixedZone("Beijing", 5.5*3600)
-	//loc2 := time.FixedZone("Beijing", -1*3600)
-	beijing, _ := time.ParseInLocation("2006-01-02 15:04:05", "2021-04-12 00:00:00", loc)
-	utc, _ := time.ParseInLocation("2006-01-02 15:04:05", "2021-04-12 00:00:00", time.UTC)
-	//other, _ := time.ParseInLocation("2006-01-02 15:04:05", "2021-03-22 00:00:00", loc2)
-	println(utc.Unix(), beijing.Unix())
-	println(beijing.Weekday(), utc.Weekday())
-	y, w := beijing.ISOWeek()
-	println(y, w)
-	y, w = utc.ISOWeek()
-	println(y, w)
-	//y, w = other.ISOWeek()
-	//println(y, w)
-	println(0xA)
+	var eg errgroup.Group
+	eg.Go(func() error {
+		atomic.AddInt32(&num, 1)
+		return nil
+	})
+	eg.Go(func() error {
+		atomic.AddInt32(&num, 1)
+		return nil
+	})
+	eg.Go(func() error {
+		atomic.AddInt32(&num, 1)
+		return nil
+	})
+	eg.Wait()
+	println(num)
+	return
+	println(time.Now().Unix(), "一秒前")
+	timer := time.NewTimer(time.Second)
+	<-timer.C
+	println(time.Now().Unix(), "一秒后")
+	timer.Stop()
+
+	v := make(chan struct{})
+	timer = time.AfterFunc(time.Second, func() {
+		println(time.Now().Unix(), "再一秒后")
+		v <- struct{}{}
+	})
+	<-v
+	timer.Stop()
+
+	ticker := time.NewTicker(time.Second)
+	defer ticker.Stop()
+	done := make(chan struct{})
+	go func() {
+		time.Sleep(time.Second * 10)
+		done <- struct{}{}
+	}()
+Loop:
+	for {
+		select {
+		case <-done:
+			break Loop
+		case <-ticker.C:
+			println(time.Now().Unix(), "ticker")
+		}
+	}
 }
