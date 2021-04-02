@@ -16,6 +16,7 @@ require (
 	github.com/fvbock/endless v0.0.0-20170109170031-447134032cb6
 	github.com/gin-gonic/gin v1.6.3
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
+	github.com/gogf/gf v1.15.5 // indirect
 	github.com/golang/protobuf v1.4.3
 	github.com/golang/snappy v0.0.2 // indirect
 	github.com/google/gops v0.3.7 // indirect
@@ -32,9 +33,8 @@ require (
 	go.uber.org/automaxprocs v1.4.0 // indirect
 	golang.org/x/blog v0.0.0-20210219171517-8bdb56a492da // indirect
 	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
-	golang.org/x/net v0.0.0-20201021035429-f5854403a974 // indirect
 	golang.org/x/sync v0.0.0-20201008141435-b3e1573b7520 // indirect
-	golang.org/x/text v0.3.3
+	golang.org/x/text v0.3.4
 	google.golang.org/grpc v1.33.0
 	google.golang.org/protobuf v1.25.0
 	gorm.io/driver/mysql v1.0.3

@@ -21,7 +21,7 @@ type groupInfo struct {
 }
 
 const (
-	goPath = "/Users/jiebin/go/src/code.inke.cn"
+	goPath = "/Users/jiebin/go/src/code.inke.cn/"
 	//gitlabToken = "L7-VN6FNDkx3u4oe2PsH" // gitlabToken获取 从gitlab setting中的Access Tokens获取
 	gitlabToken = "4DSM3BFxTvdXzZyt7Uaj" // gitlabToken获取 从gitlab setting中的Access Tokens获取
 	gitlabAddr  = "code.inke.cn"
@@ -79,6 +79,7 @@ func getNext(groupId int) {
 				stderr  bytes.Buffer
 			)
 			path := goPath + v.Name
+			fmt.Printf("path:%v\n", path)
 			_, err := os.Stat(path)
 			if err != nil {
 				command = fmt.Sprintf("git clone %s %s", v.Url, path)
