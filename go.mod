@@ -27,6 +27,7 @@ require (
 	github.com/klauspost/compress v1.11.1 // indirect
 	github.com/nicksnyder/go-i18n v1.10.1 // indirect
 	github.com/nicksnyder/go-i18n/v2 v2.1.2
+	github.com/ouqiang/timewheel v1.0.1 // indirect
 	github.com/prometheus/common v0.9.1
 	github.com/tal-tech/go-zero v1.1.6
 	go.mongodb.org/mongo-driver v1.4.2
@@ -37,6 +38,7 @@ require (
 	golang.org/x/text v0.3.4
 	google.golang.org/grpc v1.33.0
 	google.golang.org/protobuf v1.25.0
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	gorm.io/driver/mysql v1.0.3
 	gorm.io/gorm v1.20.5
 )
