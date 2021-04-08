@@ -28,6 +28,7 @@ require (
 	github.com/nicksnyder/go-i18n v1.10.1 // indirect
 	github.com/nicksnyder/go-i18n/v2 v2.1.2
 	github.com/ouqiang/timewheel v1.0.1 // indirect
+	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	github.com/prometheus/common v0.9.1
 	github.com/tal-tech/go-zero v1.1.6
 	go.mongodb.org/mongo-driver v1.4.2
