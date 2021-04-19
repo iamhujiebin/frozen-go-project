@@ -12,6 +12,8 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/dchest/siphash v1.2.1 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/extrame/ole2 v0.0.0-20160812065207-d69429661ad7 // indirect
+	github.com/extrame/xls v0.0.1 // indirect
 	github.com/facebookgo/clock v0.0.0-20150410010913-600d898af40a // indirect
 	github.com/fvbock/endless v0.0.0-20170109170031-447134032cb6
 	github.com/gin-gonic/gin v1.6.3
@@ -28,13 +30,15 @@ require (
 	github.com/nicksnyder/go-i18n v1.10.1 // indirect
 	github.com/nicksnyder/go-i18n/v2 v2.1.2
 	github.com/ouqiang/timewheel v1.0.1 // indirect
-	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	github.com/prometheus/common v0.9.1
 	github.com/tal-tech/go-zero v1.1.6
+	github.com/tealeg/xlsx v1.0.5 // indirect
 	go.mongodb.org/mongo-driver v1.4.2
 	go.uber.org/automaxprocs v1.4.0 // indirect
 	golang.org/x/blog v0.0.0-20210219171517-8bdb56a492da // indirect
 	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
+	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
+	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	golang.org/x/sync v0.0.0-20201008141435-b3e1573b7520 // indirect
 	golang.org/x/text v0.3.4
 	google.golang.org/grpc v1.33.0

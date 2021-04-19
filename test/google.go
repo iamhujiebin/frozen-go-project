@@ -32,17 +32,19 @@ var (
 		Scopes: []string{
 			"https://www.googleapis.com/auth/userinfo.profile",
 			"https://www.googleapis.com/auth/userinfo.email",
-			//"https://www.googleapis.com/auth/user.gender.read",
+			//"https://www.googleapis.com/auth/content",
 		},
 		Endpoint: oauth2.Endpoint{
 			AuthURL:  "https://accounts.google.com/o/oauth2/auth",
 			TokenURL: "https://accounts.google.com/o/oauth2/token",
+			//AuthURL:  "http://accounts.google.inke.srv/o/oauth2/auth",
+			//TokenURL: "http://accounts.google.inke.srv/o/oauth2/token",
 		},
 	}
 )
 
 func ReturnAuth2() {
-	code := "4/0AY0e-g7UE0T3OM7Ti0Gco1vkcaKXSvC1w0CtTmXMEgwEeTEjrPZiOzmZ_UmJDpw6Js7RcQ"
+	code := "4/0AY0e-g53rFXrLk3nUPgpUHiL5FaPrbJ2Vh7YtkE1Rq37kSJpb1zZhtz5mlNv71-x6vK1uA"
 	token, err := _GoogleConfig.Exchange(context.Background(), code)
 	if err != nil {
 		println(err.Error())
@@ -71,6 +73,7 @@ func GetGoogleAccount(token string) *GoogleAccount {
 		return nil
 	}
 	userInfo := &GoogleAccount{}
+	println(string(content))
 	err = json.Unmarshal(content, userInfo)
 	if err != nil {
 		return nil

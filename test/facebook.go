@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/google/uuid"
 	"golang.org/x/oauth2"
 	"io/ioutil"
@@ -27,16 +28,18 @@ var (
 		ClientID:     "826021178006005",
 		ClientSecret: "a9fafcc5dfb62b0481128eae23c3483c",
 		RedirectURL:  "https://testservice.xiangshengclub.com/api/activity/2ndcp_rank",
-		Scopes:       []string{"public_profile", "email"},
+		Scopes:       []string{"public_profile", "email", "user_hometown", "user_location"},
 		Endpoint: oauth2.Endpoint{
-			AuthURL:  "https://www.facebook.com/v4.0/dialog/oauth",
-			TokenURL: "https://graph.facebook.com/v4.0/oauth/access_token",
+			AuthURL:  "https://www.facebook.com/dialog/oauth",
+			TokenURL: "https://graph.facebook.com/oauth/access_token",
+			//AuthURL:  "http://www.facebook.inke.srv/dialog/oauth",
+			//TokenURL: "http://www.facebook.inke.srv/oauth/access_token",
 		},
 	}
 )
 
 func ReturnAuth() {
-	code := "AQAXXUSF66Qj0didoB_u6IHGDDaujM5dnQvx6ktAhZZFF3clg4rIvwscuCqZjOyxnw8vRK04rRQx-5S5nkOeIwC4Y6QULP_pVxzaHhFAgK1Rk7z9PId0YluQdn0PmIAXHgT8Q2s0J6pBDq2YG7SJnyBQbRKbLSJtnk9DgRxiocvSLdfTCjkxwBoxGPOGiU8xKWJDqobMvEWwQIeilPtHwobzXabs8FHC69heBbARcV2w6ZHhLaNRIZbXq_MzTYTXWnZ6yRTyhFUPE7o2eWDsg6Jhxf2DMl3RfL199Tm4nHY3BXLfJwCqfhHK09NT5mheXrGXnrPJMS0WeZFkauKKVxGR"
+	code := "AQARaUawcRpdOeL7ZkWDED83dXCaGnYIOgXwSBjFo6DSBYL2JJMdNuKfwMrFyhDay0GHoe2cLGddHTflQk872a-V7IPKV8DFFqGnxxbMG3IB89suRJrikASMJhZqlB-ddCiA0vhciZK5CGessjMSeYc3tgXvdcIEHUTlVHBNjQOTeFmI3CkVLW8U7nmek49hPyzB8wlFoAyWblMBUqpj5uqVJo9q3oCrQQIjWnUSDowfzTdHDm9PdwpX4J6ikJSIjaAjO1fVQUB35mrfWgP-XJ1YoKEFv34uWY-stmI7G_1tiRtdXMOGnNTlofMpe4ojnzb29dzT5yphVQpUpf6oXMfy"
 	token, err := _FacebookConfig.Exchange(context.Background(), code)
 	if err != nil {
 		println(err.Error())
@@ -47,7 +50,7 @@ func ReturnAuth() {
 	if account == nil {
 		return
 	}
-	println(account)
+	fmt.Printf("%#v\n", account)
 }
 
 // bear token string
@@ -55,7 +58,8 @@ func GetFacebookAccount(token string) *FacebookAccount {
 	if token == "" {
 		return nil
 	}
-	resp, err := http.Get("https://graph.facebook.com/v4.0/me?access_token=" + token)
+	//resp, err := http.Get("https://graph.facebook.com/me?fields=id,name,picture,hometown{location},location{location}&access_token=" + token)
+	resp, err := http.Get("https://graph.facebook.com/v3.0/me?fields=id,name,picture,hometown{location{city,country,country_code}},location{location{city,country,country_code}}&access_token=" + token)
 	if err != nil {
 		return nil
 	}
@@ -72,9 +76,9 @@ func GetFacebookAccount(token string) *FacebookAccount {
 	}
 	userInfo := new(FacebookAccount)
 	err = json.Unmarshal(content, userInfo)
+	println(string(content))
 	if err != nil {
 		return nil
 	}
-	userInfo.Avatar = "https://graph.facebook.com/" + userInfo.ID + "/picture?width=9999"
 	return userInfo
 }

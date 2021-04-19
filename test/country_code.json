@@ -1,0 +1,1088 @@
+{
+  "AD": {
+    "country_code": "AD",
+    "rc": "376",
+    "cn": "安道尔共和国",
+    "en": "Andorra"
+  },
+  "AE": {
+    "country_code": "AE",
+    "rc": "971",
+    "cn": "阿拉伯联合酋长国",
+    "en": "United Arab Emirates"
+  },
+  "AF": {
+    "country_code": "AF",
+    "rc": "93",
+    "cn": "阿富汗",
+    "en": "Afghanistan"
+  },
+  "AG": {
+    "country_code": "AG",
+    "rc": "1268",
+    "cn": "安提瓜和巴布达",
+    "en": "Antigua and Barbuda"
+  },
+  "AI": {
+    "country_code": "AI",
+    "rc": "1264",
+    "cn": "安圭拉岛",
+    "en": "Anguilla"
+  },
+  "AL": {
+    "country_code": "AL",
+    "rc": "355",
+    "cn": "阿尔巴尼亚",
+    "en": "Albania"
+  },
+  "AM": {
+    "country_code": "AM",
+    "rc": "374",
+    "cn": "亚美尼亚",
+    "en": "Armenia"
+  },
+  "AO": {
+    "country_code": "AO",
+    "rc": "244",
+    "cn": "安哥拉",
+    "en": "Angola"
+  },
+  "AR": {
+    "country_code": "AR",
+    "rc": "54",
+    "cn": "阿根廷",
+    "en": "Argentina"
+  },
+  "AT": {
+    "country_code": "AT",
+    "rc": "43",
+    "cn": "奥地利",
+    "en": "Austria"
+  },
+  "AU": {
+    "country_code": "AU",
+    "rc": "61",
+    "cn": "澳大利亚",
+    "en": "Australia"
+  },
+  "AZ": {
+    "country_code": "AZ",
+    "rc": "994",
+    "cn": "阿塞拜疆",
+    "en": "Azerbaijan"
+  },
+  "BB": {
+    "country_code": "BB",
+    "rc": "1246",
+    "cn": "巴巴多斯",
+    "en": "Barbados"
+  },
+  "BD": {
+    "country_code": "BD",
+    "rc": "880",
+    "cn": "孟加拉国",
+    "en": "Bangladesh"
+  },
+  "BE": {
+    "country_code": "BE",
+    "rc": "32",
+    "cn": "比利时",
+    "en": "Belgium"
+  },
+  "BF": {
+    "country_code": "BF",
+    "rc": "226",
+    "cn": "布基纳法索",
+    "en": "Burkina-faso"
+  },
+  "BG": {
+    "country_code": "BG",
+    "rc": "359",
+    "cn": "保加利亚",
+    "en": "Bulgaria"
+  },
+  "BH": {
+    "country_code": "BH",
+    "rc": "973",
+    "cn": "巴林",
+    "en": "Bahrain"
+  },
+  "BI": {
+    "country_code": "BI",
+    "rc": "257",
+    "cn": "布隆迪",
+    "en": "Burundi"
+  },
+  "BJ": {
+    "country_code": "BJ",
+    "rc": "229",
+    "cn": "贝宁",
+    "en": "Benin"
+  },
+  "BM": {
+    "country_code": "BM",
+    "rc": "1441",
+    "cn": "百慕大群岛",
+    "en": "Bermuda Is."
+  },
+  "BN": {
+    "country_code": "BN",
+    "rc": "673",
+    "cn": "文莱",
+    "en": "Brunei"
+  },
+  "BO": {
+    "country_code": "BO",
+    "rc": "591",
+    "cn": "玻利维亚",
+    "en": "Bolivia"
+  },
+  "BR": {
+    "country_code": "BR",
+    "rc": "55",
+    "cn": "巴西",
+    "en": "Brazil"
+  },
+  "BS": {
+    "country_code": "BS",
+    "rc": "1242",
+    "cn": "巴哈马",
+    "en": "Bahamas"
+  },
+  "BW": {
+    "country_code": "BW",
+    "rc": "267",
+    "cn": "博茨瓦纳",
+    "en": "Botswana"
+  },
+  "BY": {
+    "country_code": "BY",
+    "rc": "375",
+    "cn": "白俄罗斯",
+    "en": "Belarus"
+  },
+  "BZ": {
+    "country_code": "BZ",
+    "rc": "501",
+    "cn": "伯利兹",
+    "en": "Belize"
+  },
+  "CA": {
+    "country_code": "CA",
+    "rc": "1",
+    "cn": "加拿大",
+    "en": "Canada"
+  },
+  "CF": {
+    "country_code": "CF",
+    "rc": "236",
+    "cn": "中非共和国",
+    "en": "Central African Republic"
+  },
+  "CG": {
+    "country_code": "CG",
+    "rc": "242",
+    "cn": "刚果",
+    "en": "Congo"
+  },
+  "CH": {
+    "country_code": "CH",
+    "rc": "41",
+    "cn": "瑞士",
+    "en": "Switzerland"
+  },
+  "CK": {
+    "country_code": "CK",
+    "rc": "682",
+    "cn": "库克群岛",
+    "en": "Cook Is."
+  },
+  "CL": {
+    "country_code": "CL",
+    "rc": "56",
+    "cn": "智利",
+    "en": "Chile"
+  },
+  "CM": {
+    "country_code": "CM",
+    "rc": "237",
+    "cn": "喀麦隆",
+    "en": "Cameroon"
+  },
+  "CN": {
+    "country_code": "CN",
+    "rc": "86",
+    "cn": "中国",
+    "en": "China"
+  },
+  "CO": {
+    "country_code": "CO",
+    "rc": "57",
+    "cn": "哥伦比亚",
+    "en": "Colombia"
+  },
+  "CR": {
+    "country_code": "CR",
+    "rc": "506",
+    "cn": "哥斯达黎加",
+    "en": "Costa Rica"
+  },
+  "CU": {
+    "country_code": "CU",
+    "rc": "53",
+    "cn": "古巴",
+    "en": "Cuba"
+  },
+  "CY": {
+    "country_code": "CY",
+    "rc": "357",
+    "cn": "塞浦路斯",
+    "en": "Cyprus"
+  },
+  "CZ": {
+    "country_code": "CZ",
+    "rc": "420",
+    "cn": "捷克",
+    "en": "Czech Republic"
+  },
+  "DE": {
+    "country_code": "DE",
+    "rc": "49",
+    "cn": "德国",
+    "en": "Germany"
+  },
+  "DJ": {
+    "country_code": "DJ",
+    "rc": "253",
+    "cn": "吉布提",
+    "en": "Djibouti"
+  },
+  "DK": {
+    "country_code": "DK",
+    "rc": "45",
+    "cn": "丹麦",
+    "en": "Denmark"
+  },
+  "DO": {
+    "country_code": "DO",
+    "rc": "1890",
+    "cn": "多米尼加共和国",
+    "en": "Dominica Rep."
+  },
+  "DZ": {
+    "country_code": "DZ",
+    "rc": "213",
+    "cn": "阿尔及利亚",
+    "en": "Algeria"
+  },
+  "EC": {
+    "country_code": "EC",
+    "rc": "593",
+    "cn": "厄瓜多尔",
+    "en": "Ecuador"
+  },
+  "EE": {
+    "country_code": "EE",
+    "rc": "372",
+    "cn": "爱沙尼亚",
+    "en": "Estonia"
+  },
+  "EG": {
+    "country_code": "EG",
+    "rc": "20",
+    "cn": "埃及",
+    "en": "Egypt"
+  },
+  "ES": {
+    "country_code": "ES",
+    "rc": "34",
+    "cn": "西班牙",
+    "en": "Spain"
+  },
+  "ET": {
+    "country_code": "ET",
+    "rc": "251",
+    "cn": "埃塞俄比亚",
+    "en": "Ethiopia"
+  },
+  "FI": {
+    "country_code": "FI",
+    "rc": "358",
+    "cn": "芬兰",
+    "en": "Finland"
+  },
+  "FJ": {
+    "country_code": "FJ",
+    "rc": "679",
+    "cn": "斐济",
+    "en": "Fiji"
+  },
+  "FR": {
+    "country_code": "FR",
+    "rc": "33",
+    "cn": "法国",
+    "en": "France"
+  },
+  "GA": {
+    "country_code": "GA",
+    "rc": "241",
+    "cn": "加蓬",
+    "en": "Gabon"
+  },
+  "GB": {
+    "country_code": "GB",
+    "rc": "44",
+    "cn": "英国",
+    "en": "United Kiongdom"
+  },
+  "GD": {
+    "country_code": "GD",
+    "rc": "1809",
+    "cn": "格林纳达",
+    "en": "Grenada"
+  },
+  "GE": {
+    "country_code": "GE",
+    "rc": "995",
+    "cn": "格鲁吉亚",
+    "en": "Georgia"
+  },
+  "GF": {
+    "country_code": "GF",
+    "rc": "594",
+    "cn": "法属圭亚那",
+    "en": "French Guiana"
+  },
+  "GH": {
+    "country_code": "GH",
+    "rc": "233",
+    "cn": "加纳",
+    "en": "Ghana"
+  },
+  "GI": {
+    "country_code": "GI",
+    "rc": "350",
+    "cn": "直布罗陀",
+    "en": "Gibraltar"
+  },
+  "GM": {
+    "country_code": "GM",
+    "rc": "220",
+    "cn": "冈比亚",
+    "en": "Gambia"
+  },
+  "GN": {
+    "country_code": "GN",
+    "rc": "224",
+    "cn": "几内亚",
+    "en": "Guinea"
+  },
+  "GR": {
+    "country_code": "GR",
+    "rc": "30",
+    "cn": "希腊",
+    "en": "Greece"
+  },
+  "GT": {
+    "country_code": "GT",
+    "rc": "502",
+    "cn": "危地马拉",
+    "en": "Guatemala"
+  },
+  "GU": {
+    "country_code": "GU",
+    "rc": "1671",
+    "cn": "关岛",
+    "en": "Guam"
+  },
+  "GY": {
+    "country_code": "GY",
+    "rc": "592",
+    "cn": "圭亚那",
+    "en": "Guyana"
+  },
+  "HK": {
+    "country_code": "HK",
+    "rc": "852",
+    "cn": "香港",
+    "en": "Hongkong"
+  },
+  "HN": {
+    "country_code": "HN",
+    "rc": "504",
+    "cn": "洪都拉斯",
+    "en": "Honduras"
+  },
+  "HT": {
+    "country_code": "HT",
+    "rc": "509",
+    "cn": "海地",
+    "en": "Haiti"
+  },
+  "HU": {
+    "country_code": "HU",
+    "rc": "36",
+    "cn": "匈牙利",
+    "en": "Hungary"
+  },
+  "ID": {
+    "country_code": "ID",
+    "rc": "62",
+    "cn": "印度尼西亚",
+    "en": "Indonesia"
+  },
+  "IE": {
+    "country_code": "IE",
+    "rc": "353",
+    "cn": "爱尔兰",
+    "en": "Ireland"
+  },
+  "IL": {
+    "country_code": "IL",
+    "rc": "972",
+    "cn": "以色列",
+    "en": "Israel"
+  },
+  "IN": {
+    "country_code": "IN",
+    "rc": "91",
+    "cn": "印度",
+    "en": "India"
+  },
+  "IQ": {
+    "country_code": "IQ",
+    "rc": "964",
+    "cn": "伊拉克",
+    "en": "Iraq"
+  },
+  "IR": {
+    "country_code": "IR",
+    "rc": "98",
+    "cn": "伊朗",
+    "en": "Iran"
+  },
+  "IS": {
+    "country_code": "IS",
+    "rc": "354",
+    "cn": "冰岛",
+    "en": "Iceland"
+  },
+  "IT": {
+    "country_code": "IT",
+    "rc": "39",
+    "cn": "意大利",
+    "en": "Italy"
+  },
+  "JM": {
+    "country_code": "JM",
+    "rc": "1876",
+    "cn": "牙买加",
+    "en": "Jamaica"
+  },
+  "JO": {
+    "country_code": "JO",
+    "rc": "962",
+    "cn": "约旦",
+    "en": "Jordan"
+  },
+  "JP": {
+    "country_code": "JP",
+    "rc": "81",
+    "cn": "日本",
+    "en": "Japan"
+  },
+  "KE": {
+    "country_code": "KE",
+    "rc": "254",
+    "cn": "肯尼亚",
+    "en": "Kenya"
+  },
+  "KG": {
+    "country_code": "KG",
+    "rc": "331",
+    "cn": "吉尔吉斯坦",
+    "en": "Kyrgyzstan"
+  },
+  "KH": {
+    "country_code": "KH",
+    "rc": "855",
+    "cn": "柬埔寨",
+    "en": "Kampuchea (Cambodia )"
+  },
+  "KP": {
+    "country_code": "KP",
+    "rc": "850",
+    "cn": "朝鲜",
+    "en": "North Korea"
+  },
+  "KR": {
+    "country_code": "KR",
+    "rc": "82",
+    "cn": "韩国",
+    "en": "Korea"
+  },
+  "KW": {
+    "country_code": "KW",
+    "rc": "965",
+    "cn": "科威特",
+    "en": "Kuwait"
+  },
+  "KZ": {
+    "country_code": "KZ",
+    "rc": "327",
+    "cn": "哈萨克斯坦",
+    "en": "Kazakstan"
+  },
+  "LA": {
+    "country_code": "LA",
+    "rc": "856",
+    "cn": "老挝",
+    "en": "Laos"
+  },
+  "LB": {
+    "country_code": "LB",
+    "rc": "961",
+    "cn": "黎巴嫩",
+    "en": "Lebanon"
+  },
+  "LC": {
+    "country_code": "LC",
+    "rc": "1758",
+    "cn": "圣卢西亚",
+    "en": "St.Lucia"
+  },
+  "LI": {
+    "country_code": "LI",
+    "rc": "423",
+    "cn": "列支敦士登",
+    "en": "Liechtenstein"
+  },
+  "LK": {
+    "country_code": "LK",
+    "rc": "94",
+    "cn": "斯里兰卡",
+    "en": "Sri Lanka"
+  },
+  "LR": {
+    "country_code": "LR",
+    "rc": "231",
+    "cn": "利比里亚",
+    "en": "Liberia"
+  },
+  "LS": {
+    "country_code": "LS",
+    "rc": "266",
+    "cn": "莱索托",
+    "en": "Lesotho"
+  },
+  "LT": {
+    "country_code": "LT",
+    "rc": "370",
+    "cn": "立陶宛",
+    "en": "Lithuania"
+  },
+  "LU": {
+    "country_code": "LU",
+    "rc": "352",
+    "cn": "卢森堡",
+    "en": "Luxembourg"
+  },
+  "LV": {
+    "country_code": "LV",
+    "rc": "371",
+    "cn": "拉脱维亚",
+    "en": "Latvia"
+  },
+  "LY": {
+    "country_code": "LY",
+    "rc": "218",
+    "cn": "利比亚",
+    "en": "Libya"
+  },
+  "MA": {
+    "country_code": "MA",
+    "rc": "212",
+    "cn": "摩洛哥",
+    "en": "Morocco"
+  },
+  "MC": {
+    "country_code": "MC",
+    "rc": "377",
+    "cn": "摩纳哥",
+    "en": "Monaco"
+  },
+  "MD": {
+    "country_code": "MD",
+    "rc": "373",
+    "cn": "摩尔多瓦",
+    "en": "Moldova, Republic of"
+  },
+  "MG": {
+    "country_code": "MG",
+    "rc": "261",
+    "cn": "马达加斯加",
+    "en": "Madagascar"
+  },
+  "ML": {
+    "country_code": "ML",
+    "rc": "223",
+    "cn": "马里",
+    "en": "Mali"
+  },
+  "MM": {
+    "country_code": "MM",
+    "rc": "95",
+    "cn": "缅甸",
+    "en": "Burma"
+  },
+  "MN": {
+    "country_code": "MN",
+    "rc": "976",
+    "cn": "蒙古",
+    "en": "Mongolia"
+  },
+  "MO": {
+    "country_code": "MO",
+    "rc": "853",
+    "cn": "澳门",
+    "en": "Macao"
+  },
+  "MS": {
+    "country_code": "MS",
+    "rc": "1664",
+    "cn": "蒙特塞拉特岛",
+    "en": "Montserrat Is"
+  },
+  "MT": {
+    "country_code": "MT",
+    "rc": "356",
+    "cn": "马耳他",
+    "en": "Malta"
+  },
+  "MU": {
+    "country_code": "MU",
+    "rc": "230",
+    "cn": "毛里求斯",
+    "en": "Mauritius"
+  },
+  "MV": {
+    "country_code": "MV",
+    "rc": "960",
+    "cn": "马尔代夫",
+    "en": "Maldives"
+  },
+  "MW": {
+    "country_code": "MW",
+    "rc": "265",
+    "cn": "马拉维",
+    "en": "Malawi"
+  },
+  "MX": {
+    "country_code": "MX",
+    "rc": "52",
+    "cn": "墨西哥",
+    "en": "Mexico"
+  },
+  "MY": {
+    "country_code": "MY",
+    "rc": "60",
+    "cn": "马来西亚",
+    "en": "Malaysia"
+  },
+  "MZ": {
+    "country_code": "MZ",
+    "rc": "258",
+    "cn": "莫桑比克",
+    "en": "Mozambique"
+  },
+  "NA": {
+    "country_code": "NA",
+    "rc": "264",
+    "cn": "纳米比亚",
+    "en": "Namibia"
+  },
+  "NE": {
+    "country_code": "NE",
+    "rc": "227",
+    "cn": "尼日尔",
+    "en": "Niger"
+  },
+  "NG": {
+    "country_code": "NG",
+    "rc": "234",
+    "cn": "尼日利亚",
+    "en": "Nigeria"
+  },
+  "NI": {
+    "country_code": "NI",
+    "rc": "505",
+    "cn": "尼加拉瓜",
+    "en": "Nicaragua"
+  },
+  "NL": {
+    "country_code": "NL",
+    "rc": "31",
+    "cn": "荷兰",
+    "en": "Netherlands"
+  },
+  "NO": {
+    "country_code": "NO",
+    "rc": "47",
+    "cn": "挪威",
+    "en": "Norway"
+  },
+  "NP": {
+    "country_code": "NP",
+    "rc": "977",
+    "cn": "尼泊尔",
+    "en": "Nepal"
+  },
+  "NR": {
+    "country_code": "NR",
+    "rc": "674",
+    "cn": "瑙鲁",
+    "en": "Nauru"
+  },
+  "NZ": {
+    "country_code": "NZ",
+    "rc": "64",
+    "cn": "新西兰",
+    "en": "New Zealand"
+  },
+  "OM": {
+    "country_code": "OM",
+    "rc": "968",
+    "cn": "阿曼",
+    "en": "Oman"
+  },
+  "PA": {
+    "country_code": "PA",
+    "rc": "507",
+    "cn": "巴拿马",
+    "en": "Panama"
+  },
+  "PE": {
+    "country_code": "PE",
+    "rc": "51",
+    "cn": "秘鲁",
+    "en": "Peru"
+  },
+  "PF": {
+    "country_code": "PF",
+    "rc": "689",
+    "cn": "法属玻利尼西亚",
+    "en": "French Polynesia"
+  },
+  "PG": {
+    "country_code": "PG",
+    "rc": "675",
+    "cn": "巴布亚新几内亚",
+    "en": "Papua New Cuinea"
+  },
+  "PH": {
+    "country_code": "PH",
+    "rc": "63",
+    "cn": "菲律宾",
+    "en": "Philippines"
+  },
+  "PK": {
+    "country_code": "PK",
+    "rc": "92",
+    "cn": "巴基斯坦",
+    "en": "Pakistan"
+  },
+  "PL": {
+    "country_code": "PL",
+    "rc": "48",
+    "cn": "波兰",
+    "en": "Poland"
+  },
+  "PR": {
+    "country_code": "PR",
+    "rc": "1787",
+    "cn": "波多黎各",
+    "en": "Puerto Rico"
+  },
+  "PT": {
+    "country_code": "PT",
+    "rc": "351",
+    "cn": "葡萄牙",
+    "en": "Portugal"
+  },
+  "PY": {
+    "country_code": "PY",
+    "rc": "595",
+    "cn": "巴拉圭",
+    "en": "Paraguay"
+  },
+  "QA": {
+    "country_code": "QA",
+    "rc": "974",
+    "cn": "卡塔尔",
+    "en": "Qatar"
+  },
+  "RO": {
+    "country_code": "RO",
+    "rc": "40",
+    "cn": "罗马尼亚",
+    "en": "Romania"
+  },
+  "RU": {
+    "country_code": "RU",
+    "rc": "7",
+    "cn": "俄罗斯",
+    "en": "Russia"
+  },
+  "SA": {
+    "country_code": "SA",
+    "rc": "966",
+    "cn": "沙特阿拉伯",
+    "en": "Saudi Arabia"
+  },
+  "SB": {
+    "country_code": "SB",
+    "rc": "677",
+    "cn": "所罗门群岛",
+    "en": "Solomon Is"
+  },
+  "SC": {
+    "country_code": "SC",
+    "rc": "248",
+    "cn": "塞舌尔",
+    "en": "Seychelles"
+  },
+  "SD": {
+    "country_code": "SD",
+    "rc": "249",
+    "cn": "苏丹",
+    "en": "Sudan"
+  },
+  "SE": {
+    "country_code": "SE",
+    "rc": "46",
+    "cn": "瑞典",
+    "en": "Sweden"
+  },
+  "SG": {
+    "country_code": "SG",
+    "rc": "65",
+    "cn": "新加坡",
+    "en": "Singapore"
+  },
+  "SI": {
+    "country_code": "SI",
+    "rc": "386",
+    "cn": "斯洛文尼亚",
+    "en": "Slovenia"
+  },
+  "SK": {
+    "country_code": "SK",
+    "rc": "421",
+    "cn": "斯洛伐克",
+    "en": "Slovakia"
+  },
+  "SL": {
+    "country_code": "SL",
+    "rc": "232",
+    "cn": "塞拉利昂",
+    "en": "Sierra Leone"
+  },
+  "SM": {
+    "country_code": "SM",
+    "rc": "378",
+    "cn": "圣马力诺",
+    "en": "San Marino"
+  },
+  "SN": {
+    "country_code": "SN",
+    "rc": "221",
+    "cn": "塞内加尔",
+    "en": "Senegal"
+  },
+  "SO": {
+    "country_code": "SO",
+    "rc": "252",
+    "cn": "索马里",
+    "en": "Somali"
+  },
+  "SR": {
+    "country_code": "SR",
+    "rc": "597",
+    "cn": "苏里南",
+    "en": "Suriname"
+  },
+  "ST": {
+    "country_code": "ST",
+    "rc": "239",
+    "cn": "圣多美和普林西比",
+    "en": "Sao Tome and Principe"
+  },
+  "SV": {
+    "country_code": "SV",
+    "rc": "503",
+    "cn": "萨尔瓦多",
+    "en": "EI Salvador"
+  },
+  "SY": {
+    "country_code": "SY",
+    "rc": "963",
+    "cn": "叙利亚",
+    "en": "Syria"
+  },
+  "SZ": {
+    "country_code": "SZ",
+    "rc": "268",
+    "cn": "斯威士兰",
+    "en": "Swaziland"
+  },
+  "TD": {
+    "country_code": "TD",
+    "rc": "235",
+    "cn": "乍得",
+    "en": "Chad"
+  },
+  "TG": {
+    "country_code": "TG",
+    "rc": "228",
+    "cn": "多哥",
+    "en": "Togo"
+  },
+  "TH": {
+    "country_code": "TH",
+    "rc": "66",
+    "cn": "泰国",
+    "en": "Thailand"
+  },
+  "TJ": {
+    "country_code": "TJ",
+    "rc": "992",
+    "cn": "塔吉克斯坦",
+    "en": "Tajikstan"
+  },
+  "TM": {
+    "country_code": "TM",
+    "rc": "993",
+    "cn": "土库曼斯坦",
+    "en": "Turkmenistan"
+  },
+  "TN": {
+    "country_code": "TN",
+    "rc": "216",
+    "cn": "突尼斯",
+    "en": "Tunisia"
+  },
+  "TO": {
+    "country_code": "TO",
+    "rc": "676",
+    "cn": "汤加",
+    "en": "Tonga"
+  },
+  "TR": {
+    "country_code": "TR",
+    "rc": "90",
+    "cn": "土耳其",
+    "en": "Turkey"
+  },
+  "TT": {
+    "country_code": "TT",
+    "rc": "1809",
+    "cn": "特立尼达和多巴哥",
+    "en": "Trinidad and Tobago"
+  },
+  "TW": {
+    "country_code": "TW",
+    "rc": "886",
+    "cn": "台湾省",
+    "en": "Taiwan"
+  },
+  "TZ": {
+    "country_code": "TZ",
+    "rc": "255",
+    "cn": "坦桑尼亚",
+    "en": "Tanzania"
+  },
+  "UA": {
+    "country_code": "UA",
+    "rc": "380",
+    "cn": "乌克兰",
+    "en": "Ukraine"
+  },
+  "UG": {
+    "country_code": "UG",
+    "rc": "256",
+    "cn": "乌干达",
+    "en": "Uganda"
+  },
+  "US": {
+    "country_code": "US",
+    "rc": "1",
+    "cn": "美国",
+    "en": "United States of America"
+  },
+  "UY": {
+    "country_code": "UY",
+    "rc": "598",
+    "cn": "乌拉圭",
+    "en": "Uruguay"
+  },
+  "UZ": {
+    "country_code": "UZ",
+    "rc": "233",
+    "cn": "乌兹别克斯坦",
+    "en": "Uzbekistan"
+  },
+  "VC": {
+    "country_code": "VC",
+    "rc": "1784",
+    "cn": "圣文森特",
+    "en": "St.Vincent"
+  },
+  "VE": {
+    "country_code": "VE",
+    "rc": "58",
+    "cn": "委内瑞拉",
+    "en": "Venezuela"
+  },
+  "VN": {
+    "country_code": "VN",
+    "rc": "84",
+    "cn": "越南",
+    "en": "Vietnam"
+  },
+  "YE": {
+    "country_code": "YE",
+    "rc": "967",
+    "cn": "也门",
+    "en": "Yemen"
+  },
+  "YU": {
+    "country_code": "YU",
+    "rc": "381",
+    "cn": "南斯拉夫",
+    "en": "Yugoslavia"
+  },
+  "ZA": {
+    "country_code": "ZA",
+    "rc": "27",
+    "cn": "南非",
+    "en": "South Africa"
+  },
+  "ZM": {
+    "country_code": "ZM",
+    "rc": "260",
+    "cn": "赞比亚",
+    "en": "Zambia"
+  },
+  "ZR": {
+    "country_code": "ZR",
+    "rc": "243",
+    "cn": "扎伊尔",
+    "en": "Zaire"
+  },
+  "ZW": {
+    "country_code": "ZW",
+    "rc": "263",
+    "cn": "津巴布韦",
+    "en": "Zimbabwe"
+  }
+}
