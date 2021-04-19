@@ -3,7 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"frozen-go-project/cmd/tls"
+	"frozen-go-project/utils/spawn"
+	"frozen-go-project/utils/tls"
 	"time"
 )
 
@@ -24,4 +25,14 @@ func main() {
 		fmt.Printf(" tls for ctx:%+v,ok:%v\n", ctx, ok)
 	})()
 	time.Sleep(time.Second)
+
+	goSpawn := spawn.NewGoSpawn(10)
+	for i := 0; i < 10; i++ {
+		goSpawn.Go(tls.For(context.Background(), func() {
+			k, v := tls.Get("jiebin")
+			println(k, v)
+		}))
+	}
+	time.Sleep(time.Second)
+	println("end")
 }
