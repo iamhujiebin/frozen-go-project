@@ -33,6 +33,7 @@ func TestHostnameHashCode(t *testing.T) {
 }
 func TestNginxTid(t *testing.T) {
 	s := "68c757d501aaea64faf6058dc"
+	s = "3e5f9aed453031a5b5893995"
 	low, high := SplitId(s)
 	t.Log(low, high)
 	t.Log(UnixFromStr(low))
@@ -40,7 +41,7 @@ func TestNginxTid(t *testing.T) {
 	t.Log(RandomFromStr(low))
 	h := "localhost"
 	code := Fnv32a([]byte(h)) % (1 << 16)
-	t.Log(code)
+	t.Log("code:", code)
 	ss := "sv:op"
 	t.Log(Fnv32a([]byte(ss)))
 	// assert.Equal(t, high, fmt.Sprintf("%x", Fnv32a([]byte(ss))), "serviceName:op")
