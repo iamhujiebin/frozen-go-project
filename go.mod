@@ -3,12 +3,15 @@ module frozen-go-project
 go 1.14
 
 require (
+	cloud.google.com/go/firestore v1.5.0 // indirect
+	firebase.google.com/go v3.13.0+incompatible // indirect
 	github.com/BurntSushi/toml v0.3.1
 	github.com/Shopify/sarama v1.27.2
 	github.com/alicebob/miniredis v2.5.0+incompatible // indirect
 	github.com/antlr/antlr4 v0.0.0-20210216171041-fde0b28dfbd6 // indirect
 	github.com/aws/aws-sdk-go v1.35.10 // indirect
 	github.com/bitly/go-simplejson v0.5.0
+	github.com/bluele/gcache v0.0.2 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/dchest/siphash v1.2.1 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -38,11 +41,10 @@ require (
 	go.uber.org/automaxprocs v1.4.0 // indirect
 	golang.org/x/blog v0.0.0-20210219171517-8bdb56a492da // indirect
 	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
-	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
-	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
-	golang.org/x/sync v0.0.0-20201008141435-b3e1573b7520 // indirect
+	golang.org/x/net v0.0.0-20201224014010-6772e930b67b
+	golang.org/x/oauth2 v0.0.0-20210218202405-ba52d332ba99
 	golang.org/x/text v0.3.4
-	google.golang.org/grpc v1.33.0
+	google.golang.org/grpc v1.35.0
 	google.golang.org/protobuf v1.25.0
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	gorm.io/driver/mysql v1.0.3

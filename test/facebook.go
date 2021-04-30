@@ -4,23 +4,29 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/google/uuid"
 	"golang.org/x/oauth2"
 	"io/ioutil"
 	"net/http"
 )
 
 func main() {
-	println(_FacebookConfig.AuthCodeURL(uuid.New().String()))
-	ReturnAuth()
+	//println(_FacebookConfig.AuthCodeURL(uuid.New().String()))
+	//ReturnAuth()
+	account := GetFacebookAccount("e")
+	println(account)
 }
 
 type FacebookAccount struct {
-	ID     string `json:"id"`
-	Name   string `json:"name"`
-	Avatar string `json:"picture"`
-	Email  string `json:"email"`
-	Sex    string `json:"sex"`
+	ID      string `json:"id"`
+	Name    string `json:"name"`
+	Picture struct {
+		Data struct {
+			Height       int    `json:"height"`
+			Width        int    `json:"width"`
+			Url          string `json:"url"`
+			IsSilhouette bool   `json:"is_silhouette"`
+		} `json:"data"`
+	} `json:"picture"`
 }
 
 var (
@@ -39,7 +45,7 @@ var (
 )
 
 func ReturnAuth() {
-	code := "AQARaUawcRpdOeL7ZkWDED83dXCaGnYIOgXwSBjFo6DSBYL2JJMdNuKfwMrFyhDay0GHoe2cLGddHTflQk872a-V7IPKV8DFFqGnxxbMG3IB89suRJrikASMJhZqlB-ddCiA0vhciZK5CGessjMSeYc3tgXvdcIEHUTlVHBNjQOTeFmI3CkVLW8U7nmek49hPyzB8wlFoAyWblMBUqpj5uqVJo9q3oCrQQIjWnUSDowfzTdHDm9PdwpX4J6ikJSIjaAjO1fVQUB35mrfWgP-XJ1YoKEFv34uWY-stmI7G_1tiRtdXMOGnNTlofMpe4ojnzb29dzT5yphVQpUpf6oXMfy"
+	code := "AQBz0LeIm0VdTAvzIz28ZBJBGFgvWG1e24bfZ7A7c6Jqt2Flrjrq_7eZu0PgnmQHEgUnA9nu43jXgc917RPcJp2lG3p5642rd7KQ7fGCo1iH1lMkhqAKasxWsLvAle0TAm_PbpqtmlVn1y5O18uDUFmTnrmwVOeVniL3yOHRAVndsZ3SQbxCOwp9DgYmqfQVNcKUgpgtVGOaLS9uq6F4Zg1HmbyvUtlMTWzf2KpL7W1UwIT9P5jI4EO_2I6DGOSn7vNGqn43AZ3mZJrYus8AFoKIX20oVRcXeK10R0EFu75h8KsZTagxYIlkYglTmKk1vOZthQIK0BvIClUMVtE7-wR1"
 	token, err := _FacebookConfig.Exchange(context.Background(), code)
 	if err != nil {
 		println(err.Error())
@@ -58,8 +64,10 @@ func GetFacebookAccount(token string) *FacebookAccount {
 	if token == "" {
 		return nil
 	}
-	//resp, err := http.Get("https://graph.facebook.com/me?fields=id,name,picture,hometown{location},location{location}&access_token=" + token)
-	resp, err := http.Get("https://graph.facebook.com/v3.0/me?fields=id,name,picture,hometown{location{city,country,country_code}},location{location{city,country,country_code}}&access_token=" + token)
+	token = "EAAEOCGhGaL0BALs4AkZBJ2pZBTMPwtMf0tv0ljgkZBbqSRq90GC3fA5hxCT1bndwPvQ5fGPh3XmlMZAQCNjJcgCZAGWerO80YzFZAkSPxySvTMtxQ0OlgHL2iYXOV5eWziFTyB8I1he8FDXtyUwvZCBbMtZAp5vSL2EVjSgbUS14YZABdkI881wDbKvNhZCNa4vSyNNotzrLc3WW9NeBzWUfufBLNUtZAAUSZBgZD"
+	println(token)
+	resp, err := http.Get("https://graph.facebook.com/me?fields=id,name,picture&access_token=" + token)
+	//resp, err := http.Get("https://graph.facebook.com/me?fields=id,name,picture,hometown{location{city,country,country_code}},location{location{city,country,country_code}}&access_token=" + token)
 	if err != nil {
 		return nil
 	}
@@ -75,10 +83,29 @@ func GetFacebookAccount(token string) *FacebookAccount {
 		return nil
 	}
 	userInfo := new(FacebookAccount)
-	err = json.Unmarshal(content, userInfo)
+	err = json.Unmarshal(content, &userInfo)
 	println(string(content))
 	if err != nil {
 		return nil
 	}
 	return userInfo
+}
+
+func UploadFile(fburl string) (uploadPath string, err error) {
+	resp, err := http.Get("http://graph.facebook.com/1865661313609928/picture")
+	url := fmt.Sprintf("https://upload.meetstarlive.com/upload/media?sufix=png")
+	res, err := http.Post(url, "binary/octet-stream", resp.Body)
+	if err != nil {
+	}
+
+	defer res.Body.Close()
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+	}
+
+	err = json.Unmarshal(body, &resp)
+	if err != nil {
+		return
+	}
+	return
 }

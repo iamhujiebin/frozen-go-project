@@ -2,21 +2,20 @@ package main
 
 import (
 	"fmt"
-	"hash/fnv"
-	"time"
+	"net/url"
 )
 
 func main() {
-	u := time.Now().UnixNano()
-	fmt.Printf("%d,%x\n", u, u)
-	println(HashCode([]byte("jiebin")))
-}
-
-func HashCode(s []byte) uint32 {
-	h := fnv.New32a()
-	n, err := h.Write(s)
-	if err != nil || n == 0 {
-		return 0
+	picture, err := url.Parse("https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1865661313609928&height=50&width=50&ext=1622197680&hash=AeQhi_2TDasa2BrLSrw")
+	if err == nil {
+		query := picture.Query()
+		query.Set("width", "500")
+		query.Set("height", "500")
+		picture.RawQuery = query.Encode()
 	}
-	return h.Sum32()
+	println(picture.String())
+	fmt.Printf("mac input test")
+	// this is english
+	// this is english
+	// english for input
 }

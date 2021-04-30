@@ -13,6 +13,8 @@ import (
 func main() {
 	println(_GoogleConfig.AuthCodeURL(uuid.New().String()))
 	ReturnAuth2()
+	//account := GetGoogleAccount("ya29.a0AfH6SMDJYzoJ2z70dw-QDhQyyKGeoQfnpBkRaufEMGj25Cd7x58ZUJPqJBX8vVLX63zgYanBUb-0p6cBuC3h1npTgdu82WggyVIm7var7TwYUaLWTiuEy2YhKy1c0cUUkVNXtldb9lPWTFEnmKx_j4YB6TvhDQ")
+	//println(account)
 }
 
 type GoogleAccount struct {
@@ -25,8 +27,8 @@ type GoogleAccount struct {
 
 var (
 	_GoogleConfig = &oauth2.Config{
-		ClientID:     "414501839443-n0vb3qb11t9f0moacc1i3hfus34rakck.apps.googleusercontent.com",
-		ClientSecret: "JlS9oYJS2fspTWgAabPzE_t_",
+		ClientID:     "847931558677-h462724ru3f4ov47aennvrod20tb22rt.apps.googleusercontent.com",
+		ClientSecret: "bwykyNqeTrefGoE1nvthmw6K",
 		RedirectURL:  "https://testservice.xiangshengclub.com/api/activity/2ndcp_rank",
 		//RedirectURL: "https://www.baidu.com",
 		Scopes: []string{
@@ -44,7 +46,7 @@ var (
 )
 
 func ReturnAuth2() {
-	code := "4/0AY0e-g53rFXrLk3nUPgpUHiL5FaPrbJ2Vh7YtkE1Rq37kSJpb1zZhtz5mlNv71-x6vK1uA"
+	code := "4/0AY0e-g5B7HX2xoPu9m6InLzF5rBhkeqG32aKngJxgRIMszjv_d06jfqohRshyY-DHZYNew"
 	token, err := _GoogleConfig.Exchange(context.Background(), code)
 	if err != nil {
 		println(err.Error())
@@ -57,6 +59,7 @@ func ReturnAuth2() {
 // bear token string
 //如果token为空，则使用code获取token
 func GetGoogleAccount(token string) *GoogleAccount {
+	println(token)
 	resp, err := http.Get("https://www.googleapis.com/oauth2/v2/userinfo?access_token=" + token)
 	if err != nil {
 		return nil
@@ -64,16 +67,13 @@ func GetGoogleAccount(token string) *GoogleAccount {
 	if resp == nil {
 		return nil
 	}
+	content, err := ioutil.ReadAll(resp.Body)
+	println(string(content))
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
 		return nil
 	}
-	content, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return nil
-	}
 	userInfo := &GoogleAccount{}
-	println(string(content))
 	err = json.Unmarshal(content, userInfo)
 	if err != nil {
 		return nil
