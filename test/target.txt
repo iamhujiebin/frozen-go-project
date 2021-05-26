@@ -1,0 +1,490 @@
+[country.Afghanistan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NTIzNiM5NzMjcG5n.png"
+[country.Aland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NTM2MiMxNjkjcG5n.png"
+[country.Albania]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NTQ4MyMzNzcjcG5n.png"
+[country.Algeria]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NTYxNSMgMzAjcG5n.png"
+[country.Americansamoa]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NTc0MiMxNDEjcG5n.png"
+[country.Andorra]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NTg2MiMyMTQjcG5n.png"
+[country.Angola]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NTk2OSM4MjYjcG5n.png"
+[country.Anguilla]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NjA2OSMyNjUjcG5n.png"
+[country.Antarctica]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NjE3OCM2NDcjcG5n.png"
+[country.Antiguaandbarbuda]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NjI4MSM2MDQjcG5n.png"
+[country.Argentina]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NjM4MyMgIDUjcG5n.png"
+[country.Armenia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NjQ3OSMzMjcjcG5n.png"
+[country.Aruba]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NjU3MyMzNzkjcG5n.png"
+[country.Australia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NjY2NCMxOTcjcG5n.png"
+[country.Austria]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0Njc1OSMyMTkjcG5n.png"
+[country.Azerbaijan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0Njg0OCM5MzEjcG5n.png"
+[country.Bahamas]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0Njk0NCMxMjkjcG5n.png"
+[country.Bahrain]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzAzNCM4MTAjcG5n.png"
+[country.Bangladesh]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzEzMCMyODYjcG5n.png"
+[country.Barbados]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzIyMSMzMDgjcG5n.png"
+[country.Belarus]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzMxNiMzMzUjcG5n.png"
+[country.Belgium]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzQyMiM4MTEjcG5n.png"
+[country.Belize]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzUxNSMzMDMjcG5n.png"
+[country.Benin]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzYxNyM0MzUjcG5n.png"
+[country.Bermuda]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzcwNiMyMTYjcG5n.png"
+[country.Bhutan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzgwNCM4ODcjcG5n.png"
+[country.Bolivia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0NzkwNyM2ODgjcG5n.png"
+[country.Bosnia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0Nzk5OSM1NTgjcG5n.png"
+[country.Botswana]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODA5NSMgMjgjcG5n.png"
+[country.Brazil]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODE5MiM2MjUjcG5n.png"
+[country.Britishindianoceanterritory]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODI5MCM5NDcjcG5n.png"
+[country.Britishvirginislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODQwMCM3NjMjcG5n.png"
+[country.Brunei]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODUwMiMxNzkjcG5n.png"
+[country.Bulgaria]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODYwNSMyNjQjcG5n.png"
+[country.Burkinafaso]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODY5NyMyODYjcG5n.png"
+[country.Burundi]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODc5MCMyMDkjcG5n.png"
+[country.Cambodia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODg4OCMzMDYjcG5n.png"
+[country.Cameroon]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0ODk4OCM1MjcjcG5n.png"
+[country.Canada]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTA3OCM0MzAjcG5n.png"
+[country.Capeverde]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTE4NiMgMjAjcG5n.png"
+[country.Caymanislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTI3OSM3MjMjcG5n.png"
+[country.Centralafricanrepublic]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTM3NSM4NTcjcG5n.png"
+[country.Chad]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTQ2NSM0MDUjcG5n.png"
+[country.Chile]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTU2MiM3ODcjcG5n.png"
+[country.Christmasisland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTc0OCMzNjcjcG5n.png"
+[country.Cocos]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTg1MCM0NDEjcG5n.png"
+[country.Colombia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk0OTk0NSM0NjAjcG5n.png"
+[country.Comoros]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDAzOCM4OTUjcG5n.png"
+[country.Cookislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDEzMSMzNTYjcG5n.png"
+[country.Costarica]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDIzMSMyMDQjcG5n.png"
+[country.Cotedivoire]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDMyMiMyNDEjcG5n.png"
+[country.Croatia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDQxNSM1MjMjcG5n.png"
+[country.Cuba]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDUwNiM0MzUjcG5n.png"
+[country.Curacao]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDYwMCM0MTUjcG5n.png"
+[country.Cyprus]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDY5MyM5MTkjcG5n.png"
+[country.Czechrepublic]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDc4NyM1NTgjcG5n.png"
+[country.Democraticrepublicofthecongo]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDg4MiM0NjgjcG5n.png"
+[country.Denmark]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MDk3NSM3ODQjcG5n.png"
+[country.Djibouti]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTA2NyM3ODYjcG5n.png"
+[country.Dominica]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTE2MSM0MDAjcG5n.png"
+[country.Dominicanrepublic]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTI1NiM0MzAjcG5n.png"
+[country.Ecuador]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTM0OCM5NDQjcG5n.png"
+[country.Egypt]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTQzOSMgNjkjcG5n.png"
+[country.Elsalvador]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTUzMiMzNDQjcG5n.png"
+[country.Equatorialguinea]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTYyNSMxNzYjcG5n.png"
+[country.Eritrea]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTcxMyM5MDMjcG5n.png"
+[country.Estonia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTgxMyMyNDkjcG5n.png"
+[country.Ethiopia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTkwMCM2NDAjcG5n.png"
+[country.Falklandislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MTk5MCM1OTMjcG5n.png"
+[country.Faroeislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjA5MSM3MTAjcG5n.png"
+[country.Fiji]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjE4MCM0NjUjcG5n.png"
+[country.Finland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjI3NyMgNTcjcG5n.png"
+[country.France]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjM2OCMxNzYjcG5n.png"
+[country.Frenchpolynesia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjQ2MiM2OTEjcG5n.png"
+[country.Gabon]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjU2MSM5NDgjcG5n.png"
+[country.Gambia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjY1MCM4OTUjcG5n.png"
+[country.Georgia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjczNiMxNjEjcG5n.png"
+[country.Germany]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjgzMiM5ODUjcG5n.png"
+[country.Ghana]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MjkyMSMxNzUjcG5n.png"
+[country.Gibraltar]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MzAxMyMzMzgjcG5n.png"
+[country.Greece]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MzEwNyM4NDUjcG5n.png"
+[country.Greenland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MzE5OCM4MjgjcG5n.png"
+[country.Grenada]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MzM0MyMyMjIjcG5n.png"
+[country.Guadeloupe]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MzQzNiM1MjgjcG5n.png"
+[country.Guam]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MzUyNiMyNTkjcG5n.png"
+[country.Guatemala]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MzYxOCM0NTUjcG5n.png"
+[country.Guernsey]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1MzcwNiM3MTUjcG5n.png"
+[country.Guinea]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1Mzc5OCM0MDkjcG5n.png"
+[country.Guineabissau]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1Mzg5OSM2MzkjcG5n.png"
+[country.Guyana]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1Mzk4OCMyNDgjcG5n.png"
+[country.Guyane]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NDA4NSM0MDYjcG5n.png"
+[country.Haiti]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NDE3NyMzMjkjcG5n.png"
+[country.Honduras]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NDI2NSM1MzMjcG5n.png"
+[country.Hongkong]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NDM1NSMyNTQjcG5n.png"
+[country.Hungary]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NDQ0OSM4ODQjcG5n.png"
+[country.Iceland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NDU0MSM4NDAjcG5n.png"
+[country.Indonesia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NDc0NyM4NzUjcG5n.png"
+[country.Iran]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NDgzNyMyMjcjcG5n.png"
+[country.Iraq]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTAwNSM4MjgjcG5n.png"
+[country.Iraqnew]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTA5MiM3NzgjcG5n.png"
+[country.Ireland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTE3NiM1ODUjcG5n.png"
+[country.Isleofman]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTI2NyM2NzAjcG5n.png"
+[country.Israel]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTM1NiMzOTMjcG5n.png"
+[country.Italy]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTQ0NiM5MzcjcG5n.png"
+[country.Jamaica]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTUzMyM4MjMjcG5n.png"
+[country.Japan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTYyNSM0MTAjcG5n.png"
+[country.Jersey]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTcxMyMxMTEjcG5n.png"
+[country.Jordan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTgwNyMyMzUjcG5n.png"
+[country.Kazakhstan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTg5OCM0NzcjcG5n.png"
+[country.Kenya]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NTk4NyM0NzMjcG5n.png"
+[country.Kiribati]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NjA3OCM2OTYjcG5n.png"
+[country.Kosovo]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NjE3MyM2NDkjcG5n.png"
+[country.Kuwait]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NjI1MyM3NTAjcG5n.png"
+[country.Kyrgyzstan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NjM0MiMzMzUjcG5n.png"
+[country.Laos]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NjQzMiM5MzIjcG5n.png"
+[country.Latvia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NjUyMCM0OTUjcG5n.png"
+[country.Lebanon]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NjYwNSM5ODEjcG5n.png"
+[country.Lesotho]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NjY5NiM5NjEjcG5n.png"
+[country.Liberia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1Njc4MCM5ODcjcG5n.png"
+[country.Libya]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1Njg2OSMzMDkjcG5n.png"
+[country.Liechtenstein]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1Njk1MiM4MjAjcG5n.png"
+[country.Lithuania]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzA0MCM1OTAjcG5n.png"
+[country.Luxembourg]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzEyNSM4OTEjcG5n.png"
+[country.Macao]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzIxMyMgMzYjcG5n.png"
+[country.Macedonia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzMwNiM3MzgjcG5n.png"
+[country.Madagascar]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzQwMyMgMzgjcG5n.png"
+[country.Malawi]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzQ4NSMxMTIjcG5n.png"
+[country.Malaysia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzU3MCMxODkjcG5n.png"
+[country.Maldives]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzY1NiMzNDQjcG5n.png"
+[country.Mali]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1Nzc0MyM1MjUjcG5n.png"
+[country.Malta]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzgyNiMyMjkjcG5n.png"
+[country.Marshallislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1NzkwOSMgMzkjcG5n.png"
+[country.Martinique]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODAwNCMyODQjcG5n.png"
+[country.Mauritania]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODA5NCM5MTAjcG5n.png"
+[country.Mauritius]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODE3OSM3NTgjcG5n.png"
+[country.Mexico]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODI2NyMzNzkjcG5n.png"
+[country.Micronesia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODM2MCM1ODMjcG5n.png"
+[country.Moldova]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODQ0OCM0OTMjcG5n.png"
+[country.Monaco]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODUzNCMgNzEjcG5n.png"
+[country.Mongolia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODYxNyM2OTMjcG5n.png"
+[country.Montserrat]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODcwMCMyOTMjcG5n.png"
+[country.Morocco]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODc5MCM5OTAjcG5n.png"
+[country.Mozambique]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODg3MyM3ODMjcG5n.png"
+[country.Myanmar]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1ODk1OCM2MTQjcG5n.png"
+[country.Namibia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTA1MCM0NjcjcG5n.png"
+[country.Nauru]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTE0NiMyMDAjcG5n.png"
+[country.Nepal]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTIzMyM1NjUjcG5n.png"
+[country.Netherlands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTMyNyM1MzYjcG5n.png"
+[country.Netherlandsantilles]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTQxNCMxNDIjcG5n.png"
+[country.Newcaledonia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTUwMCM3MTgjcG5n.png"
+[country.Newzealand]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTU5MCM0ODMjcG5n.png"
+[country.Nicaragua]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTY4NyMgMzgjcG5n.png"
+[country.Niger]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTc3MiM0NjUjcG5n.png"
+[country.Nigeria]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTg2MCM0MTIjcG5n.png"
+[country.Niue]
+flag = "http://img.hkainob.com/MTYyMDYxNDk1OTk0NyM1ODAjcG5n.png"
+[country.Norfolkisland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDA0MCM1MjIjcG5n.png"
+[country.Northkorea]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDEzMCM3MzIjcG5n.png"
+[country.Northernmarianaislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDIxOSM2MTcjcG5n.png"
+[country.Norway]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDMxMSMyMjEjcG5n.png"
+[country.Ofmontenegro]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDM5NiM1NTQjcG5n.png"
+[country.Oman]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDQ4MiM4MDkjcG5n.png"
+[country.Pakistan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDU3MiMyOTcjcG5n.png"
+[country.Palau]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDY2MSMxNTYjcG5n.png"
+[country.Palestine]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDc1MCM3MzcjcG5n.png"
+[country.Panama]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDgzOCM3MDkjcG5n.png"
+[country.Papuanewguinea]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MDkzMSMgNjEjcG5n.png"
+[country.Paraguay]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTAyNiMzNzYjcG5n.png"
+[country.Peru]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTExNyM0NTUjcG5n.png"
+[country.Philippines]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTIwMSM5MjYjcG5n.png"
+[country.Pitcairnislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTI4OSM5MjcjcG5n.png"
+[country.Poland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTM4MiMyNjAjcG5n.png"
+[country.Portugal]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTQ2OSM5MDgjcG5n.png"
+[country.Puertorico]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTU2MSMxMzIjcG5n.png"
+[country.Qatar]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTY0OCMyMTYjcG5n.png"
+[country.Republicofthecongo]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTczMSMyNDgjcG5n.png"
+[country.Romania]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTgyMyM0NTgjcG5n.png"
+[country.Russianfederation]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTkwNiM3NjUjcG5n.png"
+[country.Rwanda]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MTk5NCMyNzgjcG5n.png"
+[country.Saintbarthelemy]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MjA3NyMgMzcjcG5n.png"
+[country.Sainthelena]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MjE3NyMxMzgjcG5n.png"
+[country.Saintkittsandnevis]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MjI2NyM4NDgjcG5n.png"
+[country.Saintlucia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MjM1NSM0MzAjcG5n.png"
+[country.Saintmartin]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MjQzOSMyNDkjcG5n.png"
+[country.Saintpierre]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MjUyNyM4OTAjcG5n.png"
+[country.Saintvicentandthegrenadines]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MjYyMCMyNDQjcG5n.png"
+[country.Samoa]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MjcwNSM3MzUjcG5n.png"
+[country.Sanmarino]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Mjc4OSM2MTAjcG5n.png"
+[country.Saotomeandprincipe]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Mjg3NSM3NjIjcG5n.png"
+[country.Saudiarabia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Mjk2MSMyODgjcG5n.png"
+[country.Senegal]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MzA1MCMzNzQjcG5n.png"
+[country.Serbia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MzEzNSMzMjUjcG5n.png"
+[country.Serbiaandmontenegro]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MzIzMiM1MjgjcG5n.png"
+[country.Seychelles]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MzMxNSM5MTkjcG5n.png"
+[country.Sierraleone]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MzM5OCM5NTIjcG5n.png"
+[country.Singapore]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MzQ4MiM0MDgjcG5n.png"
+[country.Sintmaarten]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MzU2NyM4NzcjcG5n.png"
+[country.Slovakia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2MzY1NiMxMjYjcG5n.png"
+[country.Slovenia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Mzc0MyMzODgjcG5n.png"
+[country.Solomanislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Mzg5OCM3ODMjcG5n.png"
+[country.Somalia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Mzk4MyM2NjcjcG5n.png"
+[country.Southafrica]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDA2OCMyMDYjcG5n.png"
+[country.Southgeorgia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDE1MSM1ODEjcG5n.png"
+[country.Southkorea]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDI0MSMyNTIjcG5n.png"
+[country.Southsudan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDMzNSMzNDIjcG5n.png"
+[country.Sovietunion]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDQxNyM1MDkjcG5n.png"
+[country.Spain]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDUwNiMxNTMjcG5n.png"
+[country.Srilanka]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDU5MyMgOTgjcG5n.png"
+[country.Sudan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDY4NSM1NjUjcG5n.png"
+[country.Suriname]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDc2OCMyMTUjcG5n.png"
+[country.Swaziland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDg1NSMgNzkjcG5n.png"
+[country.Sweden]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NDk0NCMyMjgjcG5n.png"
+[country.Switzerland]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTA1MCM4NzMjcG5n.png"
+[country.Syria]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTEzMiM2NzEjcG5n.png"
+[country.Taiwan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTIxNiM3NTIjcG5n.png"
+[country.Tajikistan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTMwMCMxMTkjcG5n.png"
+[country.Tanzania]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTM4NCM1NzIjcG5n.png"
+[country.Thailand]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTQ3MCMxNTYjcG5n.png"
+[country.Tibet]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTU1OSMzODMjcG5n.png"
+[country.Timorleste]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTY1MyM4NjAjcG5n.png"
+[country.Togo]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTczNyM5NDQjcG5n.png"
+[country.Tokelau]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTgyMCM5MDQjcG5n.png"
+[country.Tonga]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTkwMiM5NTIjcG5n.png"
+[country.Transparent]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NTk4NCM1NDcjcG5n.png"
+[country.Trinidadandtobago]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NjA2OSMzNjIjcG5n.png"
+[country.Tunisia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NjE1NSM2MjgjcG5n.png"
+[country.Turkey]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NjI0NiM1NzYjcG5n.png"
+[country.Turkmenistan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NjMyOSM3OTQjcG5n.png"
+[country.Turksandcaicosislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NjQxOSMxMzEjcG5n.png"
+[country.Tuvalu]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NjUxMSM3MTkjcG5n.png"
+[country.Uae]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NjYwMiM4MDAjcG5n.png"
+[country.Uganda]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NjY4MiM5NTQjcG5n.png"
+[country.Ukraine]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Njc2OCM3MzcjcG5n.png"
+[country.Unitedkingdom]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Njg1MCM1OTkjcG5n.png"
+[country.Unitedstatesofamerica]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Njk0MCM4NDIjcG5n.png"
+[country.Uruguay]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzAyOSM1OTUjcG5n.png"
+[country.Usvirginislands]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzExNSM3OTAjcG5n.png"
+[country.Uzbekistan]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzIwNiM2MTcjcG5n.png"
+[country.Vanuatu]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzI5MiM2ODIjcG5n.png"
+[country.Vaticancity]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzM4MSMyMzQjcG5n.png"
+[country.Venezuela]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzQ3NiM4MTYjcG5n.png"
+[country.Vietnam]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzU2MCMyMDIjcG5n.png"
+[country.Wallisandfutuna]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzY0NiM3ODIjcG5n.png"
+[country.Yemen]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzcyOSM1MDIjcG5n.png"
+[country.Zambia]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2NzgxMyM2NzYjcG5n.png"
+[country.Zimbabwe]
+flag = "http://img.hkainob.com/MTYyMDYxNDk2Nzg5NiM5NTEjcG5n.png"
