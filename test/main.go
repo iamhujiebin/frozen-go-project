@@ -1,11 +1,26 @@
 package main
 
 import (
-	"fmt"
-	"net/url"
+	"net/http"
 )
 
 func main() {
-	res3, _ := url.QueryUnescape("\350\256\276\350\256\241\346\250\241\345\274\217")
-	fmt.Println(res3)
+	http.HandleFunc("/demo/", func(writer http.ResponseWriter, request *http.Request) {
+		_, _ = writer.Write([]byte("前缀匹配"))
+		return
+	})
+	http.HandleFunc("/demo1", func(writer http.ResponseWriter, request *http.Request) {
+		_, _ = writer.Write([]byte("精准匹配"))
+		return
+	})
+	err := http.ListenAndServe(":6666", nil)
+	panic(err)
+
+	//e := gin.Default()
+	////e.GET("/ping", func(context *gin.Context) {})
+	////e.GET("/pong", func(context *gin.Context) {})
+	////e.GET("/user/:id", func(context *gin.Context) {})
+	////e.GET("/user/:id/add", func(context *gin.Context) {})
+	////err := e.Run(":7777")
+	//panic(err)
 }
