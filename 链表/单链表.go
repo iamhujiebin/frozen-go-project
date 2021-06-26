@@ -293,7 +293,7 @@ func (s SingleLinkList) MergeList(head1 Head, head2 Head) (head Head) {
 		return head1
 	}
 	head = s.InitList()
-	cur1, cur2 := head1.Next, head2.Next
+	cur1, cur2 := head1.Next, head2.Next // 需要用无头链表！
 	for cur1 != nil && cur2 != nil {
 		next1, next2 := cur1.Next, cur2.Next
 		if cur1.Data.(int) < cur2.Data.(int) {
