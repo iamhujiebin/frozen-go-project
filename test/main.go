@@ -3,13 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	m := make([]int, 0)
-	test(&m)
-	fmt.Println(m)
-}
-
-func test(m *[]int) {
-	*m = append(*m, 1)
-	*m = append(*m, 1)
-	*m = append(*m, 1)
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 99, 0, 99, 99, 99, 99}
+	for i, v := range arr {
+		if v == 2 || v == 5 {
+			arr = append(arr[0:i], arr[i+1:]...)
+		}
+	}
+	fmt.Println(arr)
 }
