@@ -17,8 +17,11 @@ func TestIndexBF(t *testing.T) {
 
 func TestNextArr(t *testing.T) {
 	t.Log(nextArr(substr))
+	t.Log(nextValueArr(substr))
 	t.Log(nextArr("hello"))
+	t.Log(nextValueArr("hello"))
 	t.Log(nextArr("aaaab"))
+	t.Log(nextValueArr("aaaab"))
 }
 
 func TestIndexKMP(t *testing.T) {
@@ -30,4 +33,6 @@ func TestIndexKMP(t *testing.T) {
 	t.Log(IndexKMP("ababc", "abc"))
 	t.Log(IndexGo("abcabc", "d"))
 	t.Log(IndexKMP("abcabc", "d"))
+	t.Log(IndexGo("aaaaab", "ab"))
+	t.Log(IndexKMP("aaaaab", "ab"))
 }
