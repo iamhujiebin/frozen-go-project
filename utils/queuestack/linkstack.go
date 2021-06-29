@@ -93,12 +93,8 @@ func (u *LinkStack) IsEmpty(stack *QueueStack) bool {
 }
 
 func (u *LinkStack) IsFull(stack *QueueStack) bool {
-	if stack == nil {
-		return false
-	}
-	u.lock.RLock()
-	u.lock.RUnlock()
-	return stack.Len >= stack.Cap
+	// 链栈不需要满
+	return false
 }
 
 func (u *LinkStack) Length(stack *QueueStack) int {
