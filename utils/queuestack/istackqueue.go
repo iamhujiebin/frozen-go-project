@@ -25,6 +25,9 @@ type QueueStack struct {
 
 	headIndex int // 头节点索引-循环队列
 	tailIndex int // 尾节点索引-循环队列
+
+	head *Node // 头节点-链式队列
+	tail *Node // 尾节点-链式队列
 }
 
 type IQueueStack interface {
