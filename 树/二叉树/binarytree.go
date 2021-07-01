@@ -1,5 +1,9 @@
 package 二叉树
 
+import (
+	. "frozen-go-project/utils/queuestack"
+)
+
 type BinaryTree struct {
 }
 
@@ -66,6 +70,40 @@ func (B BinaryTree) PreOrder(root Root, res *[]interface{}) {
 	return
 }
 
+// 用栈来实现递归: 递去=入栈 归来=出栈
+// 前序遍历:节点入栈前访问
+// 步骤:
+// 1. 从根节点,沿左边节点,依次入栈(递去),直到左节点为空。(可以准备归来了)
+// 2. 出栈 ,pop出来的有右节点,把右节点当成子树,回到步骤1;如果没有右节点,回到步骤2
+// 3. 直至栈为空
+func (B BinaryTree) PreOrder1(root *BNode, res *[]interface{}) {
+	if root == nil || res == nil {
+		return
+	}
+	ls := LinkStack{}
+	stack, _ := ls.Init(0)
+	// 步骤1
+	cur := root
+	for cur != nil {
+		// 节点入栈前访问,下同
+		*res = append(*res, cur.Data)
+		_ = ls.Push(stack, &Node{Data: cur})
+		cur = cur.Left
+	}
+	for !ls.IsEmpty(stack) {
+		node := ls.Pop(stack)
+		// 步骤3
+		if node.Data.(*BNode).Right != nil {
+			cur := node.Data.(*BNode).Right
+			for cur != nil {
+				*res = append(*res, cur.Data)
+				_ = ls.Push(stack, &Node{Data: cur})
+				cur = cur.Left
+			}
+		}
+	}
+}
+
 func (B BinaryTree) InOrder(root Root, res *[]interface{}) {
 	if root == nil {
 		return
@@ -73,6 +111,35 @@ func (B BinaryTree) InOrder(root Root, res *[]interface{}) {
 	B.InOrder(root.Left, res)
 	*res = append(*res, root.Data)
 	B.InOrder(root.Right, res)
+}
+
+// 步骤同前序遍历
+// 不同点: 出栈的时候访问数据
+func (B BinaryTree) InOrder1(root *BNode, res *[]interface{}) {
+	if root == nil || res == nil {
+		return
+	}
+	ls := LinkStack{}
+	stack, _ := ls.Init(0)
+	// 步骤1
+	cur := root
+	for cur != nil {
+		_ = ls.Push(stack, &Node{Data: cur})
+		cur = cur.Left
+	}
+	for !ls.IsEmpty(stack) {
+		node := ls.Pop(stack)
+		// 出栈的时候访问
+		*res = append(*res, node.Data.(*BNode).Data)
+		// 步骤3
+		if node.Data.(*BNode).Right != nil {
+			cur := node.Data.(*BNode).Right
+			for cur != nil {
+				_ = ls.Push(stack, &Node{Data: cur})
+				cur = cur.Left
+			}
+		}
+	}
 }
 
 func (B BinaryTree) PostOrder(root Root, res *[]interface{}) {
