@@ -56,20 +56,32 @@ func (B BinaryTree) LevelOrder(root Root) []interface{} {
 	return res
 }
 
-func (B BinaryTree) PreOrder(root Root) []interface{} {
+func (B BinaryTree) PreOrder(root Root, res *[]interface{}) {
 	if root == nil {
-		return nil
+		return
 	}
-	var res []interface{}
-
+	*res = append(*res, root.Data)
+	B.PreOrder(root.Left, res)
+	B.PreOrder(root.Right, res)
+	return
 }
 
-func (B BinaryTree) InOrder(root Root) []interface{} {
-	panic("implement me")
+func (B BinaryTree) InOrder(root Root, res *[]interface{}) {
+	if root == nil {
+		return
+	}
+	B.InOrder(root.Left, res)
+	*res = append(*res, root.Data)
+	B.InOrder(root.Right, res)
 }
 
-func (B BinaryTree) PostOrder(root Root) []interface{} {
-	panic("implement me")
+func (B BinaryTree) PostOrder(root Root, res *[]interface{}) {
+	if root == nil {
+		return
+	}
+	B.PostOrder(root.Left, res)
+	B.PostOrder(root.Right, res)
+	*res = append(*res, root.Data)
 }
 
 func (B BinaryTree) TreeDepth(root Root) int {

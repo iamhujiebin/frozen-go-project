@@ -2,13 +2,26 @@ package main
 
 import "fmt"
 
+type query func(string) string
+
 func main() {
-	str := "xxxxxxxxababacxxxxxxx"
-	tar := "ababac"
-	for i := 0; i < len(str); i++ {
-		//fmt.Println(str[i : i+1])
-		fmt.Println(str[i])
+	ret := exec("111", func(s string) string {
+		return s + " func1"
+	}, func(s string) string {
+		return s + " func2"
+	}, func(s string) string {
+		return s + " func3"
+	})
+	fmt.Println(ret)
+}
+
+func exec(name string, vs ...query) string {
+	ch := make(chan string)
+	fn := func(i int) {
+		ch <- vs[i](name)
 	}
-	fmt.Println(str[8:10] == tar[0:2])
-	fmt.Printf("%v %v %s \n", str[8:10], tar[0:2], tar)
+	for i := range vs {
+		go fn(i)
+	}
+	return <-ch
 }
