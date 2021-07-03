@@ -44,3 +44,10 @@ func TestBinaryTree_PostOrder(t *testing.T) {
 	bt.PostOrder(binaryTree, &res)
 	fmt.Printf("PostOrder:%v\n", res)
 }
+
+func TestBinaryTree_Find(t *testing.T) {
+	res := bt.LevelOrder(binaryTree)
+	t.Log(res)
+	n, pre := bt.Find(binaryTree, 4)
+	t.Log(n, pre)
+}

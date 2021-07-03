@@ -41,3 +41,20 @@ func TestBinarySortTree_PostOrder(t *testing.T) {
 func TestBinarySortTree_TreeDepth(t *testing.T) {
 	fmt.Println(bs.TreeDepth(bst))
 }
+
+func TestBinarySortTree_Find(t *testing.T) {
+	n, pre := bs.Find(bst, 1)
+	t.Log(n, pre)
+}
+
+func TestBinarySortTree_Delete(t *testing.T) {
+	res := make([]interface{}, 0)
+	bs.InOrder(bst, &res)
+	fmt.Println(res)
+
+	bst = bs.Delete(bst, 5)
+	res = make([]interface{}, 0)
+	bs.InOrder(bst, &res)
+	fmt.Println(res)
+
+}

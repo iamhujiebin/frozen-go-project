@@ -31,6 +31,23 @@ func (B BinaryTree) InitTree(datas ...interface{}) *bNode {
 	return n1
 }
 
+// 递归查找
+// 递归查找貌似没发找到pre指针
+func (B BinaryTree) Find(root *bNode, data interface{}) (node *bNode, pre *bNode) {
+	if root == nil {
+		return
+	}
+	if root.data == data {
+		node = root
+		return
+	}
+	node, pre = B.Find(root.left, data)
+	if node != nil {
+		return
+	}
+	return B.Find(root.right, data)
+}
+
 func (B BinaryTree) Insert(root *bNode, data interface{}) {
 	panic("implement me")
 }

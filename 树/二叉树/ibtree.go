@@ -21,6 +21,7 @@ func (n *bNode) ToInt() int {
 // Binary Tree :二叉树
 type IBinaryTree interface {
 	InitTree(...interface{}) *bNode                   // 初始化树
+	Find(*bNode, interface{}) (*bNode, *bNode)        // 查找节点
 	Insert(*bNode, interface{})                       // 插入节点
 	Delete(*bNode, interface{})                       // 删除节点
 	LevelOrder(*bNode) []interface{}                  // 层序遍历
