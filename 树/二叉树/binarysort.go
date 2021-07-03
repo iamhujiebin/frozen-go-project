@@ -59,15 +59,15 @@ func (b BinarySortTree) LevelOrder(root *BNode) (res []interface{}) {
 	}
 	lq := new(LinkQueue)
 	linkQueue, _ := lq.Init(0)
-	_ = lq.Push(linkQueue, &Node{Data: root})
+	_ = lq.Push(linkQueue, &node{Data: root})
 	for !lq.IsEmpty(linkQueue) {
 		node := lq.Pop(linkQueue).Data.(*BNode)
 		res = append(res, node.Data)
 		if node.Left != nil {
-			_ = lq.Push(linkQueue, &Node{Data: node.Left})
+			_ = lq.Push(linkQueue, &node{Data: node.Left})
 		}
 		if node.Right != nil {
-			_ = lq.Push(linkQueue, &Node{Data: node.Right})
+			_ = lq.Push(linkQueue, &node{Data: node.Right})
 		}
 	}
 	return

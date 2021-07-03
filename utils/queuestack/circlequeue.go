@@ -12,14 +12,14 @@ type CircleQueue struct {
 	lock sync.RWMutex
 }
 
-func (c *CircleQueue) Init(cap int, nodes ...*Node) (*QueueStack, error) {
+func (c *CircleQueue) Init(cap int, datas ...interface{}) (*QueueStack, error) {
 	q := &QueueStack{
 		Cap:       cap,
-		arr:       make([]*Node, cap),
+		arr:       make([]interface{}, cap),
 		headIndex: -1,
 		tailIndex: -1,
 	}
-	for _, node := range nodes {
+	for _, node := range datas {
 		_ = c.Push(q, node)
 	}
 	return q, nil
@@ -33,12 +33,9 @@ func (c *CircleQueue) Clear(queue *QueueStack) {
 	queue, _ = c.Init(queue.Cap)
 }
 
-func (c *CircleQueue) Push(queue *QueueStack, node *Node) error {
+func (c *CircleQueue) Push(queue *QueueStack, data interface{}) error {
 	if queue == nil {
 		return ErrNoInit
-	}
-	if node == nil {
-		return ErrNode
 	}
 	if c.IsFull(queue) {
 		return ErrFull
@@ -58,11 +55,11 @@ func (c *CircleQueue) Push(queue *QueueStack, node *Node) error {
 	if queue.tailIndex >= queue.Cap {
 		queue.tailIndex = 0
 	}
-	queue.arr[queue.tailIndex] = node
+	queue.arr[queue.tailIndex] = data
 	return nil
 }
 
-func (c *CircleQueue) Pop(queue *QueueStack) *Node {
+func (c *CircleQueue) Pop(queue *QueueStack) interface{} {
 	if queue == nil {
 		return nil
 	}
@@ -72,8 +69,7 @@ func (c *CircleQueue) Pop(queue *QueueStack) *Node {
 	c.lock.Lock()
 	defer c.lock.Unlock()
 	queue.Len--
-	node := queue.arr[queue.headIndex]
-	queue.arr[queue.headIndex] = nil // 置空,否则影响print
+	data := queue.arr[queue.headIndex]
 	queue.headIndex++
 	if queue.headIndex >= queue.Cap {
 		queue.headIndex = 0
@@ -85,7 +81,7 @@ func (c *CircleQueue) Pop(queue *QueueStack) *Node {
 			queue.tailIndex = 0
 		}
 	}
-	return node
+	return data
 }
 
 func (c *CircleQueue) IsEmpty(queue *QueueStack) bool {
@@ -115,7 +111,7 @@ func (c *CircleQueue) Length(queue *QueueStack) int {
 	return queue.Len
 }
 
-func (c *CircleQueue) GetTop(queue *QueueStack) *Node {
+func (c *CircleQueue) GetTop(queue *QueueStack) interface{} {
 	if queue == nil {
 		return nil
 	}
@@ -131,7 +127,7 @@ func (c *CircleQueue) Print(queue *QueueStack) {
 		if queue.arr[i] == nil {
 			datas[i] = nil
 		} else {
-			datas[i] = queue.arr[i].Data
+			datas[i] = queue.arr[i]
 		}
 	}
 	fmt.Printf("Cap:%v,Len:%v,headIndex:%v,tailIndex:%v,datas:%v\n",

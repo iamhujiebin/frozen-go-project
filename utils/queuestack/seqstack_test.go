@@ -6,7 +6,7 @@ var sStack *QueueStack
 var ss SeqStack
 
 func init() {
-	sStack, _ = ss.Init(10, &Node{Data: 1}, &Node{Data: 5}, &Node{Data: 9})
+	sStack, _ = ss.Init(10, 1, 5, 9)
 }
 
 func TestSeqStack_Init(t *testing.T) {
@@ -44,7 +44,7 @@ func TestSeqStack_Pop(t *testing.T) {
 }
 
 func TestSeqStack_Push(t *testing.T) {
-	err := ss.Push(sStack, &Node{Data: 99})
+	err := ss.Push(sStack, 99)
 	t.Log(err)
 	ss.Print(sStack)
 }

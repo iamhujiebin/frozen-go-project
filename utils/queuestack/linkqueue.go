@@ -11,13 +11,13 @@ type LinkQueue struct {
 	lock sync.Mutex
 }
 
-func (l *LinkQueue) Init(cap int, nodes ...*Node) (*QueueStack, error) {
+func (l *LinkQueue) Init(cap int, datas ...interface{}) (*QueueStack, error) {
 	queue := &QueueStack{
 		Len:  0,
 		head: nil,
 		tail: nil,
 	}
-	for _, node := range nodes {
+	for _, node := range datas {
 		_ = l.Push(queue, node)
 	}
 	return queue, nil
@@ -34,26 +34,24 @@ func (l *LinkQueue) Clear(queue *QueueStack) {
 	queue.head, queue.tail = nil, nil
 }
 
-func (l *LinkQueue) Push(queue *QueueStack, node *Node) error {
+func (l *LinkQueue) Push(queue *QueueStack, data interface{}) error {
 	if queue == nil {
 		return ErrNoInit
 	}
-	if node == nil {
-		return ErrNode
-	}
 	l.lock.Lock()
 	defer l.lock.Unlock()
+	n := &node{Data: data}
 	if queue.Len == 0 {
-		queue.head, queue.tail = node, node
+		queue.head, queue.tail = n, n
 	} else {
-		queue.tail.Next = node
-		queue.tail = node
+		queue.tail.Next = n
+		queue.tail = n
 	}
 	queue.Len++
 	return nil
 }
 
-func (l *LinkQueue) Pop(queue *QueueStack) *Node {
+func (l *LinkQueue) Pop(queue *QueueStack) interface{} {
 	if queue == nil {
 		return nil
 	}
@@ -61,12 +59,12 @@ func (l *LinkQueue) Pop(queue *QueueStack) *Node {
 		return nil
 	}
 	queue.Len--
-	node := queue.head
-	queue.head = node.Next
+	n := queue.head
+	queue.head = n.Next
 	if queue.Len == 0 {
 		queue.tail = nil
 	}
-	return node
+	return n.Data
 }
 
 func (l *LinkQueue) IsEmpty(queue *QueueStack) bool {
@@ -90,11 +88,11 @@ func (l *LinkQueue) Length(queue *QueueStack) int {
 	return queue.Len
 }
 
-func (l *LinkQueue) GetTop(queue *QueueStack) *Node {
-	if queue == nil {
+func (l *LinkQueue) GetTop(queue *QueueStack) interface{} {
+	if queue == nil || queue.head == nil {
 		return nil
 	}
-	return queue.head
+	return queue.head.Data
 }
 
 func (l *LinkQueue) Print(queue *QueueStack) {

@@ -11,15 +11,15 @@ type SeqStack struct {
 	lock sync.RWMutex // 加了锁之后,函数需要用pointer,因为golang值传递
 }
 
-func (s *SeqStack) Init(cap int, nodes ...*Node) (*QueueStack, error) {
+func (s *SeqStack) Init(cap int, datas ...interface{}) (*QueueStack, error) {
 	stack := &QueueStack{
 		Len:      0,
 		Cap:      cap,
-		arr:      make([]*Node, cap),
+		arr:      make([]interface{}, cap),
 		topIndex: -1,
 	}
-	for _, n := range nodes {
-		err := s.Push(stack, n)
+	for _, data := range datas {
+		err := s.Push(stack, data)
 		if err != nil {
 			return nil, err
 		}
@@ -35,12 +35,9 @@ func (s *SeqStack) Clear(stack *QueueStack) {
 	stack, _ = s.Init(stack.Cap)
 }
 
-func (s *SeqStack) Push(stack *QueueStack, node *Node) error {
+func (s *SeqStack) Push(stack *QueueStack, data interface{}) error {
 	if stack == nil {
 		return ErrNoInit
-	}
-	if node == nil {
-		return ErrNode
 	}
 	if s.IsFull(stack) {
 		return ErrFull
@@ -49,11 +46,11 @@ func (s *SeqStack) Push(stack *QueueStack, node *Node) error {
 	defer s.lock.Unlock()
 	stack.topIndex++
 	stack.Len++
-	stack.arr[stack.topIndex] = node
+	stack.arr[stack.topIndex] = data
 	return nil
 }
 
-func (s *SeqStack) Pop(stack *QueueStack) *Node {
+func (s *SeqStack) Pop(stack *QueueStack) interface{} {
 	if stack == nil {
 		return nil
 	}
@@ -63,10 +60,9 @@ func (s *SeqStack) Pop(stack *QueueStack) *Node {
 	s.lock.Lock()
 	defer s.lock.Unlock()
 	stack.Len--
-	node := stack.arr[stack.topIndex]
-	stack.arr[stack.topIndex] = nil // 需要置空,print会用
+	data := stack.arr[stack.topIndex]
 	stack.topIndex--
-	return node
+	return data
 }
 
 func (s *SeqStack) IsEmpty(stack *QueueStack) bool {
@@ -92,8 +88,8 @@ func (s *SeqStack) Length(stack *QueueStack) int {
 	return stack.Len
 }
 
-func (s *SeqStack) GetTop(stack *QueueStack) *Node {
-	if stack == nil {
+func (s *SeqStack) GetTop(stack *QueueStack) interface{} {
+	if stack == nil || stack.topIndex == -1 {
 		return nil
 	}
 	s.lock.RLock()
@@ -107,7 +103,7 @@ func (s *SeqStack) Print(stack *QueueStack) {
 	}
 	var datas []interface{}
 	for i := 0; i < stack.Len; i++ {
-		datas = append(datas, stack.arr[i].Data)
+		datas = append(datas, stack.arr[i])
 	}
 	fmt.Printf("Len:%v,Cap:%v,topIndex:%v,datas:%v",
 		stack.Len, stack.Cap, stack.topIndex, datas)

@@ -26,14 +26,14 @@ func (u *LinkStack) Print(stack *QueueStack) {
 		stack.Len, stack.Cap, stack.top, datas)
 }
 
-func (u *LinkStack) Init(cap int, nodes ...*Node) (*QueueStack, error) {
+func (u *LinkStack) Init(cap int, datas ...interface{}) (*QueueStack, error) {
 	s := &QueueStack{
 		top: nil,
 		Len: 0,
 		Cap: cap,
 	}
-	for _, n := range nodes {
-		err := u.Push(s, n)
+	for _, data := range datas {
+		err := u.Push(s, data)
 		if err != nil {
 			return nil, err
 		}
@@ -50,25 +50,23 @@ func (u *LinkStack) Clear(stack *QueueStack) {
 	stack.Len = 0
 }
 
-func (u *LinkStack) Push(stack *QueueStack, node *Node) error {
+func (u *LinkStack) Push(stack *QueueStack, data interface{}) error {
 	if stack == nil {
 		return ErrNoInit
-	}
-	if node == nil {
-		return ErrNode
 	}
 	if u.IsFull(stack) {
 		return ErrFull
 	}
+	n := &node{Data: data}
 	u.lock.Lock()
 	u.lock.Unlock()
 	stack.Len++
-	node.Next = stack.top
-	stack.top = node
+	n.Next = stack.top
+	stack.top = n
 	return nil
 }
 
-func (u *LinkStack) Pop(stack *QueueStack) *Node {
+func (u *LinkStack) Pop(stack *QueueStack) interface{} {
 	if stack == nil {
 		return nil
 	}
@@ -78,9 +76,9 @@ func (u *LinkStack) Pop(stack *QueueStack) *Node {
 	u.lock.Lock()
 	u.lock.Unlock()
 	stack.Len--
-	node := stack.top
-	stack.top = node.Next
-	return node
+	n := stack.top
+	stack.top = n.Next
+	return n.Data
 }
 
 func (u *LinkStack) IsEmpty(stack *QueueStack) bool {
@@ -106,11 +104,11 @@ func (u *LinkStack) Length(stack *QueueStack) int {
 	return stack.Len
 }
 
-func (u *LinkStack) GetTop(stack *QueueStack) *Node {
-	if stack == nil {
+func (u *LinkStack) GetTop(stack *QueueStack) interface{} {
+	if stack == nil || stack.top == nil {
 		return nil
 	}
 	u.lock.RLock()
 	u.lock.RUnlock()
-	return stack.top
+	return stack.top.Data
 }

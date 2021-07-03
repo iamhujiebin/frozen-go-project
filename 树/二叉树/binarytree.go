@@ -95,7 +95,7 @@ func (B BinaryTree) PreOrder1(root *BNode, res *[]interface{}) {
 	for cur != nil {
 		// 节点入栈前访问,下同
 		*res = append(*res, cur.Data)
-		_ = ls.Push(stack, &Node{Data: cur})
+		_ = ls.Push(stack, &node{Data: cur})
 		cur = cur.Left
 	}
 	for !ls.IsEmpty(stack) {
@@ -105,7 +105,7 @@ func (B BinaryTree) PreOrder1(root *BNode, res *[]interface{}) {
 			cur := node.Data.(*BNode).Right
 			for cur != nil {
 				*res = append(*res, cur.Data)
-				_ = ls.Push(stack, &Node{Data: cur})
+				_ = ls.Push(stack, &node{Data: cur})
 				cur = cur.Left
 			}
 		}
@@ -132,7 +132,7 @@ func (B BinaryTree) InOrder1(root *BNode, res *[]interface{}) {
 	// 步骤1
 	cur := root
 	for cur != nil {
-		_ = ls.Push(stack, &Node{Data: cur})
+		_ = ls.Push(stack, &node{Data: cur})
 		cur = cur.Left
 	}
 	for !ls.IsEmpty(stack) {
@@ -143,7 +143,7 @@ func (B BinaryTree) InOrder1(root *BNode, res *[]interface{}) {
 		if node.Data.(*BNode).Right != nil {
 			cur := node.Data.(*BNode).Right
 			for cur != nil {
-				_ = ls.Push(stack, &Node{Data: cur})
+				_ = ls.Push(stack, &node{Data: cur})
 				cur = cur.Left
 			}
 		}

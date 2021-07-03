@@ -6,7 +6,7 @@ var linkStack *QueueStack
 var ls LinkStack
 
 func init() {
-	linkStack, _ = ls.Init(10, &Node{Data: 1}, &Node{Data: 5}, &Node{Data: 9})
+	linkStack, _ = ls.Init(10, 1, 5, 9)
 }
 
 func TestLinkStack_InitStack(t *testing.T) {
@@ -45,6 +45,6 @@ func TestLinkStack_Pop(t *testing.T) {
 
 func TestLinkStack_Push(t *testing.T) {
 	ls.Print(linkStack)
-	_ = ls.Push(linkStack, &Node{Data: 99})
+	_ = ls.Push(linkStack, 99)
 	ls.Print(linkStack)
 }
