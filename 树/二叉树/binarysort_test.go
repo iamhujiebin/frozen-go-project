@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var bst *BNode
+var bst *bNode
 var bs BinarySortTree
 
 func init() {

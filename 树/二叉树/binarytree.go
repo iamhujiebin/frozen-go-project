@@ -16,26 +16,26 @@ type BinaryTree struct {
 / \  /\
 7  8 9 0
 */
-func (B BinaryTree) InitTree(datas ...interface{}) *BNode {
+func (B BinaryTree) InitTree(datas ...interface{}) *bNode {
 	//if len(datas) <= 0 {
 	//	return nil
 	//}
 	n1, n2, n3, n4, n5, n6, n7, n8, n9, n10 :=
-		&BNode{Data: 1}, &BNode{Data: 2}, &BNode{Data: 3}, &BNode{Data: 4}, &BNode{Data: 5},
-		&BNode{Data: 6}, &BNode{Data: 7}, &BNode{Data: 8}, &BNode{Data: 9}, &BNode{Data: 0}
-	n1.Left, n1.Right = n2, n3
-	n2.Left, n2.Right = n4, n5
-	n3.Left = n6
-	n4.Left, n4.Right = n7, n8
-	n5.Left, n5.Right = n9, n10
+		&bNode{data: 1}, &bNode{data: 2}, &bNode{data: 3}, &bNode{data: 4}, &bNode{data: 5},
+		&bNode{data: 6}, &bNode{data: 7}, &bNode{data: 8}, &bNode{data: 9}, &bNode{data: 0}
+	n1.left, n1.right = n2, n3
+	n2.left, n2.right = n4, n5
+	n3.left = n6
+	n4.left, n4.right = n7, n8
+	n5.left, n5.right = n9, n10
 	return n1
 }
 
-func (B BinaryTree) Insert(root *BNode, node *BNode) {
+func (B BinaryTree) Insert(root *bNode, data interface{}) {
 	panic("implement me")
 }
 
-func (B BinaryTree) Delete(root *BNode, node *BNode) {
+func (B BinaryTree) Delete(root *bNode, data interface{}) {
 	panic("implement me")
 }
 
@@ -43,38 +43,38 @@ func (B BinaryTree) Delete(root *BNode, node *BNode) {
 // root先放入
 // 出一个节点，再把它的左右节点放进去
 // 循环直到队列为空
-func (B BinaryTree) LevelOrder(root *BNode) []interface{} {
+func (B BinaryTree) LevelOrder(root *bNode) []interface{} {
 	if root == nil {
 		return nil
 	}
 	var res []interface{}
-	var queue []*BNode
+	var queue []*bNode
 	// root先入队
 	queue = append(queue, root)
 	for len(queue) > 0 {
 		// queue出队一个
 		// 把节点的左右子节点再入队即可
-		node := queue[0]
+		n := queue[0]
 		// 干掉前一个
 		queue = queue[1:]
-		res = append(res, node.Data)
-		if node.Left != nil {
-			queue = append(queue, node.Left)
+		res = append(res, n.data)
+		if n.left != nil {
+			queue = append(queue, n.left)
 		}
-		if node.Right != nil {
-			queue = append(queue, node.Right)
+		if n.right != nil {
+			queue = append(queue, n.right)
 		}
 	}
 	return res
 }
 
-func (B BinaryTree) PreOrder(root *BNode, res *[]interface{}) {
+func (B BinaryTree) PreOrder(root *bNode, res *[]interface{}) {
 	if root == nil {
 		return
 	}
-	*res = append(*res, root.Data)
-	B.PreOrder(root.Left, res)
-	B.PreOrder(root.Right, res)
+	*res = append(*res, root.data)
+	B.PreOrder(root.left, res)
+	B.PreOrder(root.right, res)
 	return
 }
 
@@ -84,7 +84,7 @@ func (B BinaryTree) PreOrder(root *BNode, res *[]interface{}) {
 // 1. 从根节点,沿左边节点,依次入栈(递去),直到左节点为空。(可以准备归来了)
 // 2. 出栈 ,pop出来的有右节点,把右节点当成子树,回到步骤1;如果没有右节点,回到步骤2
 // 3. 直至栈为空
-func (B BinaryTree) PreOrder1(root *BNode, res *[]interface{}) {
+func (B BinaryTree) PreOrder1(root *bNode, res *[]interface{}) {
 	if root == nil || res == nil {
 		return
 	}
@@ -94,36 +94,36 @@ func (B BinaryTree) PreOrder1(root *BNode, res *[]interface{}) {
 	cur := root
 	for cur != nil {
 		// 节点入栈前访问,下同
-		*res = append(*res, cur.Data)
-		_ = ls.Push(stack, &node{Data: cur})
-		cur = cur.Left
+		*res = append(*res, cur.data)
+		_ = ls.Push(stack, cur)
+		cur = cur.left
 	}
 	for !ls.IsEmpty(stack) {
-		node := ls.Pop(stack)
-		// 步骤3
-		if node.Data.(*BNode).Right != nil {
-			cur := node.Data.(*BNode).Right
+		n := ls.Pop(stack)
+		// 步骤2
+		if n.(*bNode).right != nil {
+			cur := n.(*bNode).right
 			for cur != nil {
-				*res = append(*res, cur.Data)
-				_ = ls.Push(stack, &node{Data: cur})
-				cur = cur.Left
+				*res = append(*res, cur.data)
+				_ = ls.Push(stack, cur)
+				cur = cur.left
 			}
 		}
 	}
 }
 
-func (B BinaryTree) InOrder(root *BNode, res *[]interface{}) {
+func (B BinaryTree) InOrder(root *bNode, res *[]interface{}) {
 	if root == nil {
 		return
 	}
-	B.InOrder(root.Left, res)
-	*res = append(*res, root.Data)
-	B.InOrder(root.Right, res)
+	B.InOrder(root.left, res)
+	*res = append(*res, root.data)
+	B.InOrder(root.right, res)
 }
 
 // 步骤同前序遍历
 // 不同点: 出栈的时候访问数据
-func (B BinaryTree) InOrder1(root *BNode, res *[]interface{}) {
+func (B BinaryTree) InOrder1(root *bNode, res *[]interface{}) {
 	if root == nil || res == nil {
 		return
 	}
@@ -132,45 +132,45 @@ func (B BinaryTree) InOrder1(root *BNode, res *[]interface{}) {
 	// 步骤1
 	cur := root
 	for cur != nil {
-		_ = ls.Push(stack, &node{Data: cur})
-		cur = cur.Left
+		_ = ls.Push(stack, cur)
+		cur = cur.left
 	}
 	for !ls.IsEmpty(stack) {
-		node := ls.Pop(stack)
+		n := ls.Pop(stack)
 		// 出栈的时候访问
-		*res = append(*res, node.Data.(*BNode).Data)
+		*res = append(*res, n.(*bNode).data)
 		// 步骤3
-		if node.Data.(*BNode).Right != nil {
-			cur := node.Data.(*BNode).Right
+		if n.(*bNode).right != nil {
+			cur := n.(*bNode).right
 			for cur != nil {
-				_ = ls.Push(stack, &node{Data: cur})
-				cur = cur.Left
+				_ = ls.Push(stack, cur)
+				cur = cur.left
 			}
 		}
 	}
 }
 
-func (B BinaryTree) PostOrder(root *BNode, res *[]interface{}) {
+func (B BinaryTree) PostOrder(root *bNode, res *[]interface{}) {
 	if root == nil {
 		return
 	}
-	B.PostOrder(root.Left, res)
-	B.PostOrder(root.Right, res)
-	*res = append(*res, root.Data)
+	B.PostOrder(root.left, res)
+	B.PostOrder(root.right, res)
+	*res = append(*res, root.data)
 }
 
-func (B BinaryTree) TreeDepth(root *BNode) int {
+func (B BinaryTree) TreeDepth(root *bNode) int {
 	if root == nil {
 		return 0
 	}
-	leftDepth := B.TreeDepth(root.Left) + 1
-	rightDepth := B.TreeDepth(root.Right) + 1
+	leftDepth := B.TreeDepth(root.left) + 1
+	rightDepth := B.TreeDepth(root.right) + 1
 	if leftDepth > rightDepth {
 		return leftDepth
 	}
 	return rightDepth
 }
 
-func (B BinaryTree) RestoreBTree(i []interface{}, i2 []interface{}) *BNode {
+func (B BinaryTree) RestoreBTree(i []interface{}, i2 []interface{}) *bNode {
 	panic("implement me")
 }
