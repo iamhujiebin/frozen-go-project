@@ -16,7 +16,7 @@ type BinaryTree struct {
 / \  /\
 7  8 9 0
 */
-func (B BinaryTree) InitTree(datas []interface{}) Root {
+func (B BinaryTree) InitTree(datas ...interface{}) *BNode {
 	//if len(datas) <= 0 {
 	//	return nil
 	//}
@@ -31,11 +31,19 @@ func (B BinaryTree) InitTree(datas []interface{}) Root {
 	return n1
 }
 
+func (B BinaryTree) Insert(root *BNode, node *BNode) {
+	panic("implement me")
+}
+
+func (B BinaryTree) Delete(root *BNode, node *BNode) {
+	panic("implement me")
+}
+
 // 利用一个队列
 // root先放入
 // 出一个节点，再把它的左右节点放进去
 // 循环直到队列为空
-func (B BinaryTree) LevelOrder(root Root) []interface{} {
+func (B BinaryTree) LevelOrder(root *BNode) []interface{} {
 	if root == nil {
 		return nil
 	}
@@ -60,7 +68,7 @@ func (B BinaryTree) LevelOrder(root Root) []interface{} {
 	return res
 }
 
-func (B BinaryTree) PreOrder(root Root, res *[]interface{}) {
+func (B BinaryTree) PreOrder(root *BNode, res *[]interface{}) {
 	if root == nil {
 		return
 	}
@@ -104,7 +112,7 @@ func (B BinaryTree) PreOrder1(root *BNode, res *[]interface{}) {
 	}
 }
 
-func (B BinaryTree) InOrder(root Root, res *[]interface{}) {
+func (B BinaryTree) InOrder(root *BNode, res *[]interface{}) {
 	if root == nil {
 		return
 	}
@@ -142,7 +150,7 @@ func (B BinaryTree) InOrder1(root *BNode, res *[]interface{}) {
 	}
 }
 
-func (B BinaryTree) PostOrder(root Root, res *[]interface{}) {
+func (B BinaryTree) PostOrder(root *BNode, res *[]interface{}) {
 	if root == nil {
 		return
 	}
@@ -151,7 +159,7 @@ func (B BinaryTree) PostOrder(root Root, res *[]interface{}) {
 	*res = append(*res, root.Data)
 }
 
-func (B BinaryTree) TreeDepth(root Root) int {
+func (B BinaryTree) TreeDepth(root *BNode) int {
 	if root == nil {
 		return 0
 	}
@@ -163,6 +171,6 @@ func (B BinaryTree) TreeDepth(root Root) int {
 	return rightDepth
 }
 
-func (B BinaryTree) RestoreBTree(i []interface{}, i2 []interface{}) Root {
+func (B BinaryTree) RestoreBTree(i []interface{}, i2 []interface{}) *BNode {
 	panic("implement me")
 }

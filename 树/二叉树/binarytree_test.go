@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var binaryTree Root
+var binaryTree *BNode
 var bt BinaryTree
 
 func init() {

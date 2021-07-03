@@ -8,6 +8,8 @@ var (
 	ErrFull   = fmt.Errorf("is full")
 )
 
+// todo 这里的Node,不应该暴露出来
+// 应该要把Data interface{}作为外面就行了
 type Node struct {
 	Data interface{}
 	Next *Node
