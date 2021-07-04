@@ -17,6 +17,14 @@ func (b BinarySortTree) InitTree(datas ...interface{}) *bNode {
 	return root
 }
 
+func (b BinarySortTree) InitTree1(datas ...interface{}) *bNode {
+	var root *bNode
+	for _, data := range datas {
+		root = b.Insert1(root, data)
+	}
+	return root
+}
+
 // 比当前节点大就右移动|作为右子节点
 // 比当前节点小就左移动|作为左子节点
 func (b BinarySortTree) Insert(root *bNode, data interface{}) (newRoot *bNode) {
@@ -40,6 +48,20 @@ func (b BinarySortTree) Insert(root *bNode, data interface{}) (newRoot *bNode) {
 			cur = cur.left
 		}
 	}
+}
+
+// 递归插入
+func (b BinarySortTree) Insert1(root *bNode, data interface{}) (newRoot *bNode) {
+	newRoot = root
+	if root == nil {
+		return &bNode{data: data}
+	}
+	if data.(int) >= root.ToInt() {
+		root.right = b.Insert1(root.right, data)
+	} else {
+		root.left = b.Insert1(root.left, data)
+	}
+	return
 }
 
 // 普通的查找就是递归查找O(N)

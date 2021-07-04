@@ -6,14 +6,17 @@ import (
 )
 
 var bst *bNode
+var bst1 *bNode
 var bs BinarySortTree
 
 func init() {
 	bst = bs.InitTree(5, 2, 3, 4, 1, 6, 7, 8, 9, 0)
+	bst1 = bs.InitTree1(5, 2, 3, 4, 1, 6, 7, 8, 9, 0)
 }
 
 func TestBinarySortTree_InitTree(t *testing.T) {
 	fmt.Println(bs.LevelOrder(bst))
+	fmt.Println(bs.LevelOrder(bst1))
 }
 
 func TestBinarySortTree_LevelOrder(t *testing.T) {
@@ -24,17 +27,26 @@ func TestBinarySortTree_PreOrder(t *testing.T) {
 	res := make([]interface{}, 0)
 	bs.PreOrder(bst, &res)
 	fmt.Println(res)
+	res = make([]interface{}, 0)
+	bs.PreOrder(bst1, &res)
+	fmt.Println(res)
 }
 
 func TestBinarySortTree_InOrder(t *testing.T) {
 	res := make([]interface{}, 0)
 	bs.InOrder(bst, &res)
 	fmt.Println(res)
+	res = make([]interface{}, 0)
+	bs.InOrder(bst1, &res)
+	fmt.Println(res)
 }
 
 func TestBinarySortTree_PostOrder(t *testing.T) {
 	res := make([]interface{}, 0)
 	bs.PostOrder(bst, &res)
+	fmt.Println(res)
+	res = make([]interface{}, 0)
+	bs.PostOrder(bst1, &res)
 	fmt.Println(res)
 }
 
