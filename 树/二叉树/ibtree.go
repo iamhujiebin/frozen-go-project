@@ -23,7 +23,7 @@ type IBinaryTree interface {
 	InitTree(...interface{}) *bNode                   // 初始化树
 	Find(*bNode, interface{}) (*bNode, *bNode)        // 查找节点
 	Insert(*bNode, interface{})                       // 插入节点
-	Delete(*bNode, interface{})                       // 删除节点
+	Delete(*bNode, interface{}) *bNode                // 删除节点
 	LevelOrder(*bNode) []interface{}                  // 层序遍历
 	PreOrder(*bNode, *[]interface{})                  // 前序遍历:中左右
 	InOrder(*bNode, *[]interface{})                   // 中序遍历:左中右

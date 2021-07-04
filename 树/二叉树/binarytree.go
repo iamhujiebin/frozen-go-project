@@ -52,7 +52,7 @@ func (B BinaryTree) Insert(root *bNode, data interface{}) {
 	panic("implement me")
 }
 
-func (B BinaryTree) Delete(root *bNode, data interface{}) {
+func (B BinaryTree) Delete(root *bNode, data interface{}) *bNode {
 	panic("implement me")
 }
 
