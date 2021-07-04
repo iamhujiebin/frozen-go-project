@@ -48,7 +48,7 @@ func (B BinaryTree) Find(root *bNode, data interface{}) (node *bNode, pre *bNode
 	return B.Find(root.right, data)
 }
 
-func (B BinaryTree) Insert(root *bNode, data interface{}) {
+func (B BinaryTree) Insert(root *bNode, data interface{}) *bNode {
 	panic("implement me")
 }
 

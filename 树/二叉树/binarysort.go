@@ -10,28 +10,20 @@ type BinarySortTree struct {
 }
 
 func (b BinarySortTree) InitTree(datas ...interface{}) *bNode {
-	root := &bNode{
-		data:  nil,
-		left:  nil,
-		right: nil,
-	}
+	var root *bNode
 	for _, data := range datas {
-		b.Insert(root, data)
+		root = b.Insert(root, data)
 	}
 	return root
 }
 
 // 比当前节点大就右移动|作为右子节点
 // 比当前节点小就左移动|作为左子节点
-func (b BinarySortTree) Insert(root *bNode, data interface{}) {
+func (b BinarySortTree) Insert(root *bNode, data interface{}) (newRoot *bNode) {
 	if root == nil {
-		return
+		return &bNode{data: data}
 	}
-	// 空树
-	if root.data == nil && root.left == nil && root.right == nil {
-		root.data = data
-		return
-	}
+	newRoot = root
 	cur := root
 	for {
 		if data.(int) >= cur.ToInt() {
@@ -104,7 +96,7 @@ func (b BinarySortTree) Delete(root *bNode, data interface{}) (newRoot *bNode) {
 	if pre == nil {
 		// 只有根节点
 		if root.left == nil && root.right == nil {
-			root.data = nil
+			newRoot = nil
 			return
 		}
 		// 只有左|右子树

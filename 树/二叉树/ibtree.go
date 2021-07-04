@@ -22,7 +22,7 @@ func (n *bNode) ToInt() int {
 type IBinaryTree interface {
 	InitTree(...interface{}) *bNode                   // 初始化树
 	Find(*bNode, interface{}) (*bNode, *bNode)        // 查找节点
-	Insert(*bNode, interface{})                       // 插入节点
+	Insert(*bNode, interface{}) *bNode                // 插入节点
 	Delete(*bNode, interface{}) *bNode                // 删除节点
 	LevelOrder(*bNode) []interface{}                  // 层序遍历
 	PreOrder(*bNode, *[]interface{})                  // 前序遍历:中左右
