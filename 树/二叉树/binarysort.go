@@ -7,6 +7,7 @@ import (
 // 二叉排序树
 // 定义:左子树每一个节点都比根节点小,右子树每一个节点都比根节点大
 type BinarySortTree struct {
+	BinaryTree
 }
 
 func (b BinarySortTree) InitTree(datas ...interface{}) *bNode {
@@ -226,47 +227,4 @@ func (b BinarySortTree) LevelOrder(root *bNode) (res []interface{}) {
 		}
 	}
 	return
-}
-
-func (b BinarySortTree) PreOrder(root *bNode, i *[]interface{}) {
-	if root == nil {
-		return
-	}
-	*i = append(*i, root.data)
-	b.PreOrder(root.left, i)
-	b.PreOrder(root.right, i)
-}
-
-func (b BinarySortTree) InOrder(root *bNode, i *[]interface{}) {
-	if root == nil {
-		return
-	}
-	b.InOrder(root.left, i)
-	*i = append(*i, root.data)
-	b.InOrder(root.right, i)
-}
-
-func (b BinarySortTree) PostOrder(root *bNode, i *[]interface{}) {
-	if root == nil {
-		return
-	}
-	b.PostOrder(root.left, i)
-	b.PostOrder(root.right, i)
-	*i = append(*i, root.data)
-}
-
-func (b BinarySortTree) TreeDepth(root *bNode) int {
-	if root == nil {
-		return 0
-	}
-	left := b.TreeDepth(root.left)
-	right := b.TreeDepth(root.right)
-	if left > right {
-		return left + 1
-	}
-	return right + 1
-}
-
-func (b BinarySortTree) RestoreBTree(i []interface{}, i2 []interface{}) *bNode {
-	panic("implement me")
 }
