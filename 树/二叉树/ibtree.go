@@ -8,6 +8,8 @@ type bNode struct {
 	data  interface{}
 	left  *bNode
 	right *bNode
+
+	height int // avl 平衡二叉搜索树用到
 }
 
 func (n *bNode) ToInt() int {
@@ -30,4 +32,11 @@ type IBinaryTree interface {
 	PostOrder(*bNode, *[]interface{})                 // 后序遍历:左右中
 	TreeDepth(*bNode) int                             // 树深度
 	RestoreBTree([]interface{}, []interface{}) *bNode // 还原二叉树
+}
+
+func max(a, b int) int {
+	if a >= b {
+		return a
+	}
+	return b
 }
