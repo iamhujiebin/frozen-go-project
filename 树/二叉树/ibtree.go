@@ -10,6 +10,9 @@ type bNode struct {
 	right *bNode
 
 	height int // avl 平衡二叉搜索树用到
+
+	isBlack bool   // 红黑树用到,是否黑色节点
+	parent  *bNode // 红黑树父节点
 }
 
 func (n *bNode) ToInt() int {
