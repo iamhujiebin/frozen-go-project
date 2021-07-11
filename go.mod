@@ -34,6 +34,7 @@ require (
 	github.com/nicksnyder/go-i18n/v2 v2.1.2
 	github.com/ouqiang/timewheel v1.0.1 // indirect
 	github.com/prometheus/common v0.9.1
+	github.com/pyihe/go-skipList v0.0.0-20200630084334-fc3047a567b4 // indirect
 	github.com/stretchr/testify v1.7.0
 	github.com/tal-tech/go-zero v1.1.6
 	github.com/tealeg/xlsx v1.0.5 // indirect
