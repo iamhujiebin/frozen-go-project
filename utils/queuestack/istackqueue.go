@@ -10,6 +10,8 @@ var (
 type node struct {
 	Data interface{}
 	Next *node
+
+	priority int // 优先队列-优先级
 }
 
 // 队列|栈
@@ -25,7 +27,7 @@ type QueueStack struct {
 	headIndex int // 头节点索引-循环队列
 	tailIndex int // 尾节点索引-循环队列
 
-	head *node // 头节点-链式队列
+	head *node // 头节点-链式队列|优先队列
 	tail *node // 尾节点-链式队列
 }
 
