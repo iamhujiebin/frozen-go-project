@@ -67,15 +67,52 @@ func newSkipListNode(index uint64, data interface{}, level int) *SkipListNode {
 }
 
 func (s *SkipList) Insert(index uint64, data interface{}) {
-	panic("implement me")
+	// 找前驱节点
+	cur, preNodes := s.searchWithPre(index)
+	if cur != s.head && cur.Index == index {
+		cur.Data = data
+		return
+	}
+	newNode := newSkipListNode(index, data, s.randLevel())
+	level := len(newNode.nextNodes)
+	for l := level - 1; l >= 0; l-- {
+		// 链表插入
+		newNode.nextNodes[l] = preNodes[l].nextNodes[l]
+		preNodes[l].nextNodes[l] = newNode
+	}
 }
 
 func (s *SkipList) Delete(index uint64) {
-	panic("implement me")
+	// 找前驱节点
+	cur, preNodes := s.searchWithPre(index)
+	if cur != s.head && cur.Index != index {
+		// 没有对应的节点
+		return
+	}
+	level := len(cur.nextNodes)
+	for l := level - 1; l >= 0; l-- {
+		// 链表删除
+		preNodes[l].nextNodes[l] = cur.nextNodes[l]
+	}
 }
 
 func (s *SkipList) Search(index uint64) *SkipListNode {
-	panic("implement me")
+	cur := s.head
+	// 从上层往下找
+	for l := s.level - 1; l >= 0; l-- {
+		for cur.nextNodes[l] != s.tail && cur.nextNodes[l].Index < index {
+			cur = cur.nextNodes[l]
+		}
+	}
+	// 已经到了level=0的底层了,cur就是小于index的最大节点
+	cur = cur.nextNodes[0]
+	if cur == s.tail {
+		return nil
+	}
+	if cur.Index == index {
+		return cur
+	}
+	return nil
 }
 
 // 返回搜索节点(可能是搜索节点的前驱节点)以及各层的前驱节点
@@ -92,7 +129,7 @@ func (s *SkipList) searchWithPre(index uint64) (*SkipListNode, []*SkipListNode) 
 		// 跳出循环:要不到层的末尾,要不找到了一个index大的,cur就是前一个节点
 		preNodes[l] = cur
 	}
-	// 已经到了level=0的底层了,cur要不就是index节点,要不就是小于index的最小节点
+	// 已经到了level=0的底层了,cur就是小于index的最大节点
 	if cur.nextNodes[0] != s.tail {
 		cur = cur.nextNodes[0]
 	}
@@ -103,7 +140,7 @@ func (s *SkipList) searchWithPre(index uint64) (*SkipListNode, []*SkipListNode) 
 func (s *SkipList) randLevel() int {
 	rand.Seed(time.Now().UnixNano())
 	level := 1
-	for level < s.Level && rand.Float64() < s.p {
+	for level < s.level && rand.Float64() < s.p {
 		level++
 	}
 	return level
