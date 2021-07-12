@@ -5,7 +5,9 @@ go 1.14
 require (
 	cloud.google.com/go/firestore v1.5.0 // indirect
 	firebase.google.com/go v3.13.0+incompatible // indirect
+	github.com/AceDarkknight/ConcurrentSkipList v0.0.0-20201026075402-347c1f2b9242 // indirect
 	github.com/BurntSushi/toml v0.3.1
+	github.com/OneOfOne/xxhash v1.2.8
 	github.com/Shopify/sarama v1.27.2
 	github.com/alicebob/miniredis v2.5.0+incompatible // indirect
 	github.com/antlr/antlr4 v0.0.0-20210216171041-fde0b28dfbd6 // indirect
