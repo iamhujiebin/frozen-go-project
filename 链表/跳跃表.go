@@ -5,6 +5,10 @@ import (
 	"time"
 )
 
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+
 // 跳跃表
 // 实际上就是多层"有序链表"
 // 排序根据index字段
@@ -53,7 +57,7 @@ func NewSkipList(level int) *SkipList {
 		head:  head,
 		tail:  tail,
 		level: level,
-		p:     0.25,
+		p:     0.5,
 	}
 }
 
@@ -138,7 +142,6 @@ func (s *SkipList) searchWithPre(index uint64) (*SkipListNode, []*SkipListNode) 
 
 // 根据概率随机层高
 func (s *SkipList) randLevel() int {
-	rand.Seed(time.Now().UnixNano())
 	level := 1
 	for level < s.level && rand.Float64() < s.p {
 		level++
