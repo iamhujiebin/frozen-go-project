@@ -28,4 +28,6 @@ func TestNewSkipList(t *testing.T) {
 	fmt.Printf("n:%+v\n", n)
 	n = skipList.Search(11)
 	fmt.Printf("n:%+v\n", n)
+	nodes := skipList.Range()
+	fmt.Printf("nodes:%v\n", nodes)
 }

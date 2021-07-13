@@ -30,6 +30,7 @@ type ISkipList interface {
 	Insert(index uint64, data interface{})
 	Delete(index uint64)
 	Search(index uint64) *SkipListNode // key用于排序
+	Range() []*SkipListNode            // 遍历
 }
 
 // 跳跃表节点
@@ -117,6 +118,21 @@ func (s *SkipList) Search(index uint64) *SkipListNode {
 		return cur
 	}
 	return nil
+}
+
+func (s *SkipList) Range() []*SkipListNode {
+	if s.head == nil {
+		return nil
+	}
+	var nodes []*SkipListNode
+	// 只遍历最后一层就行了
+	l := 0
+	cur := s.head.nextNodes[l]
+	for cur != s.tail {
+		nodes = append(nodes, cur)
+		cur = cur.nextNodes[l]
+	}
+	return nodes
 }
 
 // 返回搜索节点(可能是搜索节点的前驱节点)以及各层的前驱节点
