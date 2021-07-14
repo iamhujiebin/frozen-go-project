@@ -22,6 +22,8 @@ func TestNewSkipList(t *testing.T) {
 	skipList.Delete(3)
 	n = skipList.Search(3)
 	fmt.Printf("n:%+v\n", n)
+	n = skipList.SearchNotGood(3)
+	fmt.Printf("n:%+v\n", n)
 	n = skipList.Search(5)
 	fmt.Printf("n:%+v\n", n)
 	n = skipList.Search(6)
