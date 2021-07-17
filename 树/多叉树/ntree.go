@@ -29,7 +29,7 @@ type NTree struct {
 	/
    11
 */
-func (N NTree) InitTree(i ...interface{}) *nNode {
+func (N NTree) InitTree(...interface{}) *nNode {
 	n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11 := &nNode{Data: 1}, &nNode{Data: 2}, &nNode{Data: 3}, &nNode{Data: 4},
 		&nNode{Data: 5}, &nNode{Data: 6}, &nNode{Data: 7}, &nNode{Data: 8}, &nNode{Data: 9}, &nNode{Data: 10}, &nNode{Data: 11}
 	n5.Nodes = make([]*nNode, 3)
