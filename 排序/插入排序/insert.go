@@ -1,5 +1,10 @@
 package 插入排序
 
+import (
+	"fmt"
+	"strconv"
+)
+
 func InsertSort(arr []int) {
 	n := len(arr)
 	if n < 2 {
@@ -18,4 +23,23 @@ func InsertSort(arr []int) {
 			arr[index] = value
 		}
 	}
+}
+
+func test() {
+	n := 13
+	var res []string
+	for i := 1; i <= n; i++ {
+		res = insert(res, strconv.Itoa(i))
+	}
+	fmt.Println(res)
+}
+
+func insert(arr []string, data string) []string {
+	arr = append(arr, data) // 这一步很关键,往数组中加一个元素,然后排序
+	for i := len(arr) - 2; i >= 0; i-- {
+		if arr[i+1] < arr[i] {
+			arr[i+1], arr[i] = arr[i], arr[i+1]
+		}
+	}
+	return arr
 }
