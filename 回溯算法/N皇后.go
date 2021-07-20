@@ -8,7 +8,7 @@ package 回溯算法
 //   [[Q...],[..Q.],[...Q]] //可行棋盘2
 //   [[Q...],[..Q.],[...Q]] //可行棋盘3
 //   [[Q...],[..Q.],[...Q]] //可行棋盘4
-// ] 的三维整型数组,Q 放置的皇后位置 "."不放置皇后位置
+// ] 的三维字符串数组,Q 放置的皇后位置 "."不放置皇后位置
 type NQueen struct {
 	Res   [][][]string // 三维数组
 	Track [][]string   // 二维数组
@@ -18,21 +18,27 @@ type NQueen struct {
 func (n *NQueen) nQueen(N int) [][][]string {
 	n.Res = make([][][]string, 0)
 	n.Track = make([][]string, 0)
-
 	n.N = N
+	n.backtrack()
 	return n.Res
 }
 
 func (n *NQueen) backtrack() {
 	if len(n.Track) == n.N {
 		path := make([][]string, 0)
-		copy(path, n.Track)
+		for k := range n.Track {
+			path = append(path, n.Track[k])
+		}
 		n.Res = append(n.Res, path)
 		return
 	}
-	for i := 0; i < n.N; i++ {
-		canPos, pos := n.checkQueenAttack()
-		if !canPos {
+	for col := 0; col < n.N; col++ {
+		pos := make([]string, n.N)
+		for j := range pos {
+			pos[j] = "."
+		}
+		pos[col] = "Q"
+		if n.queenAttack(col) {
 			continue
 		}
 		// 做选择
@@ -45,15 +51,31 @@ func (n *NQueen) backtrack() {
 }
 
 // 检查皇后是否被攻击
-// @return canPos:能否放置 true:能 false:不能
-// @return pos: 能放置
-func (n *NQueen) checkQueenAttack() (canPos bool, pos []string) {
-	pos = make([]string, n.N)
-	for i := range pos {
-		pos[i] = "."
+// 判断逻辑:
+//  0.依赖Track数组,长度为0直接返回false
+// 	1.Track数组中,当前列的其他行有没有Q(列攻击)
+//	2.Track每一行中,col+i|col-i位置有没有Q(斜攻击),k--,i++
+// @param col:尝试放置Q的列
+// @return true:被攻击 false:不被攻击
+func (n *NQueen) queenAttack(col int) bool {
+	// 情况0
+	if len(n.Track) <= 0 {
+		return false
 	}
-	for i := 0; i < n.N; i++ {
-		
+	// 情况1
+	for _, row := range n.Track {
+		if row[col] == "Q" {
+			return true
+		}
 	}
-	return false, pos
+	// 情况2
+	i := 1
+	for k := len(n.Track) - 1; k >= 0; k-- {
+		if col-i >= 0 && n.Track[k][col-i] == "Q" ||
+			col+i < n.N && n.Track[k][col+i] == "Q" {
+			return true
+		}
+		i++
+	}
+	return false
 }
