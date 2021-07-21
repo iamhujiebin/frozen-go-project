@@ -9,12 +9,13 @@ type nNode struct {
 
 // n叉树
 type INTree interface {
-	InitTree(...interface{}) *nNode  // 初始化树
-	Find(*nNode, interface{}) *nNode // 查找节点
-	LevelOrder(*nNode) []interface{} // 层序遍历
-	PreOrder(*nNode) []interface{}   // 前序遍历:根子
-	PostOrder(*nNode) []interface{}  // 后序遍历:左右中
-	TreeDepth(*nNode) int            // 树深度
+	InitTree(...interface{}) *nNode                      // 初始化树
+	Find(*nNode, interface{}) *nNode                     // 查找节点
+	FindWithParent(*nNode, interface{}) (*nNode, *nNode) // 查找父子节点
+	LevelOrder(*nNode) []interface{}                     // 层序遍历
+	PreOrder(*nNode) []interface{}                       // 前序遍历:根子
+	PostOrder(*nNode) []interface{}                      // 后序遍历:左右中
+	TreeDepth(*nNode) int                                // 树深度
 }
 
 type NTree struct {
@@ -60,6 +61,10 @@ func (N NTree) Find(root *nNode, data interface{}) *nNode {
 		}
 	}
 	return res
+}
+
+func (N NTree) FindWithParent(root *nNode, data interface{}) (*nNode, *nNode) {
+	panic("todo")
 }
 
 func (N NTree) LevelOrder(root *nNode) []interface{} {

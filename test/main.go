@@ -1,17 +1,15 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+type A struct {
+	Name string
+}
 
 func main() {
-	n := 13
-	var res []string
-	for i := 1; i <= n; i++ {
-		res = insert(res, strconv.Itoa(i))
-	}
-	fmt.Println(res)
+	a := &A{Name: "jiebin"}
+	var b, c *A
+	b = a
+	c = a
+	println(b == c)
 }
 
 func insert(arr []string, data string) []string {
