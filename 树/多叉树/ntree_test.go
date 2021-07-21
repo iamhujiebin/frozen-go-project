@@ -37,7 +37,9 @@ func TestFindLowParent(t *testing.T) {
 	t.Log(FindLowParent(ntree, 2, 11))
 }
 
-func TestFindParent(t *testing.T) {
-	t.Log(findParent(ntree, 1))
-	t.Log(findParent(ntree, 2))
+func TestNTree_FindWithParent(t *testing.T) {
+	t.Log(nt.FindWithParent(ntree, 1))
+	t.Log(nt.FindWithParent(ntree, 5))
+	t.Log(nt.FindWithParent(ntree, 4))
+	t.Log(nt.FindWithParent(ntree, 11))
 }

@@ -63,8 +63,27 @@ func (N NTree) Find(root *nNode, data interface{}) *nNode {
 	return res
 }
 
-func (N NTree) FindWithParent(root *nNode, data interface{}) (*nNode, *nNode) {
-	panic("todo")
+func (N NTree) FindWithParent(root *nNode, data interface{}) (node *nNode, parent *nNode) {
+	if root == nil {
+		return nil, nil
+	}
+	if root.Data == data {
+		return root, nil
+	}
+	cur := root
+	for _, child := range cur.Nodes {
+		if child.Data == data {
+			return child, cur
+		}
+	}
+	// 到下层
+	for i := range cur.Nodes {
+		parent, node = N.FindWithParent(cur.Nodes[i], data)
+		if node != nil {
+			return parent, node
+		}
+	}
+	return nil, nil
 }
 
 func (N NTree) LevelOrder(root *nNode) []interface{} {
