@@ -1,31 +1,29 @@
 package 多叉树
 
 func FindLowParent(root *nNode, n1, n2 interface{}) *nNode {
-	if root == nil {
+	// 顺序表存储
+	var p1, p2 []*nNode
+	for p := findParent(root, n1); p != nil; p = findParent(root, n1) {
+		p1 = append(p1, p)
+		n1 = p.Data
+	}
+	for p := findParent(root, n2); p != nil; p = findParent(root, n2) {
+		p2 = append(p2, p)
+		n2 = p.Data
+	}
+	if len(p2) <= 0 {
 		return nil
 	}
-	if n1 == n2 && root.Data == n1 {
-		return nil
+	m2 := make(map[*nNode]struct{}, len(p2))
+	for k := range p2 {
+		m2[p2[k]] = struct{}{}
 	}
-	// 同样的节点,那就返回其中一个的父节点,有就有无就无
-	if n1 == n2 && root.Data != n1 {
-		return findParent(root, n1)
+	for k := range p1 {
+		if _, ok := m2[p1[k]]; ok {
+			return p1[k]
+		}
 	}
-	// n1!=n2,循环找爹
-	var p1, p2 *nNode
-	p1 = findParent(root, n1)
-	p2 = findParent(root, n2)
-	if p1 == p2 {
-		return p1
-	}
-	for p1 != nil && p2 != nil {
-		p1 = findParent(root, p1)
-		p2 = findParent(root, p2)
-	}
-	if p1 == nil || p2 == nil {
-		return nil
-	}
-	return p1
+	return nil
 }
 
 func findParent(root *nNode, n interface{}) *nNode {
